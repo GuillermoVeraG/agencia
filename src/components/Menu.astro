@@ -17,7 +17,11 @@ const menuItems: Array<string> = [
     class="flex justify-between items-center max-w-7xl w-full mx-auto px-16 z-20"
   >
     <a href="/">
-      <img src="/image/logo.svg" class="max-w-32" alt="logo de la agencia" />
+      <img
+        src=`${import.meta.env.BASE_URL}/image/logo.svg`
+        class="max-w-32"
+        alt="logo de la agencia"
+      />
     </a>
     <nav class="hidden lg:flex gap-4">
       {
