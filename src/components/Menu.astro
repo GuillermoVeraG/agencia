@@ -1,0 +1,57 @@
+---
+import MenuButton from "@/components/icons/Menu.astro";
+const menuItems: Array<string> = [
+  "home",
+  "about",
+  "projects",
+  "team",
+  "blog",
+  "contact",
+];
+---
+
+<section
+  class="relative w-full flex justify-between items-center mx-auto py-5 bg-secondary-950"
+>
+  <div
+    class="flex justify-between items-center max-w-7xl w-full mx-auto px-16 z-20"
+  >
+    <a href="/">
+      <img src="/image/logo.svg" class="max-w-32" alt="logo de la agencia" />
+    </a>
+    <nav class="hidden lg:flex gap-4">
+      {
+        menuItems.map((item, index) => (
+          <a
+            href="/"
+            class="font-archivo uppercase text-secondary-50 hover:text-principal-400 py-4 text-sm font-light leading-5"
+          >
+            {item}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button class="lg:hidden">
+      <MenuButton className="stroke-principal-50" />
+    </button>
+  </div>
+  <nav
+    class="lg:hidden flex flex-col justify-start items-center
+    h-[100vh] w-full z-10 pt-24
+    absolute top-0 left-0
+    bg-secondary-950
+    -translate-y-[100vh] transition-transform"
+  >
+    {
+      menuItems.map((item, index) => (
+        <a
+          href="/"
+          class="font-archivo uppercase text-secondary-50 hover:text-principal-400 py-4 text-sm font-light leading-5"
+        >
+          {item}
+        </a>
+      ))
+    }
+  </nav>
+</section>
