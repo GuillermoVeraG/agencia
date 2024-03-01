@@ -4,18 +4,18 @@ import DobleLetters from "@/components/DobleLetters.astro";
 
 <section class="w-full flex justify-between items-center mx-auto py-5">
   <div
-    class="flex justify-between items-center max-w-7xl w-full mx-auto px-10 relative"
+    class="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-10 relative"
   >
-    <div class="flex flex-col text-left gap-8 mt-14">
+    <div class="flex flex-col text-left gap-8 mt-14 w-full">
       <div class="flex flex-col gap-8">
         <div
-          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[8rem] leading-[7rem] tracking-tight"
+          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[6rem] leading-[5rem] lg:text-[8rem] lg:leading-[7rem] tracking-tight"
         >
           imagine<span class="text-principal-300">.</span>
         </div>
         <DobleLetters name="create" />
         <div
-          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[8rem] leading-[7rem] tracking-tight"
+          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[6rem] leading-[5rem] lg:text-[8rem] lg:leading-[7rem] tracking-tight"
         >
           design<span class="text-principal-300">.</span>
         </div>
@@ -27,13 +27,15 @@ import DobleLetters from "@/components/DobleLetters.astro";
         creativity meets purpose.
       </div>
     </div>
-    <div class="-mt-12">
+    <div class="mt-20 lg:-mt-12">
       <img
         src="/image/hero-laptop.webp"
-        class="object-cover ml-8 w-full inline-block animate-movelaptop"
+        class="object-cover lg:ml-8 lg:w-full inline-block animate-movelaptop"
       />
     </div>
-    <div class="absolute top-1/2 left-1/2 -ml-8 -mt-4">
+    <div
+      class="absolute top-1/2 left-0 lg:left-1/2 mt-20 ml-16 md:mt-16 xl:-ml-8 lg:-mt-4"
+    >
       <a href="/">
         <img
           src="/image/hero-circle.webp"
