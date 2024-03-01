@@ -1,3 +1,5 @@
+import { transform } from "typescript";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -33,6 +35,26 @@ export default {
           800: "#404854",
           900: "#3b414a",
           950: "#1d2025",
+        },
+      },
+      animation: {
+        spin: "spin 9s linear infinite",
+        movelaptop: "movelaptop 8s ease-in infinite",
+      },
+      keyframes: {
+        spin: {
+          to: { transform: "rotate(360deg)" },
+        },
+        movelaptop: {
+          "0%": {
+            transform: "translateX(5px) rotateZ(-20deg)",
+          },
+          "50%": {
+            transform: "translateX(-5px) rotateZ(-20deg)",
+          },
+          "100%": {
+            transform: "translateX(5px) rotateZ(-20deg)",
+          },
         },
       },
     },

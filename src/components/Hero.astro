@@ -1,1 +1,45 @@
-<div>hero</div>
+---
+import DobleLetters from "@/components/DobleLetters.astro";
+---
+
+<section class="w-full flex justify-between items-center mx-auto py-5">
+  <div
+    class="flex justify-between items-center max-w-7xl w-full mx-auto px-10 relative"
+  >
+    <div class="flex flex-col text-left gap-8 mt-14">
+      <div class="flex flex-col gap-8">
+        <div
+          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[8rem] leading-[7rem] tracking-tight"
+        >
+          imagine<span class="text-principal-300">.</span>
+        </div>
+        <DobleLetters name="create" />
+        <div
+          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-[8rem] leading-[7rem] tracking-tight"
+        >
+          design<span class="text-principal-300">.</span>
+        </div>
+      </div>
+      <div
+        class="max-w-[26rem] text-secondary-50/60 tracking-wide text-base text-pretty"
+      >
+        A dynamic design agency dedicated to bringing your ideas to life. Where
+        creativity meets purpose.
+      </div>
+    </div>
+    <div class="-mt-12">
+      <img
+        src="/image/hero-laptop.webp"
+        class="object-cover ml-8 w-full inline-block animate-movelaptop"
+      />
+    </div>
+    <div class="absolute top-1/2 left-1/2 -ml-8 -mt-4">
+      <a href="/">
+        <img
+          src="/image/hero-circle.webp"
+          class="z-10 size-32 cursor-pointer duration-[5s] animate-spin"
+        />
+      </a>
+    </div>
+  </div>
+</section>
