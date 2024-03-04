@@ -1,1 +1,32 @@
-<div>Stage</div>
+---
+import Arrows from "@/components/icons/Arrows.astro";
+---
+
+<section
+  class="w-full flex justify-between items-center mx-auto py-24 md:py-40 lg:py-16"
+>
+  <div
+    class="flex flex-row justify-around items-center max-w-7xl w-full mx-auto px-6 relative"
+  >
+    <div
+      class="font-archivo font-light text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-300"
+    >
+      <Arrows className="fill-secondary-800/30" />
+      start
+    </div>
+
+    <div
+      class="font-archivo font-light text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-300"
+    >
+      <Arrows className="fill-primary-400/40" />
+      execute
+    </div>
+
+    <div
+      class="font-archivo font-light text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-300"
+    >
+      <Arrows className="fill-primary-300" />
+      launch
+    </div>
+  </div>
+</section>
