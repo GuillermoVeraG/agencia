@@ -26,12 +26,15 @@ const menuItems: Array<string> = [
     <nav class="hidden lg:flex gap-4">
       {
         menuItems.map((item) => (
-          <a
-            href=`${import.meta.env.BASE_URL}`
-            class="font-archivo uppercase text-secondary-50 hover:text-primary-300 py-4 text-sm font-light leading-5"
-          >
-            {item}
-          </a>
+          <div class="flex flex-col justify-center items-center overflow-hidden group/menu">
+            <a
+              href=`${import.meta.env.BASE_URL}`
+              class="font-archivo uppercase text-secondary-50 group-hover/menu:text-primary-300 pt-4 pb-2 text-sm font-light leading-5"
+            >
+              {item}
+            </a>
+            <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-300 from-25% to-secondary-950 -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 duration-300"></div>
+        </div>
         ))
       }
     </nav>
