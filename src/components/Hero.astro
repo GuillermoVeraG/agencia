@@ -1,5 +1,6 @@
 ---
 import DobleLetters from "@/components/DobleLetters.astro";
+import HeroArrow from "@/components/icons/HeroArrow.astro";
 ---
 
 <section class="w-full flex justify-between items-center mx-auto py-5">
@@ -36,11 +37,12 @@ import DobleLetters from "@/components/DobleLetters.astro";
     <div
       class="absolute top-1/2 left-0 lg:left-1/2 mt-20 ml-16 md:mt-16 xl:-ml-8 lg:-mt-4"
     >
-      <a href="/">
+      <a class="flex justify-center items-center" href="/">
         <img
           src=`${import.meta.env.BASE_URL}/image/hero-circle.webp`
           class="z-10 size-24 md:size-32 cursor-pointer duration-[5s] animate-spin"
         />
+        <HeroArrow className="fill-secondary-50 z-20 size-10 absolute" />
       </a>
     </div>
   </div>
