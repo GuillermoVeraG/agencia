@@ -3,6 +3,8 @@ import HorizontalSplit from "@/components/icons/HorizontalSplit.astro";
 import Details from "@/components/icons/Details.astro";
 import Deblur from "@/components/icons/Deblur.astro";
 
+import Title from "@/components/Titles.astro";
+
 const SERVICES = [
   {
     icon: "HorizontalSplit",
@@ -41,36 +43,13 @@ const SERVICES = [
   <div
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
-    <div
-      class="w-full flex flex-col-reverse text-center items-center md:items-start lg:flex-row justify-between gap-4 px-10 xl:px-0"
-    >
-      <div
-        class="flex flex-col justify-start items-center md:items-start gap-4 text-center"
-      >
-        <h5
-          class="font-archivo font-light text-xs leading-5 tracking-[8px] uppercase text-secondary-200 my-0"
-        >
-          Imagine & Design
-        </h5>
-        <p
-          class="max-w-md font-archivo text-secondary-300 text-base lg:text-lg text-pretty my-0 mx-4 md:mx-0 md:text-left"
-        >
-          From brand development to captivating user experiences, we specialize
-          in turning concepts into compelling realities.
-        </p>
-      </div>
-
-      <div class="flex flex-col items-center lg:items-start gap-2">
-        <h2
-          class="font-archivo capitalize text-secondary-50 text-5xl md:text-6xl lg:text-7xl font-medium my-0 tracking-tight lg:text-left"
-        >
-          we create
-          <span class="font-archivo text-primary-300 font-thin italic"
-            >Experiences</span
-          >
-        </h2>
-      </div>
-    </div>
+    <Title
+      title="we create "
+      titleBlue="Experiences"
+      subtitle="Imagine & Design"
+      desc="From brand development to captivating user experiences, we specialize in turning concepts into compelling realities."
+      layout="right"
+    />
   </div>
 
   <div

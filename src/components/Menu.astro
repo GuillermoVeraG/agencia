@@ -49,7 +49,7 @@ const menuItems: Array<string> = [
     h-screen w-full z-10 pt-24
     absolute top-0 left-0
     bg-secondary-950
-    -translate-y-[100vh] duration-700"
+    -translate-y-[120vh] duration-700"
   >
     {
       menuItems.map((item) => (
@@ -68,7 +68,7 @@ const menuItems: Array<string> = [
   const but = document.querySelector("#menuNavMobileBut");
   const menu = document.querySelector("#menuNavMobile");
 
-  const menuHideClasses = "-translate-y-[100vh]";
+  const menuHideClasses = "-translate-y-[120vh]";
 
   const handleNav = () => {
     if (isNavOpen) {

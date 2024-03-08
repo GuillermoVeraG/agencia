@@ -1,0 +1,102 @@
+---
+import Title from "@/components/Titles.astro";
+
+const PROJECTS = [
+  {
+    image: "/image/projects3.webp",
+    title: "creative design showcase",
+    desc: "Showcasing the core features and functionalities of an idea.",
+    category: ["design", "branding"],
+    href: "#"
+  },
+  {
+    image: "/image/projects4.webp",
+    title: "innovative design portfolio",
+    desc: "Showcasing the core features and functionalities of an idea.",
+    category: ["branding", "design"],
+    href: "#"
+  },
+  {
+    image: "/image/projects2.webp",
+    title: "desing excellence projects",
+    desc: "Showcasing the core features and functionalities of an idea.",
+    category: ["marketing", "prototype"],
+    href: "#"
+  },
+  {
+    image: "/image/projects1.webp",
+    title: "inspiring visual solutions",
+    desc: "Showcasing the core features and functionalities of an idea.",
+    category: ["design", "branding"],
+    href: "#"
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20"
+>
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+  >
+    <Title
+      title="explore our "
+      titleBlue="Projects"
+      subtitle="Artistry & Functionality"
+      desc="Crafting unique, innovative solutions that transcend the ordinary."
+      layout="left"
+    />
+
+    <div class="flex flex-row flex-wrap justify-center items-center gap-4 mt-20">
+      {
+        PROJECTS.map(({image, title, desc, category, href}) => (
+        <a href={href}>
+        <div
+        class="flex flex-col justify-center items-center relative text-left w-full min-w-[36rem] max-w-xl min-h-36"
+      >
+        <img
+          src=`${import.meta.env.BASE_URL}/${image}`
+          class="object-cover w-full"
+        />
+        <div
+          class="z-10 absolute inset-0 bg-gradient-to-b from-transparent from-50% to-secondary-950"
+        >
+        </div>
+        <div
+          class="z-20 flex flex-col justify-start items-center px-8 w-full gap-4 text-center absolute bottom-8"
+        >
+          <h4
+            class="text-secondary-50 font-archivo text-3xl capitalize font-medium my-0 tracking-tight"
+          >
+            {title}
+          </h4>
+          <p class="text-secondary-400 font-archivo mb-0 text-base font-light">
+            {desc}
+          </p>
+        </div>
+        <div
+          class="flex justify-start items-center gap-4 absolute top-8 left-8"
+        >
+            {
+                category.map((cat) => (
+                <div
+            class="flex justify-start items-start py-2 px-4 bg-secondary-950/50 border border-primary-300"
+          >
+            <p
+              class="font-archivo text-base mb-0 font-light text-secondary-200 capitalize"
+            >
+                {cat}
+            </p>
+          </div>
+                ))
+            }
+          
+        </div>
+      </div>
+    </a>
+        ))
+      }
+        
+    </div>
+  </div>
+</section>
