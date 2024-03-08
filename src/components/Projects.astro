@@ -52,11 +52,11 @@ const PROJECTS = [
         PROJECTS.map(({image, title, desc, category, href}) => (
         <a href={href}>
         <div
-        class="flex flex-col justify-center items-center relative text-left w-full min-w-[36rem] max-w-xl min-h-36"
+        class="flex flex-col justify-center items-center relative text-left w-full max-w-sm lg:max-w-xl h-[480px]"
       >
         <img
           src=`${import.meta.env.BASE_URL}/${image}`
-          class="object-cover w-full"
+          class="object-cover w-full h-full"
         />
         <div
           class="z-10 absolute inset-0 bg-gradient-to-b from-transparent from-50% to-secondary-950"
