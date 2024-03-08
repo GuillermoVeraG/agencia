@@ -3,7 +3,7 @@ const { title, titleBlue, subtitle, desc, layout } = Astro.props;
 ---
 
 <div
-  class=`w-full flex flex-col-reverse text-center items-center md:items-start lg:${layout == "right" ? "flex-row" : "flex-row-reverse"} justify-between gap-4 px-10 xl:px-0`
+  class=`w-full flex flex-col-reverse text-center items-center md:items-start ${layout == "right" ? "lg:flex-row" : "lg:flex-row-reverse"} justify-between gap-4 px-10 xl:px-0`
 >
   <div
     class="flex flex-col justify-start items-center md:items-start gap-4 text-center"
