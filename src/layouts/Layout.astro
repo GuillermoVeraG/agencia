@@ -5,6 +5,7 @@ import "@fontsource/archivo/latin-400.css";
 import "@fontsource/archivo/latin-500.css";
 import "@fontsource/archivo/latin-700.css";
 import Menu from "@/components/Menu.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
@@ -29,6 +30,7 @@ const { title } = Astro.props;
   <body class="bg-secondary-950 overflow-x-hidden w-screen">
     <Menu />
     <slot />
+    <Footer />
   </body>
 </html>
 
