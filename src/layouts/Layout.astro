@@ -36,7 +36,18 @@ const { title } = Astro.props;
 
 <style is:global>
   html {
-    font-family: "Inter", sans-serif;
     font-family: "Archivo", sans-serif;
+  }
+
+  #header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+
+  @keyframes blur {
+    to {
+      background: rgba(29, 32, 37, 0.5);
+    }
   }
 </style>
