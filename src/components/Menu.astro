@@ -1,12 +1,13 @@
 ---
 import MenuButton from "@/components/icons/Menu.astro";
-const menuItems: Array<string> = [
-  "home",
-  "about",
-  "projects",
-  "team",
-  "blog",
-  "contact",
+
+const menuItems = [
+  { text: "home", id: `${import.meta.env.BASE_URL}/` },
+  { text: "about", id: `${import.meta.env.BASE_URL}/about` },
+  { text: "projects", id: `${import.meta.env.BASE_URL}/projects` },
+  { text: "team", id: `${import.meta.env.BASE_URL}/team` },
+  { text: "blog", id: `${import.meta.env.BASE_URL}/blog` },
+  { text: "contact", id: `${import.meta.env.BASE_URL}/contact` },
 ];
 ---
 
@@ -26,17 +27,21 @@ const menuItems: Array<string> = [
     </a>
     <nav class="hidden lg:flex gap-4">
       {
-        menuItems.map((item) => (
-          <div class="flex flex-col justify-center items-center overflow-hidden group/menu">
-            <a
-              href=`${import.meta.env.BASE_URL}`
-              class="font-archivo uppercase text-secondary-50 group-hover/menu:text-primary-300 pt-4 pb-2 text-sm font-light leading-5"
-            >
-              {item}
-            </a>
-            <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-300 from-25% to-secondary-950 -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 duration-300"></div>
-        </div>
-        ))
+        menuItems.map(({text, id}) => {
+            const isActive = Astro.url.pathname == id ? "active-menu" : "";
+
+            return (
+            <div class=`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`>
+              <a
+                href={id}
+                class="font-archivo uppercase text-secondary-50 group-hover/menu:text-primary-300 group-[.active-menu]/menu:text-primary-300 pt-4 pb-2 text-sm font-light leading-5"
+              >
+                {text}
+              </a>
+              <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-300 from-25% to-secondary-950 -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300"></div>
+          </div>
+          )
+      })
       }
     </nav>
 
@@ -53,12 +58,12 @@ const menuItems: Array<string> = [
     -translate-y-[120vh] duration-700"
   >
     {
-      menuItems.map((item) => (
+      menuItems.map(({text, id}) => (
         <a
-          href=`${import.meta.env.BASE_URL}`
+          href={id}
           class="font-archivo uppercase text-secondary-50 hover:text-primary-300 py-4 text-sm font-light leading-5"
         >
-          {item}
+          {text}
         </a>
       ))
     }
