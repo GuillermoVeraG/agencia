@@ -1,6 +1,8 @@
 ---
 import MenuButton from "@/components/icons/Menu.astro";
 
+import SwitchMode from "@/components/SwitchMode.astro";
+
 const menuItems = [
   { text: "home", id: `${import.meta.env.BASE_URL}/` },
   { text: "about", id: `${import.meta.env.BASE_URL}/about` },
@@ -13,7 +15,7 @@ const menuItems = [
 
 <section
   id="header-nav"
-  class="fixed top-0 left-0 w-full flex justify-between items-center mx-auto py-5 bg-secondary-950 z-50"
+  class="fixed top-0 left-0 w-full flex justify-between items-center mx-auto py-5 z-50"
 >
   <div
     class="flex justify-between items-center max-w-screen-xl w-full mx-auto px-[10%] lg:px-10 z-20"
@@ -21,7 +23,7 @@ const menuItems = [
     <a href={import.meta.env.BASE_URL}>
       <img
         src=`${import.meta.env.BASE_URL}/image/logo.svg`
-        class="max-w-32"
+        class="max-w-32 invert dark:invert-0"
         alt="logo de la agencia"
       />
     </a>
@@ -34,34 +36,37 @@ const menuItems = [
             <div class=`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`>
               <a
                 href={id}
-                class="font-archivo uppercase text-secondary-50 group-hover/menu:text-primary-300 group-[.active-menu]/menu:text-primary-300 pt-4 pb-2 text-sm font-light leading-5"
+                class="font-archivo uppercase text-secondary-950 dark:text-secondary-50 group-hover/menu:dark:text-primary-300 group-[.active-menu]/menu:dark:text-primary-300 group-hover/menu:text-primary-600 group-[.active-menu]/menu:text-primary-600 pt-4 pb-2 text-sm font-normal dark:font-light leading-5"
               >
                 {text}
               </a>
-              <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-300 from-25% to-secondary-950 -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300"></div>
+              <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-600 dark:from-primary-300 from-25% to-transparent -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300"></div>
           </div>
           )
       })
       }
     </nav>
 
-    <button id="menuNavMobileBut" class="lg:hidden">
-      <MenuButton className="stroke-primary-50 stroke-2" />
-    </button>
+    <div>
+      <button id="menuNavMobileBut" class="lg:hidden group/mobile">
+        <MenuButton className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-primary-50 stroke-2" />
+      </button>
+      <SwitchMode/>
+    </div>
   </div>
   <nav
     id="menuNavMobile"
     class="lg:hidden flex flex-col justify-start items-center
     h-screen w-full z-10 pt-24
     absolute top-0 left-0
-    bg-secondary-950
+    bg-secondary-100 dark:bg-secondary-950
     -translate-y-[120vh] duration-700"
   >
     {
       menuItems.map(({text, id}) => (
         <a
           href={id}
-          class="font-archivo uppercase text-secondary-50 hover:text-primary-300 py-4 text-sm font-light leading-5"
+          class="font-archivo uppercase text-secondary-950 dark:text-secondary-50 hover:text-primary-600 hover:dark:text-primary-300 py-4 text-sm font-normal dark:font-light leading-5"
         >
           {text}
         </a>

@@ -1,3 +1,7 @@
+---
+import TitleVertical from "@/components/TitleVertical.astro";
+---
+
 <section
   class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20 px-0 lg:px-[10%]"
 >
@@ -10,27 +14,15 @@
       <div
         class="flex flex-col justify-center items-center text-center w-full h-1/2 lg:h-full p-4 mb-16"
       >
-        <h5
-          class="font-archivo font-normal text-xs uppercase leading-5 tracking-[8px] text-secondary-300 mt-4"
-        >
-          get in touch
-        </h5>
-        <h2
-          class="font-archivo text-5xl text-secondary-50 mt-4 capitalize font-medium"
-        >
-          Let's Start <br />
-          <span class="text-primary-300 font-thin italic">Your Project</span>
-        </h2>
-        <p
-          class="font-archivo text-base font-light text-secondary-300 mt-4 max-w-sm"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          convallis.
-        </p>
-
+        <TitleVertical
+          title="get in touch"
+          subtitlePrimary="Let's Start"
+          subtitleSecondary="Your Project"
+          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+        />
         <a
           href="#"
-          class="flex justify-center items-center px-3 py-6 text-sm bg-primary-300 hover:bg-primary-400 text-secondary-950 cursor-pointer rounded-full uppercase w-full max-w-[15rem] mt-8 transition-colors"
+          class="flex justify-center items-center px-3 py-6 text-sm bg-primary-600 dark:bg-primary-300 hover:dark:bg-primary-400 hover:bg-primary-700 text-secondary-50 dark:text-secondary-950 cursor-pointer rounded-full uppercase w-full max-w-[15rem] mt-8 transition-colors"
           >get in touch</a
         >
       </div>

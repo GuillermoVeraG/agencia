@@ -57,41 +57,43 @@ const SERVICES = [
   >
     {
       SERVICES.map(({ icon, title, desc, list }) => (
-        <div class="relative overflow-hidden group/card">
+        <div class="relative overflow-hidden rounded-lg group/card">
           <div class="flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-secondary-900/30 py-12 px-9 text-left">
             {icon == "HorizontalSplit" && (
-              <HorizontalSplit className="fill-primary-300 size-12" />
+              <HorizontalSplit className="fill-primary-600 dark:fill-primary-300 size-12" />
             )}
             {icon == "Details" && (
-              <Details className="fill-primary-300 size-12" />
+              <Details className="fill-primary-600 dark:fill-primary-300 size-12" />
             )}
             {icon == "Deblur" && (
-              <Deblur className="fill-primary-300 size-12" />
+              <Deblur className="fill-primary-600 dark:fill-primary-300 size-12" />
             )}
             <div class="flex flex-col justify-center items-start gap-4 text-left w-full">
-              <h4 class="uppercase font-archivo text-3xl font-medium my-0 text-secondary-50">
+              <h4 class="uppercase font-archivo text-3xl font-medium my-0 text-secondary-950 dark:text-secondary-50">
                 {title}
               </h4>
-              <p class="font-archivo text-base text-secondary-300">{desc}</p>
+              <p class="font-archivo text-base text-secondary-700 dark:text-secondary-300">
+                {desc}
+              </p>
             </div>
           </div>
-          <div class="absolute top-0 left-0 flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-primary-300 py-12 px-9 text-left [transform:rotateY(90deg)] group-hover/card:[transform:rotateY(0deg)] transition-transform duration-500 ease-in-out">
+          <div class="absolute top-0 left-0 flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-primary-600 dark:bg-primary-300 py-12 px-9 text-left [transform:rotateY(90deg)] group-hover/card:[transform:rotateY(0deg)] transition-transform duration-500 ease-in-out">
             {icon == "HorizontalSplit" && (
-              <HorizontalSplit className="fill-secondary-950 size-12" />
+              <HorizontalSplit className="fill-secondary-50 dark:fill-secondary-950 size-12" />
             )}
             {icon == "Details" && (
-              <Details className="fill-secondary-950 size-12" />
+              <Details className="fill-secondary-50 dark:fill-secondary-950 size-12" />
             )}
             {icon == "Deblur" && (
-              <Deblur className="fill-secondary-950 size-12" />
+              <Deblur className="fill-secondary-50 dark:fill-secondary-950 size-12" />
             )}
             <div class="flex flex-col justify-center items-start gap-4 text-left w-full">
-              <h4 class="uppercase font-archivo text-3xl font-medium my-0 text-secondary-950">
+              <h4 class="uppercase font-archivo text-3xl font-medium my-0 text-secondary-50 dark:text-secondary-950">
                 {title}
               </h4>
               <ul class="">
                 {list.map((item) => (
-                  <li class="font-archivo text-base text-secondary-800 font-light uppercase">
+                  <li class="font-archivo text-base text-secondary-200 dark:text-secondary-800 font-medium dark:font-light uppercase">
                     • {item}
                   </li>
                 ))}

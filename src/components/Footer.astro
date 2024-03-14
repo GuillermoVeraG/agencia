@@ -5,7 +5,7 @@ import X from "@/components/icons/X.astro";
 import YouTube from "@/components/icons/YouTube.astro";
 ---
 
-<footer class="bg-secondary-950 m-8 mt-20">
+<footer class="m-8 mt-20">
   <div class="w-full max-w-7xl mx-auto px-[10%] lg:px-10">
     <div class="sm:flex sm:items-center sm:justify-between">
       <a
@@ -14,12 +14,12 @@ import YouTube from "@/components/icons/YouTube.astro";
       >
         <img
           src=`${import.meta.env.BASE_URL}/image/logo.svg`
-          class="h-8"
+          class="h-8 invert dark:invert-0"
           alt="Audienze Labs Logo"
         />
       </a>
       <ul
-        class="flex flex-wrap items-center mb-6 font-archivo uppercase text-secondary-50 pt-4 pb-2 text-sm font-light leading-5 sm:mb-0"
+        class="flex flex-wrap items-center mb-6 font-archivo uppercase text-secondary-950 dark:text-secondary-50 pt-4 pb-2 text-sm font-light leading-5 sm:mb-0"
       >
         <li>
           <a href="#" class="hover:text-primary-300 me-4 md:me-6">About</a>
@@ -45,19 +45,25 @@ import YouTube from "@/components/icons/YouTube.astro";
       </span>
       <div class="flex mt-4 sm:justify-center sm:mt-0">
         <a href="#" class="text-gray-500 hover:text-gray-900">
-          <Facebook className="size-4 fill-secondary-50" />
+          <Facebook
+            className="size-4 fill-secondary-950 dark:fill-secondary-50"
+          />
           <span class="sr-only">Facebook</span>
         </a>
         <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
-          <Instagram className="size-4 fill-secondary-50" />
+          <Instagram
+            className="size-4 fill-secondary-950 dark:fill-secondary-50"
+          />
           <span class="sr-only">Instagram</span>
         </a>
         <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
-          <X className="size-4 fill-secondary-50" />
+          <X className="size-4 fill-secondary-950 dark:fill-secondary-50" />
           <span class="sr-only">X</span>
         </a>
         <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
-          <YouTube className="size-4 stroke-secondary-50" />
+          <YouTube
+            className="size-4 stroke-secondary-950 dark:stroke-secondary-50"
+          />
           <span class="sr-only">YouTube</span>
         </a>
       </div>

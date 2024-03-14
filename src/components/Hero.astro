@@ -10,19 +10,19 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
     <div class="flex flex-col text-left gap-8 mt-14 w-full">
       <div class="flex flex-col gap-8">
         <div
-          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
+          class="font-archivo text-secondary-950 dark:text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
         >
-          imagine<span class="text-primary-300">.</span>
+          imagine<span class="text-primary-600 dark:text-primary-300">.</span>
         </div>
         <DobleLetters name="create" />
         <div
-          class="font-archivo text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
+          class="font-archivo text-secondary-950 dark:text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
         >
-          design<span class="text-primary-300">.</span>
+          design<span class="text-primary-600 dark:text-primary-300">.</span>
         </div>
       </div>
       <div
-        class="max-w-[26rem] text-secondary-50/60 tracking-wide text-base text-pretty"
+        class="max-w-[26rem] text-secondary-950/60 dark:text-secondary-50/60 tracking-wide text-base text-pretty font-medium dark:font-normal"
       >
         A dynamic design agency dedicated to bringing your ideas to life. Where
         creativity meets purpose.
@@ -40,9 +40,11 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
       <a class="flex justify-center items-center" href="/">
         <img
           src=`${import.meta.env.BASE_URL}/image/hero-circle.webp`
-          class="size-24 md:size-32 cursor-pointer duration-[5s] animate-spin"
+          class="size-24 md:size-32 cursor-pointer duration-[5s] animate-spin invert dark:invert-0"
         />
-        <HeroArrow className="fill-secondary-50 size-10 absolute" />
+        <HeroArrow
+          className="fill-secondary-950 dark:fill-secondary-50 size-10 absolute"
+        />
       </a>
     </div>
   </div>

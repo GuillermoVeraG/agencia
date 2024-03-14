@@ -1,0 +1,26 @@
+---
+const { title, subtitlePrimary, subtitleSecondary, desc } = Astro.props;
+---
+
+<h5
+  class="font-archivo font-semibold dark:font-light text-xs text-left leading-5 tracking-[8px] uppercase text-secondary-800 dark:text-secondary-200 my-0"
+>
+  {title}
+</h5>
+<h2
+  class="font-archivo capitalize text-secondary-950 dark:text-secondary-50 text-5xl md:text-6xl lg:text-7xl font-medium my-0 tracking-tight"
+>
+  {subtitlePrimary}
+  <br />
+  <span
+    class="font-archivo text-primary-600 dark:text-primary-300 font-thin italic"
+    >{subtitleSecondary}</span
+  >
+</h2>
+{
+  desc && (
+    <p class="font-archivo text-base font-light text-secondary-700 dark:text-secondary-300 mt-4 max-w-sm">
+      {desc}
+    </p>
+  )
+}
