@@ -97,7 +97,6 @@ const CLIENTS = [
   const butRightSlide = document.getElementById("butRightSlide");
 
   const slideContainer = document.getElementById("slideContainer");
-  const widthSlider = slideContainer?.clientWidth || 1;
   const slideContainerChilds = slideContainer?.children || [];
 
   butLeftSlide?.addEventListener("click", () => {
@@ -123,6 +122,8 @@ const CLIENTS = [
   });
 
   function setSliderActual(actualSlider: number) {
+    const widthSlider = slideContainer?.clientWidth || 1;
+
     if (slideContainer != null) {
       slideContainer.dataset.slider = actualSlider.toString();
     }
@@ -134,4 +135,9 @@ const CLIENTS = [
       item.style.transform = `translateX(${offset}px)`;
     }
   }
+
+  window.addEventListener("resize", function () {
+    let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
+    setSliderActual(actualSlider);
+  });
 </script>
