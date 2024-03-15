@@ -1,5 +1,6 @@
 ---
-const { title, subtitlePrimary, subtitleSecondary, desc } = Astro.props;
+const { title, subtitlePrimary, subtitleSecondary, subtitleBreak, desc } =
+  Astro.props;
 ---
 
 <h5
@@ -11,7 +12,7 @@ const { title, subtitlePrimary, subtitleSecondary, desc } = Astro.props;
   class="font-archivo capitalize text-secondary-950 dark:text-secondary-50 text-5xl md:text-6xl lg:text-7xl font-medium my-0 tracking-tight"
 >
   {subtitlePrimary}
-  <br />
+  {subtitleBreak && <br />}
   <span
     class="font-archivo text-primary-600 dark:text-primary-300 font-thin italic"
     >{subtitleSecondary}</span
