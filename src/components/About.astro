@@ -1,0 +1,29 @@
+---
+import DobleLetters from "@/components/DobleLetters.astro";
+---
+
+<section class="w-full mx-auto mt-52 mb-36">
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto relative gap-8"
+  >
+    <div class="flex flex-row justify-center items-center gap-4">
+      <h1
+        class="font-archivo text-secondary-950 dark:text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
+      >
+        about
+      </h1>
+      <p
+        class="max-w-80 text-secondary-950/60 dark:text-secondary-50/60 tracking-wide text-base text-pretty text-center font-medium dark:font-normal"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        convallis, dolor sed consectetur.
+      </p>
+      <DobleLetters name="US" />
+    </div>
+    <img
+      src={`${import.meta.env.BASE_URL}/image/hero-about.webp`}
+      alt=""
+      class="object-cover w-full h-[634px]"
+    />
+  </div>
+</section>

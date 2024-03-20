@@ -1,0 +1,75 @@
+---
+import Title from "@/components/Titles.astro";
+import Items from "@/components/OurValuesItem.astro";
+
+const VALUES_1 = [
+  {
+    title: "hardwork",
+    desc: "Lorem ipsum dolor sit amet, consectetur.",
+    img: "hardwork",
+  },
+  {
+    title: "growth",
+    desc: "Lorem ipsum dolor sit amet, consectetur.",
+    img: "growth",
+  },
+];
+
+const VALUES_2 = [
+  {
+    title: "innovation",
+    desc: "Lorem ipsum dolor sit amet, consectetur.",
+    img: "innovation",
+  },
+  {
+    title: "teamwork",
+    desc: "Lorem ipsum dolor sit amet, consectetur.",
+    img: "teamwork",
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+  >
+    <Title
+      title="Our "
+      titleBlue="Values"
+      subtitle="what we believe"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+    />
+  </div>
+
+  <div
+    class="flex flex-col lg:flex-row justify-center items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 gap-8 mt-20"
+  >
+    <div
+      class="flex flex-col sm:flex-row lg:flex-col justify-between items-center h-full gap-8"
+    >
+      {
+        VALUES_1.map(({ title, desc, img }) => (
+          <Items title={title} desc={desc} img={img} />
+        ))
+      }
+    </div>
+    <div class="w-80 h-[480px]">
+      <img
+        src={`${import.meta.env.BASE_URL}/image/our-values.webp`}
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="flex flex-col sm:flex-row lg:flex-col justify-between items-center h-full gap-8"
+    >
+      {
+        VALUES_2.map(({ title, desc, img }) => (
+          <Items title={title} desc={desc} img={img} />
+        ))
+      }
+    </div>
+  </div>
+</section>

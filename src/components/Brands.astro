@@ -1,0 +1,51 @@
+---
+import Title from "@/components/Titles.astro";
+
+const BRANDS = [
+  {
+    name: "trace",
+    img: `${import.meta.env.BASE_URL}/image/brand1.webp`,
+  },
+  {
+    name: "scale",
+    img: `${import.meta.env.BASE_URL}/image/brand2.webp`,
+  },
+  {
+    name: "chain",
+    img: `${import.meta.env.BASE_URL}/image/brand3.webp`,
+  },
+  {
+    name: "load",
+    img: `${import.meta.env.BASE_URL}/image/brand4.webp`,
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+  >
+    <Title
+      title="Trusted By "
+      titleBlue="Great Brands"
+      subtitle="our clients"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+    />
+  </div>
+
+  <div
+    class="flex flex-row flex-wrap justify-evenly items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 gap-8 mt-20"
+  >
+    {
+      BRANDS.map(({ img }) => (
+        <img
+          src={img}
+          alt=""
+          class="max-w-36 h-auto object-cover dark:invert opacity-60"
+        />
+      ))
+    }
+  </div>
+</section>

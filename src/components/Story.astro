@@ -1,0 +1,51 @@
+---
+import Title from "@/components/Titles.astro";
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+  >
+    <Title
+      title="Discover "
+      titleBlue="Our Story"
+      subtitle="get to know"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+      layout="right"
+    />
+  </div>
+
+  <div
+    class="flex flex-col lg:flex-row justify-center items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 gap-4 mt-20"
+  >
+    <img
+      src={`${import.meta.env.BASE_URL}/image/story.webp`}
+      alt=""
+      class="w-full h-96 max-w-md object-cover"
+    />
+    <div
+      class="w-full flex flex-col justify-start items-start gap-4 max-w-md font-archivo text-base md:text-lg font-light text-secondary-700 dark:text-secondary-300 text-pretty"
+    >
+      <p>
+        Founded in 2012, our agency was born out of a shared love for design,
+        technology, and the limitless possibilities of the web.
+      </p>
+      <p>
+        We started as a small group of individuals who believed in the power of
+        the internet to shape businesses and create meaningful online
+        experiences.
+      </p>
+      <p>
+        From our humble beginnings in a cozy office space, we've grown into a
+        dynamic and highly skilled team of experts, united by the common goal of
+        making the web a better place, one pixel at a time.
+      </p>
+      <p>
+        Our dedication to quality, innovation, and collaboration has been the
+        driving force behind our success.
+      </p>
+    </div>
+  </div>
+</section>
