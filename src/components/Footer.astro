@@ -1,4 +1,6 @@
 ---
+import AudienzeLabs from "@/components/icons/AudienzeLabs.astro";
+
 import Facebook from "@/components/icons/Facebook.astro";
 import Instagram from "@/components/icons/Instagram.astro";
 import X from "@/components/icons/X.astro";
@@ -13,8 +15,13 @@ import YouTube from "@/components/icons/YouTube.astro";
         class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
       >
         <img
-          src=`${import.meta.env.BASE_URL}/image/logo.svg`
-          class="h-8 invert dark:invert-0"
+          src=`${import.meta.env.BASE_URL}/image/logo/logo-letras-white.webp`
+          class="w-36 hidden dark:block"
+          alt="Audienze Labs Logo"
+        />
+        <img
+          src=`${import.meta.env.BASE_URL}/image/logo/logo-letras-gray.webp`
+          class="w-36 block dark:hidden"
           alt="Audienze Labs Logo"
         />
       </a>

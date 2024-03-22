@@ -2,6 +2,7 @@
 import MenuButton from "@/components/icons/Menu.astro";
 
 import SwitchMode from "@/components/SwitchMode.astro";
+import AudienzeLabs from "@/components/icons/AudienzeLabs.astro";
 
 const menuItems = [
   { text: "home", id: `${import.meta.env.BASE_URL}/` },
@@ -22,11 +23,7 @@ const menuItems = [
     class="flex justify-between items-center max-w-screen-xl w-full mx-auto px-[10%] lg:px-10 z-20"
   >
     <a href={import.meta.env.BASE_URL}>
-      <img
-        src=`${import.meta.env.BASE_URL}/image/logo.svg`
-        class="max-w-32 invert dark:invert-0"
-        alt="logo de la agencia"
-      />
+      <AudienzeLabs className="w-full h-auto max-w-24 fill-secondary-900 dark:fill-secondary-200 hover:fill-primary-600 hover:dark:fill-primary-300"></AudienzeLabs>
     </a>
     <div class="flex justify-end items-center">
       <nav class="hidden lg:flex gap-4">

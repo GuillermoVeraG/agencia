@@ -35,6 +35,9 @@ export default {
           900: "#3b414a",
           950: "#1d2025",
         },
+        audienzelabs: {
+          50: "#010440",
+        },
       },
       animation: {
         spin: "spin 9s linear infinite",
