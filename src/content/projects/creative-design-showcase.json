@@ -1,0 +1,15 @@
+{
+  "img": "/image/projects3.webp",
+  "title": "creative design showcase",
+  "desc": "Showcasing the core features and functionalities of an idea.",
+  "tags": ["design", "branding"],
+  "slug": "creative-design-showcase",
+  "client": "Joe Smith",
+  "pubDate": "2023-10-27",
+  "gallery": [
+    "/image/projects3.webp",
+    "/image/projects1.webp",
+    "/image/projects2.webp",
+    "/image/projects4.webp"
+  ]
+}

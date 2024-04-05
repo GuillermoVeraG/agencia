@@ -1,0 +1,15 @@
+{
+  "img": "/image/projects4.webp",
+  "title": "innovative design portfolio",
+  "desc": "Showcasing the core features and functionalities of an idea.",
+  "tags": ["branding", "design"],
+  "slug": "innovative-design-portfolio",
+  "client": "Joe Smith",
+  "pubDate": "2023-10-27",
+  "gallery": [
+    "/image/projects4.webp",
+    "/image/projects1.webp",
+    "/image/projects2.webp",
+    "/image/projects3.webp"
+  ]
+}

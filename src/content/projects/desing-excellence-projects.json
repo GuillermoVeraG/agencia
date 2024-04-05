@@ -1,0 +1,15 @@
+{
+  "img": "/image/projects2.webp",
+  "title": "desing excellence projects",
+  "desc": "Showcasing the core features and functionalities of an idea.",
+  "tags": ["marketing", "prototype"],
+  "slug": "desing-excellence-projects",
+  "client": "Joe Smith",
+  "pubDate": "2023-10-27",
+  "gallery": [
+    "/image/projects2.webp",
+    "/image/projects1.webp",
+    "/image/projects3.webp",
+    "/image/projects4.webp"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "img": "/image/projects1.webp",
+  "title": "inspiring visual solutions",
+  "desc": "Showcasing the core features and functionalities of an idea.",
+  "tags": ["design", "branding"],
+  "slug": "inspiring-visual-solutions",
+  "client": "Joe Smith",
+  "pubDate": "2023-10-27",
+  "gallery": [
+    "/image/projects1.webp",
+    "/image/projects2.webp",
+    "/image/projects3.webp",
+    "/image/projects4.webp"
+  ]
+}
