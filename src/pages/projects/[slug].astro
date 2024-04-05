@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import ProjectsList from "@/components/Projects.astro";
+import TitleVertical from "@/components/TitleVertical.astro";
 
 export async function getStaticPaths() {
   const PROJECTS = await getCollection("projects");
@@ -19,6 +19,81 @@ const { img, title, desc, tags, slug, client, pubDate, gallery } = Astro.props;
 
 <Layout title={`Project - ${title}`}>
   <main class="w-full mt-40">
-    <ProjectsList />
+    <section class="w-full my-16">
+      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-8"
+        >
+          <div
+            class="w-full md:max-w-[70%] flex flex-col justify-center items-center md:items-start"
+          >
+            <h2
+              class="uppercase text-6xl text-secondary-50 text-center md:text-left"
+            >
+              {title}
+            </h2>
+            <p class="text-base font-light text-secondary-200/80 mt-2">
+              {desc}
+            </p>
+          </div>
+          <div
+            class="w-full md:max-w-[30%] flex flex-col justify-center items-center md:items-start gap-4"
+          >
+            <div
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+            >
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                Client
+              </h5>
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                •
+              </h5>
+              <p class="text-base font-normal text-secondary-300">{client}</p>
+            </div>
+
+            <div
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+            >
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                category
+              </h5>
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                •
+              </h5>
+              <p class="text-base font-normal text-secondary-300">{tags[0]}</p>
+            </div>
+
+            <div
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+            >
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                date
+              </h5>
+              <h5
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+              >
+                •
+              </h5>
+              <p class="text-base font-normal text-secondary-300">{pubDate}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src={`${import.meta.env.BASE_URL}${img}`}
+        alt="image project"
+        class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 rounded-lg"
+      />
+    </section>
   </main>
 </Layout>
