@@ -1,0 +1,68 @@
+---
+const {
+  id,
+  slug,
+  img,
+  title,
+  desc,
+  category,
+  date,
+  imgperson,
+  nameperson,
+  align,
+} = Astro.props;
+---
+
+<a href=`/agencia/blog/${slug}`>
+  <div
+    class=`flex ${align == 'left' ? 'flex-row' : 'flex-row-reverse'} justify-start items-center gap-8 group/item`
+  >
+    <div
+      class="flex flex-col justify-center items-start gap-4 py-20 w-full max-w-[50%]"
+    >
+      <div
+        class="flex flex-row flex-wrap justify-between items-center gap-x-8 gap-y-4 w-full"
+      >
+        <div class="bg-secondary-600/30 border-2 border-primary-300 p-1 pl-3">
+          <h6
+            class="uppercase my-0 font-archivo font-light text-[10px] leading-4 tracking-[6px] text-secondary-50"
+          >
+            {category}
+          </h6>
+        </div>
+        <div class="flex justify-start items-center gap-2">
+          <div class="size-5 overflow-hidden rounded-full">
+            <img src={imgperson} alt="" class="size-5 object-cover" />
+          </div>
+          <p class="font-archivo text-base text-primary-300">{nameperson}</p>
+          <span class="w-0.5 bg-secondary-400 h-3"></span>
+          <p class="font-archivo text-base text-secondary-400">
+            {date}
+          </p>
+        </div>
+      </div>
+      <h2
+        class="font-archivo my-0 capitalize font-medium text-5xl leading-[58px] tracking-tighter text-secondary-50"
+      >
+        {title}
+      </h2>
+      <p
+        class="text-wrap font-archivo mb-0 text-sm font-normal text-secondary-300"
+      >
+        {desc}
+      </p>
+      <h5
+        class="uppercase my-0 font-archivo font-light text-xs leading-5 tracking-[8px] text-secondary-50"
+      >
+        read more
+      </h5>
+    </div>
+    <div class="overflow-hidden w-[48%]">
+      <img
+        src={img}
+        alt=""
+        class="w-full h-96 object-cover group-hover/item:scale-105 transition-transform duration-500 ease-linear"
+      />
+    </div>
+  </div>
+</a>

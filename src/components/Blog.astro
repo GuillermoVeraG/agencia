@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Title from "@/components/TitleVertical.astro";
+import Item from "@/components/BlogItem.astro";
+
+const BLOG_ITEMS = await getCollection("blog");
+---
+
+<section class="w-full my-16">
+  <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
+    <div class="flex flex-col justify-center items-center gap-4 mt-10">
+      <Title
+        title="our blog"
+        subtitlePrimary="posts"
+        subtitleSecondary="& articles"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+      />
+    </div>
+
+    <div class="flex flex-col justify-center items-center gap-4 mt-10">
+      {
+        BLOG_ITEMS.map(({ id, data }, index) => {
+          console.log(data);
+          return (
+            <Item
+              id={id}
+              slug={data.slug}
+              img={data.img.url}
+              title={data.title}
+              desc={data.desc}
+              category={data.tag}
+              date={data.pubDate}
+              imgperson={data.author.img.url}
+              nameperson={data.author.name}
+              align={index % 2 == 0 ? "left" : "right"}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

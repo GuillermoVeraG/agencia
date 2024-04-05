@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import TitleVertical from "@/components/TitleVertical.astro";
+
+export async function getStaticPaths() {
+  const BLOG_ITEMS = await getCollection("blog");
+
+  return BLOG_ITEMS.map(({ id, data }) => {
+    return {
+      params: { slug: data.slug },
+      props: data,
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { img, title, desc, tag, pubDate, author } = Astro.props;
+---
+
+<Layout title="blog - audiezes lab">
+  <main>
+    <section class="w-full my-16">
+      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
+        <div class="flex flex-col items-center justify-center gap-2">
+          <div
+            class="w-fit py-2 px-4 bg-secondary-800/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
+          >
+            <h6
+              class="text-primary-400 uppercase tracking-[8px] my-0 text-[10px] font-light"
+            >
+              {tag}
+            </h6>
+          </div>
+
+          <TitleVertical
+            title=""
+            subtitlePrimary={title}
+            subtitleSecondary=""
+            desc={desc}
+          />
+
+          <h6
+            class="text-secondary-50 tracking-[8px] uppercase my-0 text-xs font-light mt-4"
+          >
+            {pubDate}
+          </h6>
+
+          <img
+            src={img.url}
+            alt=""
+            class="w-full max-h-[480px] object-cover rounded-3xl mt-20"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

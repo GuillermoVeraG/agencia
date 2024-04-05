@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "img": {
+    "url": "/agencia/image/blog1.webp",
+    "alt": "imagen blog 1"
+  },
+  "title": "world through creativity",
+  "desc": "Design is the force behind the transformation of ideas.",
+  "tag": "design",
+  "slug": "world-through-creativity",
+
+  "pubDate": "2024-01-17",
+
+  "author": {
+    "img": {
+      "url": "/agencia/image/team1.webp",
+      "alt": "imagen author"
+    },
+    "name": "John Doe",
+    "proffesion": "writter",
+    "bio": ""
+  }
+}

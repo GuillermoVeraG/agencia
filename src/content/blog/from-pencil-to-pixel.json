@@ -1,0 +1,23 @@
+{
+  "id": 2,
+  "img": {
+    "url": "/agencia/image/blog2.webp",
+    "alt": "imagen blog 2"
+  },
+  "title": "from pencil to pixel",
+  "desc": "Design is the force behind the transformation of ideas.",
+  "tag": "developer",
+  "slug": "from-pencil-to-pixel",
+
+  "pubDate": "2024-01-15",
+
+  "author": {
+    "img": {
+      "url": "/agencia/image/team3.webp",
+      "alt": "imagen author"
+    },
+    "name": "Jane Doe",
+    "proffesion": "developer",
+    "bio": ""
+  }
+}
