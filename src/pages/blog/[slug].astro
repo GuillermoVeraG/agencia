@@ -14,20 +14,19 @@ export async function getStaticPaths() {
   });
 }
 
-const { slug } = Astro.params;
 const { img, title, desc, tag, pubDate, author } = Astro.props;
 ---
 
 <Layout title="blog - audiezes lab">
-  <main>
+  <main class="w-full mt-40">
     <section class="w-full my-16">
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
         <div class="flex flex-col items-center justify-center gap-2">
           <div
-            class="w-fit py-2 px-4 bg-secondary-800/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
+            class="w-fit py-2 px-4 bg-secondary-400/50 dark:bg-secondary-900/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
           >
             <h6
-              class="text-primary-400 uppercase tracking-[8px] my-0 text-[10px] font-light"
+              class="text-primary-600 dark:text-primary-300 uppercase tracking-[8px] my-0 text-[10px] font-light"
             >
               {tag}
             </h6>
@@ -41,16 +40,48 @@ const { img, title, desc, tag, pubDate, author } = Astro.props;
           />
 
           <h6
-            class="text-secondary-50 tracking-[8px] uppercase my-0 text-xs font-light mt-4"
+            class="text-secondary-950 dark:text-secondary-50 tracking-[8px] uppercase my-0 text-xs font-normal dark:font-light mt-4"
           >
             {pubDate}
           </h6>
 
           <img
             src={img.url}
-            alt=""
+            alt={img.alt}
             class="w-full max-h-[480px] object-cover rounded-3xl mt-20"
           />
+        </div>
+
+        <div
+          class="flex flex-col items-center justify-center gap-2 mt-20 relative"
+        >
+          <div></div>
+          <div class="sticky -top-7">
+            <div
+              class="flex flex-col justify-start items-center gap-4 rounded-2xl bg-gradient-to-b from-primary-950 to-primary-700 w-full h-[420px]"
+            >
+              <img
+                src={author.img.url}
+                alt={author.img.alt}
+                class="w-32 rounded-full object-cover mt-16"
+              />
+              <div>
+                <h4
+                  class="capitalize text-3xl text-secondary-50 text-center tracking-tighter"
+                >
+                  {author.name}
+                </h4>
+                <h6
+                  class="uppercase text-secondary-50 tracking-[6px] text-[0.6rem] text-center mt-4 mb-3"
+                >
+                  {author.proffesion}
+                </h6>
+              </div>
+              <p class="text-secondary-200 max-w-[70%] text-center">
+                {author.bio}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
