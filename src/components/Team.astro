@@ -1,0 +1,102 @@
+---
+import TitleVertical from "./TitleVertical.astro";
+
+const TEAM = [
+  {
+    name: "michael carter",
+    profession: "ceo",
+    img: "/image/team1.webp",
+    socialMedia: {
+      facebook: "",
+      instagram: "a",
+      linkedin: "a",
+    },
+  },
+  {
+    name: "olivia davis",
+    profession: "manager",
+    img: "/image/team3.webp",
+    socialMedia: {
+      facebook: "a",
+      instagram: "a",
+      linkedin: "a",
+    },
+  },
+  {
+    name: "john parker",
+    profession: "engineer",
+    img: "/image/team2.webp",
+    socialMedia: {
+      facebook: "face",
+      instagram: "",
+      linkedin: "",
+    },
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10"
+  >
+    <TitleVertical
+      subtitlePrimary="Meet Our "
+      subtitleSecondary="Team"
+      title="who we are"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+    />
+  </div>
+
+  <div
+    class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-7xl w-full mx-auto px-[10%] lg:px-10 mt-20"
+  >
+    {
+      TEAM.map(({ name, profession, img, socialMedia }) => (
+        <div class="overflow-hidden w-full max-w-60 h-96 flex flex-col justify-center items-center gap-4 relative group/team">
+          <img
+            src={`${import.meta.env.BASE_URL}${img}`}
+            alt=""
+            class="h-[320px] object-cover"
+          />
+          <div class="w-full max-w-52 min-h-20 flex flex-col justify-center items-center gap-1 absolute bottom-0 bg-secondary-700/30 dark:bg-secondary-900/50">
+            <h4 class="uppercase text-secondary-50 font-medium text-xl">
+              {name}
+            </h4>
+            <h5 class="uppercase text-primary-600 dark:text-primary-300 tracking-[6px] text-sm font-normal dark:font-light">
+              {profession}
+            </h5>
+          </div>
+
+          <div class="w-full max-w-52 py-2 bg-secondary-50/60 flex justify-center items-center gap-6 absolute top-auto bottom-20 translate-y-40 opacity-0 transition-transform duration-700 group-hover/team:translate-y-0 group-hover/team:opacity-100">
+            {socialMedia.facebook && (
+              <a href="#" class="size-10 rounded-full overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}/image/facebook.webp`}
+                  alt=""
+                />
+              </a>
+            )}
+            {socialMedia.instagram && (
+              <a href="#" class="size-10 rounded-full overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}/image/instagram.webp`}
+                  alt=""
+                />
+              </a>
+            )}
+            {socialMedia.linkedin && (
+              <a href="#" class="size-10 rounded-full overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}/image/linkedin.webp`}
+                  alt=""
+                />
+              </a>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
