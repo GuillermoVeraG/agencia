@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import TitleVertical from "@/components/TitleVertical.astro";
 
 export async function getStaticPaths() {
   const PROJECTS = await getCollection("projects");
@@ -14,7 +13,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { img, title, desc, tags, slug, client, pubDate, gallery } = Astro.props;
+const { img, title, desc, tags, client, pubDate } = Astro.props;
 ---
 
 <Layout title={`Project - ${title}`}>

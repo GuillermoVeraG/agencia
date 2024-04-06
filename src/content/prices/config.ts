@@ -4,26 +4,12 @@ import { z, defineCollection } from "astro:content";
 const pricesCollection = defineCollection({
   type: "data",
   schema: z.object({
-    id: z.bigint(),
-    img: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
     title: z.string(),
     desc: z.string(),
-    tag: z.string(),
+    price: z.bigint(),
     slug: z.string(),
-    pubDate: z.date(),
 
-    author: z.object({
-      img: z.object({
-        url: z.string(),
-        alt: z.string(),
-      }),
-      name: z.string(),
-      proffesion: z.string(),
-      bio: z.string(),
-    }),
+    items: z.array(z.string()),
   }),
 });
 

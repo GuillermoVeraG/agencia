@@ -6,7 +6,7 @@ import TitleVertical from "@/components/TitleVertical.astro";
 export async function getStaticPaths() {
   const BLOG_ITEMS = await getCollection("blog");
 
-  return BLOG_ITEMS.map(({ id, data }) => {
+  return BLOG_ITEMS.map(({ data }) => {
     return {
       params: { slug: data.slug },
       props: data,

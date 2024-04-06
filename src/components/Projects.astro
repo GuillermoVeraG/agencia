@@ -23,7 +23,7 @@ const PROJECTS = await getCollection("projects");
       class="flex flex-row flex-wrap justify-center items-center gap-4 mt-20"
     >
       {
-        PROJECTS.map(({ id, data }) => (
+        PROJECTS.map(({ data }) => (
           <a href={`${import.meta.env.BASE_URL}/projects/${data.slug}`}>
             <div class="flex flex-col justify-center items-center relative text-left w-full max-w-sm lg:max-w-xl h-[480px] rounded-lg overflow-hidden">
               <img
