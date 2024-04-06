@@ -30,11 +30,13 @@ const textDate = getDateText(pubDate);
             class="w-full md:max-w-[70%] flex flex-col justify-center items-center md:items-start"
           >
             <h2
-              class="uppercase text-6xl text-secondary-50 text-center md:text-left"
+              class="uppercase text-6xl text-secondary-950 dark:text-secondary-50 text-center md:text-left"
             >
               {title}
             </h2>
-            <p class="text-base font-light text-secondary-200/80 mt-2">
+            <p
+              class="text-base font-light text-secondary-800/80 dark:text-secondary-200/80 mt-2"
+            >
               {desc}
             </p>
           </div>
@@ -42,55 +44,63 @@ const textDate = getDateText(pubDate);
             class="w-full md:max-w-[30%] flex flex-col justify-center items-center md:items-start gap-4"
           >
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 Client
               </h5>
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 •
               </h5>
-              <p class="text-base font-normal text-secondary-300 capitalize">
+              <p
+                class="text-base font-normal text-secondary-700 dark:text-secondary-300 capitalize"
+              >
                 {client}
               </p>
             </div>
 
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 category
               </h5>
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 •
               </h5>
-              <p class="text-base font-normal text-secondary-300 capitalize">
+              <p
+                class="text-base font-normal text-secondary-700 dark:text-secondary-300 capitalize"
+              >
                 {tags[0]}
               </p>
             </div>
 
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-300 pb-2"
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 date
               </h5>
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-50"
+                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 •
               </h5>
-              <p class="text-base font-normal text-secondary-300">{textDate}</p>
+              <p
+                class="text-base font-normal text-secondary-700 dark:text-secondary-300"
+              >
+                {textDate}
+              </p>
             </div>
           </div>
         </div>
