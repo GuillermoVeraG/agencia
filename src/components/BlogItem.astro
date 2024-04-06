@@ -1,6 +1,10 @@
 ---
+import { getDateText } from "@/utils/getDates";
+
 const { slug, img, title, desc, category, date, imgperson, nameperson, align } =
   Astro.props;
+
+const textDate = getDateText(date);
 ---
 
 <a href=`/agencia/blog/${slug}`>
@@ -35,7 +39,7 @@ const { slug, img, title, desc, category, date, imgperson, nameperson, align } =
           <p
             class="font-archivo text-base text-secondary-600 dark:text-secondary-400"
           >
-            {date}
+            {textDate}
           </p>
         </div>
       </div>
