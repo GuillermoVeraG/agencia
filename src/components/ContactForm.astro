@@ -1,0 +1,134 @@
+---
+import TitleVertical from "./TitleVertical.astro";
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-6"
+>
+  <div
+    class="bg-secondary-900/40 py-20 w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl"
+  >
+    <div
+      class="flex flex-col justify-center items-center text-center w-full mx-auto"
+    >
+      <TitleVertical
+        subtitlePrimary="request a free "
+        subtitleSecondary="consultation"
+        title="get in touch"
+        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+        subtitleBreak
+      />
+    </div>
+
+    <div
+      class="w-11/12 flex flex-col justify-center items-center gap-4 mx-auto mt-10"
+    >
+      <form class="w-full flex flex-col">
+        <div
+          class="w-full flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4 pt-2"
+        >
+          <div
+            class="flex flex-col items-start w-full lg:max-w-[calc(50%-0.5rem)]"
+          >
+            <label
+              for="Customer-Name"
+              class="py-2 px-0 capitalize text-base font-light text-secondary-50"
+              >name</label
+            >
+            <input
+              name="Customer-Name"
+              placeholder="Your Name"
+              id="Customer-Name"
+              type="text"
+              required
+              class="w-full min-h-16 bg-secondary-200 rounded flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-secondary-950"
+            />
+          </div>
+
+          <div
+            class="flex flex-col items-start w-full lg:max-w-[calc(50%-0.5rem)]"
+          >
+            <label
+              for="Customer-Email"
+              class="py-2 px-0 capitalize text-base font-light text-secondary-50"
+              >email</label
+            >
+            <input
+              name="Customer-Email"
+              placeholder="Your Email"
+              id="Customer-Email"
+              type="email"
+              required
+              class="w-full min-h-16 bg-secondary-200 rounded flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-secondary-950"
+            />
+          </div>
+        </div>
+
+        <div
+          class="w-full flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4 pt-2"
+        >
+          <div
+            class="flex flex-col items-start w-full lg:max-w-[calc(50%-0.5rem)]"
+          >
+            <label
+              for="Phone-Number"
+              class="py-2 px-0 capitalize text-base font-light text-secondary-50"
+              >phone number</label
+            >
+            <input
+              name="Phone-Number"
+              placeholder="+1 009 12345"
+              id="Phone-Number"
+              type="tel"
+              required
+              class="w-full min-h-16 bg-secondary-200 rounded flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-secondary-950"
+            />
+          </div>
+
+          <div
+            class="flex flex-col items-start w-full lg:max-w-[calc(50%-0.5rem)]"
+          >
+            <label
+              for="Service"
+              class="py-2 px-0 capitalize text-base font-light text-secondary-50"
+              >service</label
+            >
+            <select
+              name="Service"
+              id="Service"
+              required
+              class="w-full min-h-16 bg-secondary-200 rounded flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-secondary-950"
+            >
+              <option value="Consultation">Consultation</option>
+              <option value="Design Services">Design Services</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="w-full flex flex-col items-start pt-2">
+          <label
+            for="Customer-Message"
+            class="py-2 px-0 capitalize text-base font-light text-secondary-50"
+            >Message Us</label
+          >
+          <textarea
+            name="Customer-Message"
+            placeholder="Your Message"
+            id="Customer-Message"
+            maxlength="5000"
+            required
+            class="w-full min-h-36 bg-secondary-200 rounded flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-secondary-950"
+          ></textarea>
+        </div>
+
+        <input
+          type="submit"
+          data-wait="Please wait..."
+          value="Send Request"
+          class="capitalize flex justify-center items-center rounded-3xl pt-3 px-6 cursor-pointer text-secondary-950/60 hover:text-secondary-50 hover:bg-secondary-900 bg-primary-300 text-sm pb-3 mt-4 w-fit"
+        />
+      </form>
+    </div>
+  </div>
+</section>

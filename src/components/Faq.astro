@@ -1,0 +1,81 @@
+---
+import TitleVertical from "./TitleVertical.astro";
+
+const FAQS = [
+  {
+    question: "What Services Does Your Design Agency Offer?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+  },
+  {
+    question: "How Do I Get Started With A Design Project?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+  },
+  {
+    question: "What Industries Do You Serve?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+  },
+  {
+    question: "How Long Does A Typical Design Project Take?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+  },
+  {
+    question: "What Is The Cost Of Your Design Services?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-around items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+  >
+    <TitleVertical
+      subtitlePrimary="frequently asked "
+      subtitleSecondary="questions"
+      title="overview"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+      subtitleBreak
+    />
+  </div>
+
+  <div
+    id="faq-container"
+    class="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex flex-col justify-between items-center gap-8 mt-8"
+  >
+    {
+      FAQS.map(({ question, answer }, index) => {
+        return (
+          <div class="bg-secondary-900/40 p-10 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq">
+            <div class="w-full flex justify-center items-center gap-8 my-8 relative">
+              <h2 class="text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-0">
+                0{index + 1}
+              </h2>
+              <h3 class="w-full max-w-[90%] text-2xl font-light text-center capitalize text-secondary-50">
+                {question}
+              </h3>
+              <div class="absolute top-auto bottom-auto left-auto right-0">
+                <div
+                  class="w-8 h-8 flex justify-center items-center
+                before:content-[''] before:content-center before:bg-white before:w-8 before:h-0.5
+                after:content-[''] after:content-center after:bg-white after:w-0.5 after:h-8 after:-translate-x-4 group-[.faq-open]/faq:after:rotate-90 after:transition-transform after:duration-500"
+                />
+              </div>
+            </div>
+            <div class="hidden w-full max-w-[80%] mx-auto">
+              <p class="text-lg font-light text-center text-secondary-100/70">
+                {answer}
+              </p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</section>
