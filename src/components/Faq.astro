@@ -47,29 +47,29 @@ const FAQS = [
 
   <div
     id="faq-container"
-    class="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex flex-col justify-between items-center gap-8 mt-8"
+    class="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex flex-col justify-between items-center gap-4 mt-8"
   >
     {
       FAQS.map(({ question, answer }, index) => {
         return (
           <div class="bg-secondary-900/40 p-10 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq">
             <div class="w-full flex justify-center items-center gap-8 my-8 relative">
-              <h2 class="text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-0">
+              <h2 class="hidden md:block text-secondary-950 dark:text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-0">
                 0{index + 1}
               </h2>
-              <h3 class="w-full max-w-[90%] text-2xl font-light text-center capitalize text-secondary-50">
+              <h3 class="w-full max-w-[80%] md:max-w-[75%] text-2xl font-light text-center text-pretty capitalize text-secondary-950 dark:text-secondary-50">
                 {question}
               </h3>
               <div class="absolute top-auto bottom-auto left-auto right-0">
                 <div
                   class="w-8 h-8 flex justify-center items-center
-                before:content-[''] before:content-center before:bg-white before:w-8 before:h-0.5
-                after:content-[''] after:content-center after:bg-white after:w-0.5 after:h-8 after:-translate-x-4 group-[.faq-open]/faq:after:rotate-90 after:transition-transform after:duration-500"
+                before:content-[''] before:content-center before:bg-secondary-950 before:dark:bg-white before:w-8 before:h-0.5
+                after:content-[''] after:content-center after:bg-secondary-950 after:dark:bg-white after:w-0.5 after:h-8 after:-translate-x-4 group-[.faq-open]/faq:after:rotate-90 after:transition-transform after:duration-500"
                 />
               </div>
             </div>
             <div class="hidden w-full max-w-[80%] mx-auto">
-              <p class="text-lg font-light text-center text-secondary-100/70">
+              <p class="text-lg font-light text-center text-secondary-800/90 dark:text-secondary-100/70">
                 {answer}
               </p>
             </div>
