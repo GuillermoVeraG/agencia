@@ -37,7 +37,10 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
     <div
       class="absolute top-1/2 left-0 lg:left-1/2 mt-32 ml-16 md:mt-16 lg:-mt-4 lg:-ml-8"
     >
-      <a class="flex justify-center items-center" href="/">
+      <a
+        class="flex justify-center items-center"
+        href={`${import.meta.env.BASE_URL}/about`}
+      >
         <img
           src=`${import.meta.env.BASE_URL}/image/hero-circle.webp`
           class="size-24 md:size-32 cursor-pointer duration-[5s] animate-spin invert dark:invert-0"
