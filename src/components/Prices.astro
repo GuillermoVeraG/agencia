@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import TitleVertical from "./TitleVertical.astro";
+
+const PRICES = await getCollection("prices");
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="flex flex-col justify-center items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10"
+  >
+    <TitleVertical
+      subtitlePrimary="Our Basic"
+      subtitleSecondary="Prices"
+      title="options"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+      subtitleBreak
+    />
+  </div>
+
+  <div
+    class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-7xl w-full mx-auto px-[10%] lg:px-10 mt-20"
+  >
+    {
+      PRICES.map(({ data }) => (
+        <div class="w-full min-w-[400px] md:min-w-80 md:max-w-[30%] bg-secondary-900/40 rounded-lg">
+          <div class="flex flex-col justify-center items-center text-center gap-8 rounded-lg py-16 px-8">
+            <h4 class="capitalize text-3xl text-secondary-950 dark:text-secondary-50 min-h-24">
+              {data.title}
+            </h4>
+            <h2 class="capitalize text-xl text-primary-600 dark:text-primary-300">
+              {data.price}
+            </h2>
+            <p class="text-secondary-800 dark:text-secondary-100/70 text-base min-h-24">
+              {data.desc}
+            </p>
+            <ul class="flex flex-col justify-center items-center gap-4">
+              {data.items.map((item) => (
+                <li class="capitalize text-lg text-secondary-950 dark:text-secondary-50 py-3 border-b border-primary-600 dark:border-primary-300 w-full">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`${import.meta.env.BASE_URL}/prices/${data.slug}`}
+              class="capitalize flex justify-center items-center rounded-3xl pt-3 px-6 cursor-pointer text-secondary-50 dark:text-secondary-950/60 bg-primary-600 dark:bg-primary-300 hover:text-secondary-50 hover:bg-secondary-900 hover:dark:text-secondary-50 hover:dark:bg-secondary-900 text-sm pb-3 mt-4 w-fit"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

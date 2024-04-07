@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import PricesList from "@/components/Prices.astro";
 
 export async function getStaticPaths() {
   const PRICES = await getCollection("prices");
@@ -18,7 +17,5 @@ const { title } = Astro.props;
 ---
 
 <Layout title={`Project - ${title}`}>
-  <main class="w-full mt-40">
-    <PricesList />
-  </main>
+  <main class="w-full mt-40"></main>
 </Layout>

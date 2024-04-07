@@ -6,7 +6,7 @@ const pricesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     desc: z.string(),
-    price: z.bigint(),
+    price: z.string(),
     slug: z.string(),
 
     items: z.array(z.string()),
