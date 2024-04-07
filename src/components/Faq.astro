@@ -52,30 +52,38 @@ const FAQS = [
     {
       FAQS.map(({ question, answer }, index) => {
         return (
-          <div class="bg-secondary-900/40 p-10 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/80">
-            <div class="w-full flex justify-center items-center gap-8 my-8 relative">
-              <h2 class="hidden md:block text-secondary-950 dark:text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-0">
+          <details class="bg-secondary-900/40 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/80">
+            <summary class="w-full flex justify-center items-center gap-8 p-16 pb-12 relative">
+              <h2 class="hidden md:block text-secondary-950 dark:text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-8">
                 0{index + 1}
               </h2>
               <h3 class="w-full max-w-[80%] md:max-w-[75%] text-2xl font-light text-center text-pretty capitalize text-secondary-950 dark:text-secondary-50">
                 {question}
               </h3>
-              <div class="absolute top-auto bottom-auto left-auto right-0">
-                <div
-                  class="w-8 h-8 flex justify-center items-center
+              <div class="absolute top-auto bottom-auto left-auto right-8">
+                <button
+                  data-open="false"
+                  class="butOpenClose w-8 h-8 flex justify-center items-center
                 before:content-[''] before:content-center before:bg-secondary-950 before:dark:bg-white before:w-8 before:h-0.5
-                after:content-[''] after:content-center after:bg-secondary-950 after:dark:bg-white after:w-0.5 after:h-8 after:-translate-x-4 group-[.faq-open]/faq:after:rotate-90 after:transition-transform after:duration-500"
+                after:content-[''] after:content-center after:bg-secondary-950 after:dark:bg-white after:w-0.5 after:h-8 after:-translate-x-4 after:transition-transform after:duration-500"
                 />
               </div>
-            </div>
-            <div class="hidden w-full max-w-[80%] mx-auto">
+            </summary>
+            <div class="w-full max-w-[80%] mx-auto mb-8">
               <p class="text-lg font-light text-center text-secondary-800/90 dark:text-secondary-100/70">
                 {answer}
               </p>
             </div>
-          </div>
+          </details>
         );
       })
     }
   </div>
 </section>
+
+<style>
+  details[open] summary button::after {
+    transform: rotate(90deg) translateY(1rem);
+    transform-origin: center;
+  }
+</style>
