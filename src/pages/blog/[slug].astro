@@ -15,7 +15,8 @@ export async function getStaticPaths() {
   });
 }
 
-const { img, title, desc, tag, pubDate, author } = Astro.props;
+const { img, title, desc, tag, pubDate, author, body, conclusion } =
+  Astro.props;
 
 const textDate = getDateText(pubDate);
 ---
@@ -23,8 +24,8 @@ const textDate = getDateText(pubDate);
 <Layout title={`blog - ${title}`}>
   <main class="w-full mt-40">
     <section class="w-full my-16">
-      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
-        <div class="flex flex-col items-center justify-center gap-2">
+      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10">
+        <div class="w-full flex flex-col items-center justify-center gap-2">
           <div
             class="w-fit py-2 px-4 bg-secondary-400/50 dark:bg-secondary-900/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
           >
@@ -56,9 +57,26 @@ const textDate = getDateText(pubDate);
         </div>
 
         <div
-          class="flex flex-col items-center justify-center gap-2 mt-20 relative"
+          class="w-full flex flex-col lg:flex-row items-center justify-center lg:items-start gap-8 mt-20 relative"
         >
-          <div></div>
+          <div class="w-full lg:max-w-[60%] flex flex-col justify-center items-start gap-4">
+            {body.map(({ title, parrafo, border }) => 
+            {
+              const borderCls = border ? "border-l-4 border-primary-300 pl-2" : "";
+
+              return (
+              <div class={`flex flex-col gap-3 ${borderCls}`}>
+                {title && (<h3 class="text-secondary-50 capitalize text-5xl font-medium"></h3class>{title}</h3>)}
+                {parrafo.map((txt) => <p class="text-secondary-100/70 text-base">{txt}</p>)}
+              </div>);
+            })}
+
+            <h3 class="text-secondary-50 capitalize text-5xl font-medium mt-8">
+              conclusion:
+            </h3>
+            {conclusion.map((txt) => <p class="text-secondary-100/70 text-base">{txt}</p>)}
+          </div>
+
           <div class="sticky -top-7">
             <div
               class="flex flex-col justify-start items-center gap-4 rounded-2xl bg-gradient-to-b from-primary-950 to-primary-700 w-full h-[420px]"

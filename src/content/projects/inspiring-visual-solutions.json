@@ -11,5 +11,68 @@
     "/image/projects2.webp",
     "/image/projects3.webp",
     "/image/projects4.webp"
+  ],
+
+  "body": [
+    {
+      "title": "Project Overview:",
+      "parrafo": [
+        "In the ever-evolving world of design, our agency stands as a shining example of creativity and innovation. We understand that design is not just an art; it's a reflection of the world's aesthetics. Our journey is a constant exploration of innovative design. The visual realm is more than just images; it's an open canvas of endless inspiration."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Objectives:",
+      "parrafo": [
+        "Our mission is crystal clear: to lead the design revolution. We are fueled by a relentless commitment to artistic excellence and a never-ending passion to redefine the boundaries of design. In our tireless pursuit of visual greatness, we adapt, evolve, and innovate, always striving to remain at the forefront of design trends."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Scope Of Work:",
+      "parrafo": [
+        "As the architects of visual inspiration, we recognize that design has boundless potential. Our expertise covers a multitude of creative domains, from graphic design and branding to user experience and interior design. We don't just create designs; we craft visual experiences that transcend the ordinary, continuously pushing the boundaries of what's achievable. Each project is a unique opportunity to craft a remarkable design masterpiece."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Additional Information:",
+      "parrafo": [],
+      "border": false,
+      "list": [
+        "Client satisfaction is our ultimate goal, fostering enduring creative partnerships.",
+        "Our dedicated team of design experts is your guarantee of artistic success.",
+        "Exceptional design results are not just our aim; they are our commitment, every single time.",
+        "Join us on this thrilling journey of design innovation and success. With us, the possibilities are boundless, and the future is an empty canvas waiting for your vision."
+      ]
+    },
+    {
+      "title": "Client-Centric Approach:",
+      "parrafo": [
+        "Our clients are at the heart of everything we do. Client satisfaction is not just a goal; it's the foundation of our agency. We foster enduring partnerships, as we believe in walking hand in hand with our clients on the path to success. Your vision becomes our mission, and your objectives are our objectives."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Expert Team:",
+      "parrafo": [
+        "Our dedicated team of experts is the cornerstone of our success. We handpick the best talent in the industry, ensuring that your projects are in capable hands. With a relentless commitment to excellence, our team is always ready to tackle the most challenging and groundbreaking tech projects."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Guaranteed Excellence:",
+      "parrafo": [
+        "At our agency, exceptional results are not a mere goal; they are a guarantee, every single time. We set the bar high, and our track record of delivering outstanding outcomes is a testament to our unwavering commitment to excellence.",
+        "Join us on this thrilling odyssey of tech innovation and success. With us, possibilities are limitless, and the future is a blank canvas waiting to be filled with your vision. Your journey to success in the tech world begins here."
+      ],
+      "border": false,
+      "list": []
+    }
   ]
 }

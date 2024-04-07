@@ -4,7 +4,7 @@ import { z, defineCollection } from "astro:content";
 const blogsCollection = defineCollection({
   type: "data",
   schema: z.object({
-    id: z.bigint(),
+    id: z.number(),
     img: z.object({
       url: z.string(),
       alt: z.string(),
@@ -24,6 +24,16 @@ const blogsCollection = defineCollection({
       proffesion: z.string(),
       bio: z.string(),
     }),
+
+    body: z.array(
+      z.object({
+        title: z.string(),
+        parrafo: z.array(z.string()),
+        border: z.boolean(),
+      })
+    ),
+
+    conclusion: z.array(z.string()),
   }),
 });
 
