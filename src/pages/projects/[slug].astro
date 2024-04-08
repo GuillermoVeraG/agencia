@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import { getDateText } from "@/utils/getDates";
 
+import type {blogItemBody} from "@/content/schemas";
+
 export async function getStaticPaths() {
   const PROJECTS = await getCollection("projects");
 
@@ -113,17 +115,17 @@ const textDate = getDateText(pubDate);
       />
 
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] flex flex-col justify-start items-center gap-8">
-        {body.map(({ title, parrafo, border, list }) => 
+        {body.map(({ title, parrafo, border, list }:blogItemBody) => 
             {
               const borderCls = border ? "border-l-4 border-primary-600 dark:border-primary-300 pl-2" : "";
 
               return (
               <div class={`flex flex-col gap-3 ${borderCls}`}>
                 {title && (<h3 class="text-secondary-950 dark:text-secondary-50 capitalize text-5xl font-medium"></h3class>{title}</h3>)}
-                {parrafo.map((txt) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
+                {parrafo.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
                 {list && (
                   <ul class="pl-8 flex flex-col gap-4">
-                    {list.map((txt) => <li class="text-secondary-600 dark:text-secondary-100/70 text-base">• {txt}</li>)}
+                    {list.map((txt:string) => <li class="text-secondary-600 dark:text-secondary-100/70 text-base">• {txt}</li>)}
                   </ul>
                 )}
               </div>);
@@ -133,7 +135,7 @@ const textDate = getDateText(pubDate);
       <div class="w-full max-w-7xl mx-auto px-10 lg:px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
         <img src={`${import.meta.env.BASE_URL}${gallery[0]}`} alt="" class="w-full md:w-3/4 h-full object-cover">
         <div class="flex flex-col gap-4 w-full md:w-1/4">
-          {gallery.map((img, index) => {
+          {gallery.map((img:string, index) => {
             if(index > 0)
               return (<img src={`${import.meta.env.BASE_URL}${img}`} alt="" class="object-cover">);
           })}
