@@ -27,42 +27,48 @@
       "parrafo": [
         "Design is not merely about aesthetics; it's a powerful tool that shapes our world and influences our daily lives. Whether it's a thoughtfully crafted logo, an intuitive user interface, or an architecturally stunning building, design is the force behind the transformation of ideas into tangible, impactful creations."
       ],
-      "border": false
+      "border": false,
+      "list": []
     },
     {
       "title": "Designing User Experiences:",
       "parrafo": [
         "User experience (UX) design is at the forefront of the digital era. It's the practice of creating products and interfaces that are not just visually appealing but also user-friendly and efficient. A well-designed UX can enhance the way we interact with technology, making it a seamless and enjoyable experience."
       ],
-      "border": false
+      "border": false,
+      "list": []
     },
     {
       "title": "Branding And Identity:",
       "parrafo": [
         "A strong brand is a cornerstone of any successful business. Design agencies are entrusted with the task of creating unique visual identities that communicate a brand's values and personality. Logos, color schemes, and typography all play a pivotal role in leaving a lasting impression on the audience."
       ],
-      "border": false
+      "border": false,
+      "list": []
     },
     {
       "title": "Sustainability In Design:",
       "parrafo": [
         "In an era where environmental concerns are paramount, sustainable design practices are gaining momentum. Design agencies are exploring ways to minimize environmental impact by using eco-friendly materials, energy-efficient solutions, and waste reduction techniques. Sustainable design is not only responsible but also forward-thinking."
       ],
-      "border": false
+      "border": false,
+      "list": []
     },
     {
       "title": "The Power Of Visual Storytelling:",
       "parrafo": [
         "Design is a universal language that transcends borders. It has the ability to tell stories, evoke emotions, and communicate complex ideas. Infographics, for example, simplify intricate data and make it accessible to a broad audience. Visual storytelling through design has the power to educate, inspire, and provoke thought."
       ],
-      "border": false
+      "border": false,
+      "list": []
     },
     {
       "title": "",
       "parrafo": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis interdum posuere. Morbi id magna at arcu tempus ornare. Fusce mauris purus, rhoncus a sollicitudin sit amet, placerat vitae nisl. Morbi feugiat est in accumsan facilisis."
       ],
-      "border": true
+      "border": true,
+      "list": []
     }
   ],
 

@@ -10,6 +10,15 @@ const pricesCollection = defineCollection({
     slug: z.string(),
 
     items: z.array(z.string()),
+
+    body: z.array(
+      z.object({
+        title: z.string(),
+        parrafo: z.array(z.string()),
+        border: z.boolean(),
+        list: z.array(z.string()),
+      })
+    ),
   }),
 });
 

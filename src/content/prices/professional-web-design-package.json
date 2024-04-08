@@ -3,5 +3,51 @@
   "desc": "Perfect for businesses looking for a user-friendly and visually appealing website.",
   "price": "$ 1,499.00 USD",
   "slug": "professional-web-design-package",
-  "items": ["Custom Website Design", "SEO Optimization", "10 Pages"]
+  "items": ["Custom Website Design", "SEO Optimization", "10 Pages"],
+
+  "body": [
+    {
+      "title": "The Essentials Package For Your Success",
+      "parrafo": [
+        "Our Essentials Package is thoughtfully crafted to cover the fundamental aspects of any successful agency partnership. It's the ideal choice for clients seeking a comprehensive and hassle-free solution to achieve their goals. Here's a closer look at what this package entails:"
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "1. Strategic Planning:",
+      "parrafo": [
+        "Our seasoned team of strategists and consultants takes charge of your project from the outset. We meticulously plan every detail, from setting objectives to defining the roadmap. We ensure that your agency journey is well-guided, efficient, and aligned with your objectives. Let us be your compass to success."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "2. Creative Execution:",
+      "parrafo": [
+        "Before any strategy comes to life, creative execution is crucial. Our talented designers, content creators, and marketing experts work in harmony to bring your vision to reality. We handle everything, from content creation to design, ensuring that your brand and message are compelling and cohesive."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "3. Performance Analysis:",
+      "parrafo": [
+        "Measuring success is integral to our process. Our analysts and data experts will monitor, analyze, and optimize your campaign's performance. We ensure that your objectives are met and constantly seek areas for improvement. Your success is our success, and data-driven decisions are the key to it.",
+        "Each of our packages is designed to provide you with a tailored agency solution that meets your specific needs and goals. Whether you're launching a new campaign, seeking a refreshed marketing approach, or planning to scale your online presence, our dedicated team is here to deliver outstanding results."
+      ],
+      "border": false,
+      "list": []
+    },
+    {
+      "title": "Branding And Identity Package",
+      "parrafo": [],
+      "border": false,
+      "list": [
+        "Project Management: Our experienced project managers oversee every aspect of your branding and identity project, from initial planning to project completion. They ensure that all tasks are completed efficiently, on time, and within budget.",
+        "Concept Development: Before any design work can begin, a solid concept is crucial. Our talented designers and creative experts work collaboratively to bring your brand's identity to life.",
+        "Design Execution: A strong brand identity is the backbone of any business. We use the latest techniques and materials to craft visually striking logos, color palettes, and more that meet all industry standards and creative requirements."
+      ]
+    }
+  ]
 }

@@ -60,7 +60,7 @@ const textDate = getDateText(pubDate);
           class="w-full flex flex-col lg:flex-row items-center justify-center lg:items-start gap-8 mt-20 relative"
         >
           <div class="w-full lg:max-w-[60%] flex flex-col justify-center items-start gap-4">
-            {body.map(({ title, parrafo, border }) => 
+            {body.map(({ title, parrafo, border, list }) => 
             {
               const borderCls = border ? "border-l-4 border-primary-600 dark:border-primary-300 pl-2" : "";
 
@@ -68,6 +68,11 @@ const textDate = getDateText(pubDate);
               <div class={`flex flex-col gap-3 ${borderCls}`}>
                 {title && (<h3 class="text-secondary-950 dark:text-secondary-50 capitalize text-5xl font-medium"></h3class>{title}</h3>)}
                 {parrafo.map((txt) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
+                {list && (
+                  <ul class="pl-8 flex flex-col gap-4">
+                    {list.map((txt) => <li class="text-secondary-600 dark:text-secondary-100/70 text-base">• {txt}</li>)}
+                  </ul>
+                )}
               </div>);
             })}
 

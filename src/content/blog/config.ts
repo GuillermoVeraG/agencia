@@ -30,6 +30,7 @@ const blogsCollection = defineCollection({
         title: z.string(),
         parrafo: z.array(z.string()),
         border: z.boolean(),
+        list: z.array(z.string()),
       })
     ),
 
