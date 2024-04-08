@@ -21,14 +21,18 @@ const { title, price, items, body } = Astro.props;
   <main class="w-full mt-40">
     <section class="w-full my-16">
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10">
-        <div class="w-full flex flex-col items-center justify-center gap-4 text-center">
-          <TitleVertical
-            title="price"
-            subtitlePrimary={title}
-            subtitleSecondary={price}
-            subtitleBreak
-            desc=""
-          />
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-8"
+        >
+          <div class="flex flex-col items-center justify-center text-center md:text-left">
+            <TitleVertical
+              title="price"
+              subtitlePrimary={title}
+              subtitleSecondary={price}
+              subtitleBreak
+              desc=""
+            />
+          </div>
           <ul class="flex flex-col justify-center items-center gap-4 mt-6">
             {items.map((item) => (
               <li class="capitalize text-lg text-secondary-950 dark:text-secondary-50 py-3 border-b border-primary-600 dark:border-primary-300 w-full">
