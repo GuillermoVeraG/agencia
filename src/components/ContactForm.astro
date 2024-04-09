@@ -23,7 +23,7 @@ import TitleVertical from "./TitleVertical.astro";
     <div
       class="w-11/12 flex flex-col justify-center items-center gap-4 mx-auto mt-10"
     >
-      <form class="w-full flex flex-col">
+      <form id="formContact" class="w-full flex flex-col">
         <div
           class="w-full flex flex-col lg:flex-row lg:flex-wrap justify-between gap-4 pt-2"
         >
@@ -123,6 +123,7 @@ import TitleVertical from "./TitleVertical.astro";
         </div>
 
         <input
+          id="formButContact"
           type="submit"
           data-wait="Please wait..."
           value="Send Request"
@@ -132,3 +133,17 @@ import TitleVertical from "./TitleVertical.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import { sendEmail } from "@/utils/sendEmail";
+
+  const form = document.getElementById("formContact");
+  const sendBt = document.getElementById("formButContact");
+
+  sendBt?.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(form);
+
+    sendEmail({ subject: "test agencia", body: "ajhsdkjas" });
+  });
+</script>
