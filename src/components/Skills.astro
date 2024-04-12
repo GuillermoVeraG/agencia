@@ -21,6 +21,7 @@ const SKILLS = [
   class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
 >
   <div
+    id="skillsTitle"
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <Title
@@ -36,6 +37,7 @@ const SKILLS = [
     class="flex flex-col lg:flex-row justify-center items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 gap-4 mt-20"
   >
     <div
+      id="skillsImgs"
       class="flex w-full gap-10 object-cover justify-center items-center relative rotate-[-20deg]"
     >
       <img
@@ -53,6 +55,7 @@ const SKILLS = [
     </div>
 
     <div
+      id="skillsPer"
       class="flex flex-col justify-center items-center w-full gap-16 relative mt-16 lg:mt-0"
     >
       {
@@ -67,7 +70,7 @@ const SKILLS = [
 
               <div class="w-full bg-secondary-400 dark:bg-secondary-600">
                 <div
-                  class="h-0.5 bg-primary-600 dark:bg-primary-300"
+                  class="percentgeLine h-0.5 bg-primary-600 dark:bg-primary-300"
                   style={widthPercent}
                 />
               </div>
@@ -81,3 +84,71 @@ const SKILLS = [
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#skillsTitle",
+    {
+      opacity: 0,
+      x: 60,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#skillsTitle",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+
+      x: 10,
+      opacity: 100,
+      duration: 2,
+    }
+  );
+
+  gsap.utils
+    .toArray<HTMLElement>("#skillsImgs > img")
+    .forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        {
+          opacity: 0,
+          y: -100,
+        },
+        {
+          scrollTrigger: {
+            trigger: "#skillsImgs",
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none none",
+          },
+          y: 0,
+          opacity: 100,
+          duration: 1.5,
+          delay: 0.3 * (index + 1),
+        }
+      );
+    });
+
+  gsap.utils
+    .toArray<HTMLElement>("#skillsPer div.percentgeLine")
+    .forEach((project, index) => {
+      gsap.from(project, {
+        scrollTrigger: {
+          trigger: "#skillsPer",
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+        duration: 1.5,
+        delay: 0.6 * (index + 1),
+        width: 0,
+      });
+    });
+</script>

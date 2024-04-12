@@ -7,10 +7,7 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
   <div
     class="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
-    <div
-      id="heroText"
-      class="flex flex-col text-left gap-8 mt-14 w-full -translate-x-32 opacity-0"
-    >
+    <div id="heroText" class="flex flex-col text-left gap-8 mt-14 w-full">
       <div class="flex flex-col gap-8">
         <div
           class="font-archivo text-secondary-950 dark:text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
@@ -31,7 +28,7 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
         creativity meets purpose.
       </div>
     </div>
-    <div id="heroImg" class="mt-14 md:mt-8 lg:-mt-12 translate-x-32 opacity-0">
+    <div id="heroImg" class="mt-14 md:mt-8 lg:-mt-12">
       <img
         src=`${import.meta.env.BASE_URL}/image/hero-laptop.webp`
         class="object-cover lg:w-full inline-block animate-movelaptop"
@@ -63,27 +60,41 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("#heroText", {
-    scrollTrigger: {
-      trigger: "#heroText",
-      start: "top center",
-      end: "bottom center",
-      toggleActions: "play none none none",
+  gsap.fromTo(
+    "#heroText",
+    {
+      opacity: 0,
+      x: -100,
     },
-    x: 10,
-    opacity: 100,
-    duration: 2,
-  });
+    {
+      scrollTrigger: {
+        trigger: "#heroText",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 10,
+      opacity: 100,
+      duration: 2,
+    }
+  );
 
-  gsap.to("#heroImg", {
-    scrollTrigger: {
-      trigger: "#heroImg",
-      start: "top center",
-      end: "bottom center",
-      toggleActions: "play none none none",
+  gsap.fromTo(
+    "#heroImg",
+    {
+      opacity: 0,
+      x: 100,
     },
-    x: -20,
-    opacity: 100,
-    duration: 2,
-  });
+    {
+      scrollTrigger: {
+        trigger: "#heroImg",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 0,
+      opacity: 100,
+      duration: 2,
+    }
+  );
 </script>

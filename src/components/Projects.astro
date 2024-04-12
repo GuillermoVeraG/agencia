@@ -11,7 +11,7 @@ const PROJECTS = await getCollection("projects");
   <div
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
-    <div id="projectsTitle" class="opacity-0 -translate-x-32">
+    <div id="projectsTitle">
       <Title
         title="explore our "
         titleBlue="Projects"
@@ -27,10 +27,7 @@ const PROJECTS = await getCollection("projects");
     >
       {
         PROJECTS.map(({ data }) => (
-          <a
-            href={`${import.meta.env.BASE_URL}/projects/${data.slug}`}
-            class="opacity-0 translate-x-10"
-          >
+          <a href={`${import.meta.env.BASE_URL}/projects/${data.slug}`}>
             <div class="flex flex-col justify-center items-center relative text-left w-full max-w-sm lg:max-w-xl h-[480px] rounded-lg overflow-hidden">
               <img
                 src={`${import.meta.env.BASE_URL}/${data.img}`}
@@ -69,32 +66,46 @@ const PROJECTS = await getCollection("projects");
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("#projectsTitle", {
-    scrollTrigger: {
-      trigger: "#projectsTitle",
-      start: "top center",
-      end: "bottom center",
-      toggleActions: "play none none none",
+  gsap.fromTo(
+    "#projectsTitle",
+    {
+      x: -100,
+      opacity: 0,
     },
-    x: 0,
-    opacity: 100,
-    duration: 2,
-  });
-
-  const projects = gsap.utils.toArray<HTMLElement>("#projectsContainer > a");
-
-  projects.forEach((project, index) => {
-    gsap.to(project, {
+    {
       scrollTrigger: {
-        trigger: "#projectsContainer",
+        trigger: "#projectsTitle",
         start: "top center",
         end: "bottom center",
         toggleActions: "play none none none",
       },
       x: 0,
       opacity: 100,
-      duration: 1.5,
-      delay: 0.3 * (index + 1),
+      duration: 2,
+    }
+  );
+
+  gsap.utils
+    .toArray<HTMLElement>("#projectsContainer > a")
+    .forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          scrollTrigger: {
+            trigger: "#projectsContainer",
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none none",
+          },
+          x: 0,
+          opacity: 100,
+          duration: 1.5,
+          delay: 0.3 * (index + 1),
+        }
+      );
     });
-  });
 </script>

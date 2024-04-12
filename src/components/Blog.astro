@@ -8,7 +8,10 @@ const BLOG_ITEMS = await getCollection("blog");
 
 <section class="w-full my-16">
   <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
-    <div class="flex flex-col justify-center items-center gap-4 mt-10">
+    <div
+      id="blogsTitle"
+      class="flex flex-col justify-center items-center gap-4 mt-10"
+    >
       <Title
         title="our blog"
         subtitlePrimary="posts"
@@ -17,7 +20,10 @@ const BLOG_ITEMS = await getCollection("blog");
       />
     </div>
 
-    <div class="flex flex-col justify-center items-center gap-4 mt-10">
+    <div
+      id="blogsContainer"
+      class="flex flex-col justify-center items-center gap-4 mt-10"
+    >
       {
         BLOG_ITEMS.map(({ id, data }, index) => {
           return (
@@ -39,3 +45,54 @@ const BLOG_ITEMS = await getCollection("blog");
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#blogsTitle",
+    {
+      x: -100,
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#blogsTitle",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 0,
+      opacity: 100,
+      duration: 2,
+    }
+  );
+
+  gsap.utils
+    .toArray<HTMLElement>("#blogsContainer > a")
+    .forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        {
+          opacity: 0,
+          x: 100 * (index % 2 == 0 ? -1 : 1),
+        },
+        {
+          scrollTrigger: {
+            trigger: "#blogsContainer",
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none none",
+          },
+          x: 0,
+          opacity: 100,
+          duration: 1.5,
+          delay: 0.3 * (index + 1),
+        }
+      );
+    });
+</script>

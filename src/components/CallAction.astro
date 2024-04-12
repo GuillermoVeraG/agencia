@@ -9,9 +9,11 @@ import TitleVertical from "@/components/TitleVertical.astro";
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <div
+      id="actionBG"
       class="flex flex-col lg:flex-row gap-3 justify-start items-start h-[800px] w-full lg:h-[500px] bg-secondary-900/30 overflow-hidden"
     >
       <div
+        id="actionTitle"
         class="flex flex-col justify-center items-center text-center w-full h-1/2 lg:h-full p-4 mb-16"
       >
         <TitleVertical
@@ -28,6 +30,7 @@ import TitleVertical from "@/components/TitleVertical.astro";
         >
       </div>
       <div
+        id="actionImgs"
         class="flex flex-col justify-center items-center text-center h-1/2 lg:h-full w-[540px] lg:w-full p-4 relative"
       >
         <img
@@ -46,3 +49,71 @@ import TitleVertical from "@/components/TitleVertical.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#actionBG",
+    {
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#actionBG",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      opacity: 100,
+      duration: 3,
+    }
+  );
+
+  gsap.fromTo(
+    "#actionTitle",
+    {
+      y: 100,
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#actionTitle",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      y: 0,
+      opacity: 100,
+      duration: 2,
+    }
+  );
+
+  gsap.utils
+    .toArray<HTMLElement>("#actionImgs > img")
+    .forEach((project, index) => {
+      gsap.fromTo(
+        project,
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          scrollTrigger: {
+            trigger: "#actionImgs",
+            start: "top center",
+            end: "bottom center",
+            toggleActions: "play none none none",
+          },
+          x: 0,
+          opacity: 100,
+          duration: 1.5,
+          delay: 0.3 * (index + 1),
+        }
+      );
+    });
+</script>
