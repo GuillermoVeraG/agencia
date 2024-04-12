@@ -115,7 +115,7 @@ const SERVICES = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const services = gsap.utils.toArray("#servicesContainer > div");
+  const services = gsap.utils.toArray<HTMLElement>("#servicesContainer > div");
 
   services.forEach((service, index) => {
     gsap.to(service, {

@@ -45,7 +45,7 @@ import Arrows from "@/components/icons/Arrows.astro";
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const stages = gsap.utils.toArray("#stageContainer > div");
+  const stages = gsap.utils.toArray<HTMLElement>("#stageContainer > div");
 
   stages.forEach((stage, index) => {
     gsap.to(stage, {

@@ -81,7 +81,7 @@ const PROJECTS = await getCollection("projects");
     duration: 2,
   });
 
-  const projects = gsap.utils.toArray("#projectsContainer > a");
+  const projects = gsap.utils.toArray<HTMLElement>("#projectsContainer > a");
 
   projects.forEach((project, index) => {
     gsap.to(project, {
