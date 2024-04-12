@@ -41,7 +41,8 @@ const SERVICES = [
   class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20"
 >
   <div
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    id="servicesTitle"
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative opacity-0 translate-x-32"
   >
     <Title
       title="we create "
@@ -53,11 +54,12 @@ const SERVICES = [
   </div>
 
   <div
+    id="servicesContainer"
     class="flex flex-col md:flex-row justify-center items-center md:flex-wrap md:items-start gap-4 w-full mt-20"
   >
     {
       SERVICES.map(({ icon, title, desc, list }) => (
-        <div class="relative overflow-hidden rounded-lg group/card">
+        <div class="relative overflow-hidden rounded-lg group/card opacity-0 translate-y-10">
           <div class="flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-secondary-900/30 py-12 px-9 text-left">
             {icon == "HorizontalSplit" && (
               <HorizontalSplit className="fill-primary-600 dark:fill-primary-300 size-12" />
@@ -105,3 +107,40 @@ const SERVICES = [
     }
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const services = gsap.utils.toArray("#servicesContainer > div");
+
+  services.forEach((service, index) => {
+    gsap.to(service, {
+      scrollTrigger: {
+        trigger: "#servicesContainer",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      y: 0,
+      opacity: 100,
+      duration: 1.5,
+      delay: 0.3 * (index + 1),
+    });
+  });
+
+  gsap.to("#servicesTitle", {
+    scrollTrigger: {
+      trigger: "#servicesTitle",
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play none none none",
+    },
+    x: 0,
+    opacity: 100,
+    duration: 2,
+  });
+</script>

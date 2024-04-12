@@ -11,3 +11,24 @@
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#phoneImage", {
+    scrollTrigger: {
+      trigger: "#phoneImage",
+      start: "top center",
+      end: "60% center",
+      scrub: true,
+      toggleActions: "restart pause reverse pause",
+    },
+    y: -10,
+    scale: 1.3,
+    duration: 2,
+  });
+</script>

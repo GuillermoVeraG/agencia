@@ -7,7 +7,10 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
   <div
     class="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
-    <div class="flex flex-col text-left gap-8 mt-14 w-full">
+    <div
+      id="heroText"
+      class="flex flex-col text-left gap-8 mt-14 w-full -translate-x-32 opacity-0"
+    >
       <div class="flex flex-col gap-8">
         <div
           class="font-archivo text-secondary-950 dark:text-secondary-50 uppercase my-0 font-medium text-7xl lg:text-[8rem] lg:leading-[7rem] tracking-tight"
@@ -28,14 +31,14 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
         creativity meets purpose.
       </div>
     </div>
-    <div class="mt-14 md:mt-8 lg:-mt-12">
+    <div id="heroImg" class="mt-14 md:mt-8 lg:-mt-12 translate-x-32 opacity-0">
       <img
         src=`${import.meta.env.BASE_URL}/image/hero-laptop.webp`
         class="object-cover lg:w-full inline-block animate-movelaptop"
       />
     </div>
     <div
-      class="absolute top-1/2 left-0 lg:left-1/2 mt-32 ml-16 md:mt-16 lg:-mt-4 lg:-ml-8"
+      class="absolute top-1/2 left-0 lg:left-1/2 mt-32 ml-16 md:mt-16 lg:-mt-4 lg:-ml-8 animate-fadeIn"
     >
       <a
         class="flex justify-center items-center"
@@ -52,3 +55,35 @@ import HeroArrow from "@/components/icons/HeroArrow.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#heroText", {
+    scrollTrigger: {
+      trigger: "#heroText",
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play none none none",
+    },
+    x: 10,
+    opacity: 100,
+    duration: 2,
+  });
+
+  gsap.to("#heroImg", {
+    scrollTrigger: {
+      trigger: "#heroImg",
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play none none none",
+    },
+    x: -20,
+    opacity: 100,
+    duration: 2,
+  });
+</script>

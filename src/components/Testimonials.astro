@@ -26,7 +26,8 @@ const CLIENTS = [
   class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20"
 >
   <div
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    id="testimonialsContainer"
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative opacity-0"
   >
     <TitleV
       title="testimonials"
@@ -139,5 +140,25 @@ const CLIENTS = [
   window.addEventListener("resize", function () {
     let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
     setSliderActual(actualSlider);
+  });
+</script>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to("#testimonialsContainer", {
+    scrollTrigger: {
+      trigger: "#testimonialsContainer",
+      start: "top center",
+      end: "bottom center",
+      toggleActions: "play none none none",
+    },
+    opacity: 100,
+    duration: 3,
+    ease: "power1.in",
   });
 </script>

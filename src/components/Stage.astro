@@ -6,10 +6,11 @@ import Arrows from "@/components/icons/Arrows.astro";
   class="w-full flex justify-between items-center mx-auto pt-24 md:pt-40 lg:pt-16"
 >
   <div
+    id="stageContainer"
     class="flex flex-row justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <div
-      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light"
+      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light opacity-0 translate-y-10"
     >
       <Arrows
         className="fill-secondary-800/50 dark:fill-secondary-800/30 size-10 md:size-16"
@@ -18,7 +19,7 @@ import Arrows from "@/components/icons/Arrows.astro";
     </div>
 
     <div
-      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light"
+      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light opacity-0 translate-y-10"
     >
       <Arrows
         className="fill-primary-400/60 dark:fill-primary-400/40 size-10 md:size-16"
@@ -27,7 +28,7 @@ import Arrows from "@/components/icons/Arrows.astro";
     </div>
 
     <div
-      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light"
+      class="font-archivo text-base flex flex-row justify-between items-center gap-4 py-8 h-16 max-w-5xl uppercase text-secondary-700 dark:text-secondary-300 font-medium dark:font-light opacity-0 translate-y-10"
     >
       <Arrows
         className="fill-primary-600 dark:fill-primary-300 size-10 md:size-16"
@@ -36,3 +37,28 @@ import Arrows from "@/components/icons/Arrows.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const stages = gsap.utils.toArray("#stageContainer > div");
+
+  stages.forEach((stage, index) => {
+    gsap.to(stage, {
+      scrollTrigger: {
+        trigger: "#stageContainer",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      y: 0,
+      opacity: 100,
+      duration: 1.5,
+      delay: 0.3 * (index + 1),
+    });
+  });
+</script>

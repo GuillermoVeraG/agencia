@@ -42,6 +42,7 @@ export default {
       animation: {
         spin: "spin 9s linear infinite",
         movelaptop: "movelaptop 8s ease-in infinite",
+        fadeIn: "fadeIn 1s cubic-bezier(0, 0, 0.2, 1)",
       },
       keyframes: {
         spin: {
@@ -56,6 +57,12 @@ export default {
           },
           "100%": {
             transform: "translateX(5px) rotateZ(-20deg)",
+          },
+        },
+        fadeIn: {
+          "0%": {
+            transform: "scale(2)",
+            opacity: 0,
           },
         },
       },
