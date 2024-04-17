@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import type {CollectionEntry} from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import TitleVertical from "@/components/TitleVertical.astro";
 import { getDateText } from "@/utils/getDates";
 
 import type {blogItemBody} from "@/content/schemas";
@@ -22,7 +21,7 @@ type Props = CollectionEntry<"blog">;
 
 const blog = Astro.props;
 
-const { img, title, desc, tag, pubDate, author, body, conclusion } = blog.data;
+const { img, slug, title, desc, tag, pubDate, author, body, conclusion } = blog.data;
 const textDate = getDateText(pubDate);
 ---
 
@@ -32,6 +31,7 @@ const textDate = getDateText(pubDate);
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10">
         <div class="w-full flex flex-col items-center justify-center gap-2">
           <div
+            transition:name={`blogs-category-${slug}`}
             class="w-fit py-2 px-4 bg-secondary-400/50 dark:bg-secondary-900/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
           >
             <h6
@@ -41,20 +41,28 @@ const textDate = getDateText(pubDate);
             </h6>
           </div>
 
-          <TitleVertical
-            title=""
-            subtitlePrimary={title}
-            subtitleSecondary=""
-            desc={desc}
-          />
+          <h2
+            transition:name={`blogs-title-${slug}`}
+            class="font-archivo my-0 capitalize font-medium text-5xl md:text-6xl lg:text-7xl leading-[58px] tracking-tighter text-secondary-950 dark:text-secondary-50"
+          >
+            {title}
+          </h2>
+          <p
+            transition:name={`blogs-desc-${slug}`}
+            class="text-wrap font-archivo mb-0 text-base font-normal text-secondary-600 dark:text-secondary-300"
+          >
+            {desc}
+          </p>
 
           <h6
+            transition:name={`blogs-date-${slug}`}
             class="text-secondary-950 dark:text-secondary-50 tracking-[8px] uppercase my-0 text-xs font-normal dark:font-light mt-4"
           >
             {textDate}
           </h6>
 
           <img
+            transition:name={`blogs-img-${slug}`}
             src={img.url}
             alt={img.alt}
             class="w-full max-h-[480px] object-cover rounded-3xl mt-20"

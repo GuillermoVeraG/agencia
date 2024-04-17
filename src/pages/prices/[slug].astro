@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { title, price, items, body } = Astro.props;
+const { title, slug, price, items, body } = Astro.props;
 ---
 
 <Layout title={`Project - ${title}`}>
@@ -27,15 +27,22 @@ const { title, price, items, body } = Astro.props;
           class="flex flex-col md:flex-row justify-center items-center gap-8"
         >
           <div class="flex flex-col items-center justify-center text-center md:text-left">
-            <TitleVertical
-              title="price"
-              subtitlePrimary={title}
-              subtitleSecondary={price}
-              subtitleBreak
-              desc=""
-            />
+            <h2
+              transition:name={`prices-title-${slug}`}
+              class="font-archivo capitalize text-secondary-950 dark:text-secondary-50 text-5xl md:text-6xl lg:text-7xl font-medium my-0 tracking-tight"
+            >
+              {title}
+
+              <br />
+
+              <span
+                transition:name={`prices-price-${slug}`}
+                class="font-archivo text-primary-600 dark:text-primary-300 font-thin italic"
+                >{price}</span
+              >
+            </h2>
           </div>
-          <ul class="flex flex-col justify-center items-center gap-4 mt-6">
+          <ul transition:name={`prices-list-${slug}`} class="flex flex-col justify-center items-center gap-4 mt-6">
             {items.map((item) => (
               <li class="capitalize text-lg text-secondary-950 dark:text-secondary-50 py-3 border-b border-primary-600 dark:border-primary-300 w-full">
                 {item}

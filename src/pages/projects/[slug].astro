@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { img, title, desc, tags, client, pubDate, gallery, body } = Astro.props;
+const { img, slug, title, desc, tags, client, pubDate, gallery, body } = Astro.props;
 
 const textDate = getDateText(pubDate);
 ---
@@ -32,11 +32,13 @@ const textDate = getDateText(pubDate);
             class="w-full md:max-w-[70%] flex flex-col justify-center items-center md:items-start"
           >
             <h2
+              transition:name={`projects-title-${slug}`}
               class="uppercase text-6xl text-secondary-950 dark:text-secondary-50 text-center md:text-left"
             >
               {title}
             </h2>
             <p
+              transition:name={`projects-desc-${slug}`}
               class="text-base font-light text-secondary-800/80 dark:text-secondary-200/80 mt-2"
             >
               {desc}
@@ -109,6 +111,7 @@ const textDate = getDateText(pubDate);
       </div>
       
       <img
+        transition:name={`projects-img-${slug}`}
         src={`${import.meta.env.BASE_URL}${img}`}
         alt="image project"
         class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 rounded-lg"

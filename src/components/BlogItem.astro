@@ -18,6 +18,7 @@ const textDate = getDateText(date);
         class="flex flex-row flex-wrap justify-between items-center gap-x-8 gap-y-4 w-full"
       >
         <div
+          transition:name={`blogs-category-${slug}`}
           class="bg-secondary-600/30 border-2 border-primary-600 dark:border-primary-300 p-1 pl-3"
         >
           <h6
@@ -37,6 +38,7 @@ const textDate = getDateText(date);
           </p>
           <span class="w-0.5 bg-secondary-600 dark:bg-secondary-400 h-3"></span>
           <p
+            transition:name={`blogs-date-${slug}`}
             class="font-archivo text-base text-secondary-600 dark:text-secondary-400"
           >
             {textDate}
@@ -44,11 +46,13 @@ const textDate = getDateText(date);
         </div>
       </div>
       <h2
+        transition:name={`blogs-title-${slug}`}
         class="font-archivo my-0 capitalize font-medium text-5xl leading-[58px] tracking-tighter text-secondary-950 dark:text-secondary-50"
       >
         {title}
       </h2>
       <p
+        transition:name={`blogs-desc-${slug}`}
         class="text-wrap font-archivo mb-0 text-sm font-normal text-secondary-600 dark:text-secondary-300"
       >
         {desc}
@@ -61,6 +65,7 @@ const textDate = getDateText(date);
     </div>
     <div class="overflow-hidden md:w-[48%]">
       <img
+        transition:name={`blogs-img-${slug}`}
         src={img}
         alt=""
         class="w-full h-96 object-cover group-hover/item:scale-105 transition-transform duration-500 ease-linear"
