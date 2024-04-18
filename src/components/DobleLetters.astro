@@ -1,10 +1,18 @@
 ---
-const { name } = Astro.props;
+const { name, size } = Astro.props;
+
+let textSize = "text-[5rem] lg:text-[8rem]",
+  leftSize = "left-3";
+
+if (size == "md") {
+  textSize = "text-7xl lg:text-8xl";
+  leftSize = "left-2";
+}
 ---
 
 <div
-  class="font-inter italic font-thin text-primary-600 dark:text-primary-300 uppercase text-[5rem] leading-[5rem] lg:text-[8rem] lg:leading-[7rem] tracking-tight relative"
+  class={`font-inter italic font-thin text-primary-600 dark:text-primary-300 uppercase ${textSize} leading-[5rem] lg:leading-[7rem] tracking-tight relative`}
 >
   <div>{name}</div>
-  <div class="absolute top-0 left-3">{name}</div>
+  <div class={`absolute top-0 ${leftSize}`}>{name}</div>
 </div>
