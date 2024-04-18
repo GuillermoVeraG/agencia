@@ -3,9 +3,9 @@ import TitleVertical from "./TitleVertical.astro";
 
 const TEAM = [
   {
-    name: "michael carter",
-    profession: "ceo",
-    img: "/image/team1.webp",
+    name: "Alex Hidalgo",
+    profession: "ceo | cso",
+    img: "/image/team3.webp",
     socialMedia: {
       facebook: "",
       instagram: "a",
@@ -13,9 +13,9 @@ const TEAM = [
     },
   },
   {
-    name: "olivia davis",
-    profession: "manager",
-    img: "/image/team3.webp",
+    name: "Geisson Guadir",
+    profession: "CDO",
+    img: "/image/team1.webp",
     socialMedia: {
       facebook: "a",
       instagram: "a",
@@ -23,18 +23,18 @@ const TEAM = [
     },
   },
   {
-    name: "john parker",
-    profession: "engineer",
-    img: "/image/team2.webp",
+    name: "Guillermo Vera",
+    profession: "CTO",
+    img: "/image/team4.webp",
     socialMedia: {
-      facebook: "face",
-      instagram: "",
-      linkedin: "",
+      facebook: "",
+      instagram: "https://www.instagram.com/guive86/",
+      linkedin: "https://www.linkedin.com/in/guillermoverag/",
     },
   },
   {
-    name: "john parker",
-    profession: "engineer",
+    name: "Rosy Gonacalves",
+    profession: "CMO",
     img: "/image/team3.webp",
     socialMedia: {
       facebook: "face",
@@ -81,26 +81,35 @@ const TEAM = [
 
           <div class="w-full max-w-52 py-2 bg-secondary-50/60 flex justify-center items-center gap-6 absolute top-auto bottom-20 translate-y-40 opacity-0 transition-transform duration-700 group-hover/team:translate-y-0 group-hover/team:opacity-100">
             {socialMedia.facebook && (
-              <a href="#" class="size-10 rounded-full overflow-hidden">
+              <a
+                href={socialMedia.facebook}
+                class="size-10 rounded-full overflow-hidden"
+              >
                 <img
                   src={`${import.meta.env.BASE_URL}/image/facebook.webp`}
-                  alt=""
+                  alt="facebook"
                 />
               </a>
             )}
             {socialMedia.instagram && (
-              <a href="#" class="size-10 rounded-full overflow-hidden">
+              <a
+                href={socialMedia.instagram}
+                class="size-10 rounded-full overflow-hidden"
+              >
                 <img
                   src={`${import.meta.env.BASE_URL}/image/instagram.webp`}
-                  alt=""
+                  alt="instagram"
                 />
               </a>
             )}
             {socialMedia.linkedin && (
-              <a href="#" class="size-10 rounded-full overflow-hidden">
+              <a
+                href={socialMedia.linkedin}
+                class="size-10 rounded-full overflow-hidden"
+              >
                 <img
                   src={`${import.meta.env.BASE_URL}/image/linkedin.webp`}
-                  alt=""
+                  alt="linkedin"
                 />
               </a>
             )}
