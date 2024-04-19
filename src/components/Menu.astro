@@ -74,22 +74,3 @@ const menuItems = [
     }
   </nav>
 </section>
-<script>
-  var isNavOpen = false;
-  const but = document.querySelector("#menuNavMobileBut");
-  const menu = document.querySelector("#menuNavMobile");
-
-  const menuHideClasses = "-translate-y-[120vh]";
-
-  const handleNav = () => {
-    if (isNavOpen) {
-      menu?.classList.toggle(menuHideClasses);
-      isNavOpen = false;
-    } else {
-      menu?.classList.toggle(menuHideClasses);
-      isNavOpen = true;
-    }
-  };
-
-  but?.addEventListener("click", handleNav);
-</script>
