@@ -27,7 +27,7 @@ const CLIENTS = [
 >
   <div
     id="testimonialsContainer"
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative opacity-0"
+    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <TitleV
       title="testimonials"
@@ -94,52 +94,54 @@ const CLIENTS = [
 </section>
 
 <script>
-  const butLeftSlide = document.getElementById("butLeftSlide");
-  const butRightSlide = document.getElementById("butRightSlide");
+  document.addEventListener("astro:page-load", () => {
+    const butLeftSlide = document.getElementById("butLeftSlide");
+    const butRightSlide = document.getElementById("butRightSlide");
 
-  const slideContainer = document.getElementById("slideContainer");
-  const slideContainerChilds = slideContainer?.children || [];
+    const slideContainer = document.getElementById("slideContainer");
+    const slideContainerChilds = slideContainer?.children || [];
 
-  butLeftSlide?.addEventListener("click", () => {
-    let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
-    actualSlider--;
+    butLeftSlide?.addEventListener("click", () => {
+      let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
+      actualSlider--;
 
-    if (actualSlider < 0) {
-      actualSlider = slideContainerChilds.length - 1;
+      if (actualSlider < 0) {
+        actualSlider = slideContainerChilds.length - 1;
+      }
+
+      setSliderActual(actualSlider);
+    });
+
+    butRightSlide?.addEventListener("click", () => {
+      let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
+      actualSlider++;
+
+      if (actualSlider >= slideContainerChilds.length) {
+        actualSlider = 0;
+      }
+
+      setSliderActual(actualSlider);
+    });
+
+    function setSliderActual(actualSlider: number) {
+      const widthSlider = slideContainer?.clientWidth || 1;
+
+      if (slideContainer != null) {
+        slideContainer.dataset.slider = actualSlider.toString();
+      }
+
+      const offset = actualSlider * widthSlider * -1;
+
+      for (const slideItem of slideContainerChilds) {
+        const item = slideItem as HTMLElement;
+        item.style.transform = `translateX(${offset}px)`;
+      }
     }
 
-    setSliderActual(actualSlider);
-  });
-
-  butRightSlide?.addEventListener("click", () => {
-    let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
-    actualSlider++;
-
-    if (actualSlider >= slideContainerChilds.length) {
-      actualSlider = 0;
-    }
-
-    setSliderActual(actualSlider);
-  });
-
-  function setSliderActual(actualSlider: number) {
-    const widthSlider = slideContainer?.clientWidth || 1;
-
-    if (slideContainer != null) {
-      slideContainer.dataset.slider = actualSlider.toString();
-    }
-
-    const offset = actualSlider * widthSlider * -1;
-
-    for (const slideItem of slideContainerChilds) {
-      const item = slideItem as HTMLElement;
-      item.style.transform = `translateX(${offset}px)`;
-    }
-  }
-
-  window.addEventListener("resize", function () {
-    let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
-    setSliderActual(actualSlider);
+    window.addEventListener("resize", function () {
+      let actualSlider = parseInt(slideContainer?.dataset.slider || "0");
+      setSliderActual(actualSlider);
+    });
   });
 </script>
 
@@ -150,15 +152,21 @@ const CLIENTS = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to("#testimonialsContainer", {
-    scrollTrigger: {
-      trigger: "#testimonialsContainer",
-      start: "top center",
-      end: "bottom center",
-      toggleActions: "play none none none",
+  gsap.fromTo(
+    "#testimonialsContainer",
+    {
+      opacity: 0,
     },
-    opacity: 100,
-    duration: 3,
-    ease: "power1.in",
-  });
+    {
+      scrollTrigger: {
+        trigger: "#testimonialsContainer",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      opacity: 100,
+      duration: 3,
+      ease: "power1.in",
+    }
+  );
 </script>
