@@ -52,7 +52,7 @@ const FAQS = [
     {
       FAQS.map(({ question, answer }, index) => {
         return (
-          <details class="bg-secondary-900/40 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/80">
+          <details class="bg-secondary-900/40 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/50">
             <summary class="w-full flex justify-center items-center gap-8 p-16 pb-12 relative">
               <h2 class="hidden md:block text-secondary-950 dark:text-secondary-50 text-6xl font-medium absolute top-auto bottom-auto right-auto left-8">
                 0{index + 1}
@@ -70,7 +70,7 @@ const FAQS = [
               </div>
             </summary>
             <div class="w-full max-w-[80%] mx-auto mb-8">
-              <p class="text-lg font-light text-center text-secondary-800/90 dark:text-secondary-100/70">
+              <p class="text-lg font-light text-center text-secondary-800/90 dark:text-secondary-100/70 ">
                 {answer}
               </p>
             </div>
