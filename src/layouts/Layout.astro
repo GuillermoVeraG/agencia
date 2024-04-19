@@ -5,6 +5,7 @@ import "@fontsource/archivo/latin-300.css";
 import "@fontsource/archivo/latin-400.css";
 import "@fontsource/archivo/latin-500.css";
 import "@fontsource/archivo/latin-700.css";
+import "@fontsource/poppins";
 import Menu from "@/components/Menu.astro";
 import Footer from "@/components/Footer.astro";
 
@@ -36,8 +37,17 @@ const { title } = Astro.props;
     <slot />
     <Footer />
     <style is:global>
+      /* Register your custom font family and tell the browser where to find it. */
+      @font-face {
+        font-family: "StretchPro";
+        src: url("/agencia/fonts/StretchPro.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
       html {
-        font-family: "Archivo", sans-serif;
+        font-family: "Poppins", sans-serif;
       }
 
       .dark #header-nav {

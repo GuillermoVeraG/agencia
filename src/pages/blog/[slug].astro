@@ -43,13 +43,13 @@ const textDate = getDateText(pubDate);
 
           <h2
             transition:name={`blogs-title-${slug}`}
-            class="font-archivo my-0 capitalize font-medium text-5xl md:text-6xl lg:text-7xl leading-[58px] tracking-tighter text-secondary-950 dark:text-secondary-50"
+            class="font-stretchpro my-0 uppercase font-medium text-3xl md:text-4xl lg:text-5xl leading-[58px] tracking-tighter text-secondary-950 dark:text-secondary-50"
           >
             {title}
           </h2>
           <p
             transition:name={`blogs-desc-${slug}`}
-            class="text-wrap font-archivo mb-0 text-base font-normal text-secondary-600 dark:text-secondary-300"
+            class="text-wrap mb-0 text-base font-normal text-secondary-600 dark:text-secondary-300"
           >
             {desc}
           </p>
@@ -79,7 +79,7 @@ const textDate = getDateText(pubDate);
 
               return (
               <div class={`flex flex-col gap-3 ${borderCls}`}>
-                {title && (<h3 class="text-secondary-950 dark:text-secondary-50 capitalize text-5xl font-medium"></h3class>{title}</h3>)}
+                {title && (<h3 class="text-secondary-950 dark:text-secondary-50 uppercase text-4xl font-medium"></h3class>{title}</h3>)}
                 {parrafo.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
                 {list && (
                   <ul class="pl-8 flex flex-col gap-4">
@@ -89,7 +89,7 @@ const textDate = getDateText(pubDate);
               </div>);
             })}
 
-            <h3 class="text-primary-600 dark:text-primary-300 capitalize text-5xl font-medium mt-8">
+            <h3 class="text-primary-600 dark:text-primary-300 uppercase text-5xl font-medium mt-8">
               conclusion:
             </h3>
             {conclusion.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
@@ -106,12 +106,12 @@ const textDate = getDateText(pubDate);
               />
               <div>
                 <h4
-                  class="capitalize text-3xl text-secondary-50 text-center tracking-tighter"
+                  class="capitalize text-4xl text-secondary-50 text-center tracking-tighter"
                 >
                   {author.name}
                 </h4>
                 <h6
-                  class="uppercase text-secondary-50 tracking-[6px] text-[0.6rem] text-center mt-4 mb-3"
+                  class="font-stretchpro uppercase text-secondary-50 tracking-[5px] text-[0.6em] text-center mt-4 mb-3"
                 >
                   {author.proffesion}
                 </h6>

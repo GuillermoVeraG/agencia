@@ -33,7 +33,7 @@ const textDate = getDateText(pubDate);
           >
             <h2
               transition:name={`projects-title-${slug}`}
-              class="uppercase text-6xl text-secondary-950 dark:text-secondary-50 text-center md:text-left"
+              class="font-stretchpro uppercase text-5xl text-secondary-950 dark:text-secondary-50 text-center md:text-left"
             >
               {title}
             </h2>
@@ -51,7 +51,7 @@ const textDate = getDateText(pubDate);
               class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 Client
               </h5>
@@ -61,7 +61,7 @@ const textDate = getDateText(pubDate);
                 •
               </h5>
               <p
-                class="text-base font-normal text-secondary-700 dark:text-secondary-300 capitalize"
+                class="text-base font-sm text-secondary-700 dark:text-secondary-300 capitalize"
               >
                 {client}
               </p>
@@ -71,7 +71,7 @@ const textDate = getDateText(pubDate);
               class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="font-stretchpro uppercase text-[0.6em] font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 category
               </h5>
@@ -81,7 +81,7 @@ const textDate = getDateText(pubDate);
                 •
               </h5>
               <p
-                class="text-base font-normal text-secondary-700 dark:text-secondary-300 capitalize"
+                class="text-base font-sm text-secondary-700 dark:text-secondary-300 capitalize"
               >
                 {tags[0]}
               </p>
@@ -91,7 +91,7 @@ const textDate = getDateText(pubDate);
               class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
             >
               <h5
-                class="uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
               >
                 date
               </h5>
@@ -101,7 +101,7 @@ const textDate = getDateText(pubDate);
                 •
               </h5>
               <p
-                class="text-base font-normal text-secondary-700 dark:text-secondary-300"
+                class="text-sm font-normal text-secondary-700 dark:text-secondary-300"
               >
                 {textDate}
               </p>
@@ -124,7 +124,7 @@ const textDate = getDateText(pubDate);
 
               return (
               <div class={`flex flex-col gap-3 ${borderCls}`}>
-                {title && (<h3 class="text-secondary-950 dark:text-secondary-50 capitalize text-5xl font-medium"></h3class>{title}</h3>)}
+                {title && (<h3 class="text-secondary-950 dark:text-secondary-50 uppercase text-4xl font-medium"></h3class>{title}</h3>)}
                 {parrafo.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
                 {list && (
                   <ul class="pl-8 flex flex-col gap-4">
