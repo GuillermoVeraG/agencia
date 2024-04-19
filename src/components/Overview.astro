@@ -1,0 +1,169 @@
+---
+import Title from "@/components/TitleVertical.astro";
+
+import ClientIcon from "@/components/icons/Client.astro";
+import AnalyticIcon from "@/components/icons/Analytic.astro";
+---
+
+<section
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+>
+  <div
+    class="w-full h-full max-w-[540px] md:max-w-[720px] lg:max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-center items-center lg:items-start px-4 py-5"
+  >
+    <div class="w-full h-full lg:max-w-[40%] z-20 relative">
+      <img
+        id="overviewImg"
+        src={`${import.meta.env.BASE_URL}/image/story.webp`}
+        alt=""
+        class="object-cover rounded-md w-[650px] h-[692px] lg:max-w-none lg:h-full mb-0"
+      />
+      <img
+        id="overviewImg2"
+        src={`${import.meta.env.BASE_URL}/image/our-values.webp`}
+        alt=""
+        class="absolute -bottom-12 -right-14 md:-right-20 lg:-left-28 h-[15rem] object-cover max-w-none mb-0 rounded-md"
+      />
+      <div
+        id="overviewMenssage"
+        class="absolute size-48 -top-4 right-0 md:-left-10 bg-about-circle dark:bg-about-circle-dark bg-no-repeat bg-center flex flex-col justify-center items-center"
+      >
+        <span
+          class="block text-xs font-bold uppercase mb-2 text-secondary-50 dark:text-secondary-950"
+          >Trusted by</span
+        >
+        <h4
+          class="font-handlee text-4xl text-secondary-50 dark:text-secondary-950 m-0 font-bold"
+        >
+          8900
+        </h4>
+      </div>
+    </div>
+
+    <div class="w-full lg:max-w-[58%] z-30">
+      <div
+        id="overviewContainer"
+        class="bg-transparent lg:bg-secondary-900/30 p-2 lg:p-14 lg:pl-24 mt-10 rounded-md flex flex-col justify-center items-start gap-4"
+      >
+        <Title
+          title="Welcome to Audienze Labs"
+          subtitlePrimary="where gaming dreams"
+          subtitleSecondary="become reality."
+          subtitleBreak
+          desc=""
+        />
+
+        <p
+          class="font-handlee text-secondary-700 dark:text-secondary-300 text-2xl m-0"
+        >
+          Together, let's create the future of play.
+        </p>
+
+        <p
+          class="font-inter text-secondary-900 font-semibold dark:font-normal dark:text-gray-100 text-base leading-9"
+        >
+          Join us as we explore new worlds, forge new connections, and push the
+          boundaries of what's possible in gaming.
+        </p>
+
+        <div
+          class="border-x-0 border-y w-full border-secondary-400 dark:border-secondary-700 py-5 mb-4 flex flex-col lg:flex-row items-center justify-center gap-8"
+        >
+          <div
+            class="w-full lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
+          >
+            <ClientIcon
+              className="size-12 fill-secondary-800 dark:fill-secondary-50 group-hover/abouticon:dark:fill-primary-300 group-hover/abouticon:fill-primary-600"
+            />
+            <h4
+              class="capitalize text-lg font-bold text-secondary-800 dark:text-secondary-50 group-hover/abouticon:text-primary-600 group-hover/abouticon:dark:text-primary-300"
+            >
+              Client-Centric Approach
+            </h4>
+          </div>
+          <div
+            class="w-full lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
+          >
+            <AnalyticIcon
+              className="size-12 stroke-secondary-800 dark:stroke-secondary-50 group-hover/abouticon:stroke-primary-600 group-hover/abouticon:dark:stroke-primary-300"
+            />
+            <h4
+              class="capitalize text-lg font-bold text-secondary-800 dark:text-secondary-50 group-hover/abouticon:text-primary-600 group-hover/abouticon:dark:text-primary-300"
+            >
+              Innovation & Creativity
+            </h4>
+          </div>
+        </div>
+
+        <a
+          href={`${import.meta.env.BASE_URL}/contact`}
+          class="flex justify-center items-center py-5 text-sm bg-primary-600 dark:bg-primary-300 hover:dark:bg-primary-400 hover:bg-primary-700 text-secondary-50 dark:text-secondary-950 cursor-pointer rounded-full uppercase w-full max-w-[15rem] mt-8 transition-colors tracking-[4px]"
+          >discover more</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#overviewImg",
+    {
+      opacity: 0,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#overviewImg",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      opacity: 100,
+      duration: 6,
+    }
+  );
+
+  gsap.fromTo(
+    "#overviewImg2",
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#heroImg",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 0,
+      opacity: 100,
+      duration: 3,
+    }
+  );
+
+  gsap.fromTo(
+    "#overviewContainer",
+    {
+      opacity: 0,
+      x: 200,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#overviewContainer",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 0,
+      opacity: 100,
+      duration: 3,
+    }
+  );
+</script>

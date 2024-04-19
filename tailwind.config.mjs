@@ -66,6 +66,10 @@ export default {
           },
         },
       },
+      backgroundImage: {
+        "about-circle-dark": `url('/agencia/image/about-circle-dark.png')`,
+        "about-circle": `url('/agencia/image/about-circle.png')`,
+      },
     },
   },
   plugins: [],
