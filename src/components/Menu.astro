@@ -10,7 +10,7 @@ const menuItems = [
   { text: "projects", id: `${import.meta.env.BASE_URL}/projects` },
   { text: "team", id: `${import.meta.env.BASE_URL}/team` },
   { text: "blog", id: `${import.meta.env.BASE_URL}/blog` },
-  { text: "prices", id: `${import.meta.env.BASE_URL}/prices` },
+  { text: "services", id: `${import.meta.env.BASE_URL}/services` },
   { text: "contact", id: `${import.meta.env.BASE_URL}/contact` },
 ];
 ---
@@ -22,37 +22,50 @@ const menuItems = [
   <div
     class="flex justify-between items-center max-w-screen-xl w-full mx-auto px-[10%] lg:px-10 z-20"
   >
-    <a href={import.meta.env.BASE_URL} class="flex justify-center items-center group/logo">
-      <AudienzeLabs className="w-full h-auto max-w-16 sm:max-w-20 md:max-w-24 fill-secondary-950 dark:fill-secondary-200 group-hover/logo:fill-primary-600 group-hover/logo:dark:fill-primary-300"></AudienzeLabs>
-      <h1 class="font-stretchpro uppercase text-sm sm:text-lg md:text-2xl text-secondary-950 dark:text-secondary-200 group-hover/logo:text-primary-600 group-hover/logo:dark:text-primary-300">audienze labs</h1>
+    <a
+      href={import.meta.env.BASE_URL}
+      class="flex justify-center items-center group/logo"
+    >
+      <AudienzeLabs
+        className="w-full h-auto max-w-16 sm:max-w-20 md:max-w-24 fill-secondary-950 dark:fill-secondary-200 group-hover/logo:fill-primary-600 group-hover/logo:dark:fill-primary-300"
+      />
+      <h1
+        class="font-stretchpro uppercase text-sm sm:text-lg md:text-2xl text-secondary-950 dark:text-secondary-200 group-hover/logo:text-primary-600 group-hover/logo:dark:text-primary-300"
+      >
+        audienze labs
+      </h1>
     </a>
     <div class="flex justify-end items-center">
       <nav class="hidden lg:flex gap-4">
         {
-          menuItems.map(({text, id}) => {
-              const isActive = Astro.url.pathname == id ? "active-menu" : "";
+          menuItems.map(({ text, id }) => {
+            const isActive = Astro.url.pathname == id ? "active-menu" : "";
 
-              return (
-              <div class=`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`>
+            return (
+              <div
+                class={`flex flex-col justify-center items-center overflow-hidden group/menu ${isActive}`}
+              >
                 <a
                   href={id}
                   class="uppercase text-secondary-950 dark:text-secondary-50 group-hover/menu:dark:text-primary-300 group-[.active-menu]/menu:dark:text-primary-300 group-hover/menu:text-primary-600 group-[.active-menu]/menu:text-primary-600 pt-4 pb-2 text-sm font-normal dark:font-light leading-5"
                 >
                   {text}
                 </a>
-                <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-600 dark:from-primary-300 from-25% to-transparent -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300"></div>
-            </div>
-            )
-        })
+                <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-600 dark:from-primary-300 from-25% to-transparent -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300" />
+              </div>
+            );
+          })
         }
       </nav>
 
-        <div>
-          <button id="menuNavMobileBut" class="lg:hidden group/mobile">
-            <MenuButton className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-primary-50 stroke-2" />
-          </button>
-          <SwitchMode/>
-        </div>
+      <div>
+        <button id="menuNavMobileBut" class="lg:hidden group/mobile">
+          <MenuButton
+            className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-primary-50 stroke-2"
+          />
+        </button>
+        <SwitchMode />
+      </div>
     </div>
   </div>
   <nav
@@ -64,7 +77,7 @@ const menuItems = [
     -translate-y-[120vh] duration-700"
   >
     {
-      menuItems.map(({text, id}) => (
+      menuItems.map(({ text, id }) => (
         <a
           href={id}
           class="font-archivo uppercase text-secondary-950 dark:text-secondary-50 hover:text-primary-600 hover:dark:text-primary-300 py-4 text-sm font-normal dark:font-light leading-5"
