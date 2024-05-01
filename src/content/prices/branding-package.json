@@ -1,12 +1,15 @@
 {
-  "title": "Premium Design & Marketing Package",
-  "desc": "An all-in-one package for businesses looking for a complete design and marketing solution.",
-  "price": "$ 2,399.00 USD",
-  "slug": "premium-design-marketing-package",
+  "title": "Branding Package",
+  "desc": "Ideal for startups and small businesses seeking to establish a strong brand identity.",
+  "price": "$ 599.00 USD",
+  "slug": "branding-package",
   "items": [
-    "Website Design & Development",
-    "Social Media Graphics",
-    "SEO Services"
+    "Logo Design",
+    "identity branding",
+    "social media branding",
+    "merch branding",
+    "web branding",
+    "design"
   ],
 
   "body": [

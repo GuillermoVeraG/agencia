@@ -1,9 +1,16 @@
 {
-  "title": "Professional Web Design Package",
+  "title": "Web Develop Package",
   "desc": "Perfect for businesses looking for a user-friendly and visually appealing website.",
   "price": "$ 1,499.00 USD",
-  "slug": "professional-web-design-package",
-  "items": ["Custom Website Design", "SEO Optimization", "10 Pages"],
+  "slug": "web-develop-package",
+  "items": [
+    "Research & Discovery",
+    "UX/UI Design & prototyping",
+    "Web Development",
+    "Web Testing & QA",
+    "Web Maintenance & Hosting",
+    "AI Development"
+  ],
 
   "body": [
     {
