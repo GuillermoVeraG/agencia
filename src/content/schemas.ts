@@ -1,5 +1,19 @@
 import { z } from "astro:content";
 
+const list = z.object({
+  title: z.string(),
+  txt: z.string(),
+});
+
+const body = z.array(
+  z.object({
+    title: z.string(),
+    parrafo: z.array(z.string()),
+    border: z.boolean(),
+    list: z.array(list),
+  })
+);
+
 export const blogSchema = z.object({
   id: z.number(),
   img: z.object({
@@ -22,34 +36,21 @@ export const blogSchema = z.object({
     bio: z.string(),
   }),
 
-  body: z.array(
-    z.object({
-      title: z.string(),
-      parrafo: z.array(z.string()),
-      border: z.boolean(),
-      list: z.array(z.string()),
-    })
-  ),
+  body: body,
 
   conclusion: z.array(z.string()),
 });
 
-export const priceSchema = z.object({
+export const serviceSchema = z.object({
   title: z.string(),
   desc: z.string(),
+  largedesc: z.array(z.string()),
   price: z.string(),
   slug: z.string(),
 
   items: z.array(z.string()),
 
-  body: z.array(
-    z.object({
-      title: z.string(),
-      parrafo: z.array(z.string()),
-      border: z.boolean(),
-      list: z.array(z.string()),
-    })
-  ),
+  body: body,
 });
 
 export const projectSchema = z.object({
@@ -61,19 +62,18 @@ export const projectSchema = z.object({
   client: z.string(),
   pubDate: z.string(),
   gallery: z.array(z.string()),
-  body: z.array(
-    z.object({
-      title: z.string(),
-      parrafo: z.array(z.string()),
-      border: z.boolean(),
-      list: z.array(z.string()),
-    })
-  ),
+
+  body: body,
 });
+
+export interface blogItemList {
+  title: string;
+  txt: string;
+}
 
 export interface blogItemBody {
   title: string;
   parrafo: Array<string>;
-  list: Array<string>;
+  list: Array<blogItemList>;
   border: boolean;
 }

@@ -1,0 +1,55 @@
+---
+import GradientLetters from "@/components/GradientLetters.astro";
+---
+
+<section class="w-full flex justify-between items-center mx-auto mt-20">
+  <div
+    class="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative bg-about-banner min-h-[38rem]"
+  >
+    <div id="aboutText" class="flex flex-col text-left gap-0 mt-14 w-full">
+      <div class="flex flex-col">
+        <div
+          class="font-stretchpro text-white uppercase my-0 text-5xl lg:text-7xl lg:leading-[3rem] tracking-tight"
+        >
+          About us
+        </div>
+        <GradientLetters size="md" name="who we are" />
+      </div>
+      <div
+        class="max-w-[26rem] text-gray-300 tracking-wide text-base text-pretty"
+      >
+        At Audienze Labs, we bring your gaming vision to life with immersive
+        experiences that resonate. Guided by innovation and data-driven
+        insights, we create journeys that leave a lasting impact on every
+        player.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#aboutText",
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#aboutText",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 10,
+      opacity: 100,
+      duration: 2,
+    }
+  );
+</script>

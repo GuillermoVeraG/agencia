@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-
-import type {blogItemBody} from "@/content/schemas";
+import Body from "@/components/Body.astro";
+import Back from "@/components/Back.astro";
 
 export async function getStaticPaths() {
-  const PRICES = await getCollection("prices");
+  const SERVICES = await getCollection("services");
 
-  return PRICES.map(({ data }) => {
+  return SERVICES.map(({ data }) => {
     return {
       params: { slug: data.slug },
       props: data,
@@ -15,57 +15,35 @@ export async function getStaticPaths() {
   });
 }
 
-const { title, slug, price, items, body } = Astro.props;
+const { title, desc, body } = Astro.props;
 ---
 
-<Layout title={`Project - ${title}`}>
+<Layout title={`Service ${title}`}>
   <main class="w-full mt-40">
     <section class="w-full my-16">
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10">
+        <Back href="/services" />
+
         <div
-          class="flex flex-col md:flex-row justify-center items-center gap-8"
+          class="flex flex-col items-center justify-center text-center md:text-left"
         >
-          <div class="flex flex-col items-center justify-center text-center md:text-left">
-            <h2
-              transition:name={`prices-title-${slug}`}
-              class="font-stretchpro uppercase text-secondary-950 dark:text-secondary-50 text-2xl md:text-3xl lg:text-4xl font-medium my-0 tracking-tight"
-            >
-              {title}
+          <h4
+            class="font-stretchpro uppercase text-xl text-black dark:text-brand_cyan"
+          >
+            {title}
+          </h4>
 
-              <br />
-
-              <span
-                transition:name={`prices-price-${slug}`}
-                class="font-poppins text-primary-600 dark:text-primary-300 font-thin italic"
-                >{price}</span
-              >
-            </h2>
-          </div>
-          <ul transition:name={`prices-list-${slug}`} class="flex flex-col justify-center items-center gap-4 mt-6">
-            {items.map((item) => (
-              <li class="capitalize text-lg text-secondary-950 dark:text-secondary-50 py-3 border-b border-primary-600 dark:border-primary-300 w-full">
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p
+            class="text-gray-500 dark:text-gray-500 text-sm max-w-sm text-center"
+          >
+            {desc}
+          </p>
         </div>
-        
-        <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] flex flex-col justify-start items-center gap-8 mt-20">
-          {body.map(({ title, parrafo, border, list }:blogItemBody) => 
-              {
-                const borderCls = border ? "border-l-4 border-primary-600 dark:border-primary-300 pl-2" : "";
-  
-                return (
-                <div class={`flex flex-col gap-3 ${borderCls}`}>
-                  {title && (<h3 class="text-secondary-950 dark:text-secondary-50 uppercase text-4xl font-medium"></h3class>{title}</h3>)}
-                  {parrafo.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
-                  {list && (
-                    <ul class="pl-8 flex flex-col gap-4">
-                      {list.map((txt:string) => <li class="text-secondary-600 dark:text-secondary-100/70 text-base">• {txt}</li>)}
-                    </ul>
-                  )}
-                </div>);
-              })}
+
+        <div
+          class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] mt-20"
+        >
+          <Body body={body} />
         </div>
       </div>
     </section>

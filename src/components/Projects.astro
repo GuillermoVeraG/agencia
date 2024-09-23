@@ -2,7 +2,11 @@
 import { getCollection } from "astro:content";
 import Title from "@/components/Titles.astro";
 
-const PROJECTS = await getCollection("projects");
+const { showAll } = Astro.props;
+
+const allProjects = await getCollection("projects");
+
+const PROJECTS = showAll ? allProjects : allProjects.slice(0, 2);
 ---
 
 <section
@@ -26,33 +30,33 @@ const PROJECTS = await getCollection("projects");
       class="flex flex-row flex-wrap justify-center items-center gap-4 mt-20"
     >
       {
-        PROJECTS.map(({ data }) => (
-          <a href={`${import.meta.env.BASE_URL}/projects/${data.slug}`}>
+        PROJECTS.map(({ data }, index) => (
+          <a href={`/projects/${data.slug}`} class="group/projects">
             <div class="flex flex-col justify-center items-center relative text-left w-full max-w-sm lg:max-w-xl h-[480px] rounded-lg overflow-hidden">
               <img
                 transition:name={`projects-img-${data.slug}`}
-                src={`${import.meta.env.BASE_URL}/${data.img}`}
-                class="object-cover w-full h-full"
+                src={`${data.img}`}
+                class="object-cover w-full h-full group-hover/projects:scale-110 transition-transform"
               />
-              <div class="z-10 absolute inset-0 bg-gradient-to-b from-transparent from-50% to-secondary-950" />
-              <div class="z-20 flex flex-col justify-start items-center px-8 w-full gap-4 text-center absolute bottom-8">
+              {index % 2 == 0 && (
+                <div class="z-10 absolute inset-0 group-hover/projects:opacity-0 opacity-100 transition-opacity bg-gradient-to-b from-[rgba(22,209,240,0.4)] via-55% via-[rgba(121,26,242,0.5)] to-[rgba(24,64,255,0.6)]" />
+              )}
+              {index % 2 != 0 && (
+                <div class="z-10 absolute inset-0 group-hover/projects:opacity-0 opacity-100 transition-opacity bg-gradient-to-t from-[rgba(22,209,240,0.4)] via-55% via-[rgba(121,26,242,0.5)] to-[rgba(24,64,255,0.6)]" />
+                /*rgba(250,34,202,0.6)*/
+              )}
+              <div class="z-20 flex flex-col justify-start items-start px-8 w-full gap-4 absolute bottom-8">
                 <h4
                   transition:name={`projects-title-${data.slug}`}
-                  class="text-secondary-50 font-stretchpro text-xl uppercase font-medium my-0 tracking-tight"
+                  class="text-white font-stretchpro text-xl uppercase font-medium my-0 tracking-tight max-w-sm"
                 >
                   {data.title}
                 </h4>
-                <p
-                  transition:name={`projects-desc-${data.slug}`}
-                  class="text-secondary-400 mb-0 text-base font-light"
-                >
-                  {data.desc}
-                </p>
               </div>
-              <div class="flex justify-start items-center gap-4 absolute top-8 left-8">
+              <div class="flex justify-start items-center gap-4 absolute top-8 left-8 z-20">
                 {data.tags.map((cat: string) => (
-                  <div class="flex justify-start items-start py-2 px-4 bg-secondary-950/50 border border-primary-300 rounded-md">
-                    <p class="font-stretchpro text-xs mb-0 font-light text-secondary-200 uppercase">
+                  <div class="flex justify-start items-start py-2 px-4 bg-white/60 border border-white rounded-md">
+                    <p class="font-stretchpro text-xs mb-0 font-light text-brand uppercase">
                       {cat}
                     </p>
                   </div>

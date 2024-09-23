@@ -1,0 +1,67 @@
+---
+import GradientLetters from "@/components/GradientLetters.astro";
+---
+
+<section class="w-full flex justify-between items-center mx-auto mt-20">
+  <div
+    class="flex flex-col lg:flex-row justify-between items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative bg-header-banner min-h-[38rem]"
+  >
+    <div id="heroText" class="flex flex-col text-left gap-8 mt-14 w-full">
+      <div class="flex flex-col">
+        <div
+          class="font-stretchpro text-white uppercase my-0 text-5xl lg:text-7xl lg:leading-[3rem] tracking-tight"
+        >
+          Unleash
+        </div>
+        <GradientLetters size="md" name="the power of" />
+        <div
+          class="font-stretchpro text-white uppercase my-0 font-medium text-5xl lg:text-7xl lg:leading-[3rem] tracking-tight"
+        >
+          Insights<span class="text-primary-600 dark:text-primary-300">.</span>
+        </div>
+      </div>
+      <div
+        class="max-w-[26rem] text-gray-300/70 tracking-wide text-base text-pretty"
+      >
+        With data-driven insights as power-ups, we empower you to reshape gaming
+        worlds!
+      </div>
+      <div
+        class="max-w-[26rem] text-gray-300/70 tracking-wide text-base text-pretty"
+      >
+        <a
+          href="/services"
+          class="bg-brand-600 hover:bg-brand-900 px-8 py-2 text-white text-xs font-light rounded-3xl"
+          >Our Services</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    "#heroText",
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      scrollTrigger: {
+        trigger: "#heroText",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none none",
+      },
+      x: 10,
+      opacity: 100,
+      duration: 2,
+    }
+  );
+</script>

@@ -1,0 +1,66 @@
+{
+  "title": "Data Analytics",
+  "desc": "Transform raw data into actionable insights with our cutting-edge data analytics services.",
+  "largedesc": [
+    "Our Data Analytics services at Audienze Labs empower you to make informed decisions by turning complex data into clear, actionable insights. We offer Basic Player Behavior Analysis to decode player engagement and retention metrics, providing you with the knowledge to enhance your gaming experiences.",
+    "Our Audienze Labs - Service and Prices Dashboard Creation service designs personalized, interactive dashboards that allow you to visualize data trends and metrics effectively, making it easier to track performance and make strategic decisions."
+  ],
+  "price": "$ 2,399.00 USD",
+  "slug": "data-analytics",
+  "items": [
+    "Data Discovery",
+    "Basic Player Behavior Analysis",
+    "Interactive Dashboard Creation"
+  ],
+
+  "body": [
+    {
+      "title": "1. Basic Player Behavior Analysis",
+      "parrafo": [
+        "This service focuses on understanding how players interact with your game, identifying key engagement metrics, and providing actionable insights to optimize player retention and satisfaction.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Player Engagement Metrics: ($1,000 - $2,000)",
+          "txt": "We analyze key metrics such as session duration, frequency of play, and progression patterns to understand how players engage with your game."
+        },
+        {
+          "title": "Player Segmentation: ($1,500 - $2,000)",
+          "txt": "Segmenting your player base into meaningful groups based on behavior, preferences, and spending patterns to tailor your game experience."
+        },
+        {
+          "title": "Player Feedback Analysis: ($1,000 - $1,500)",
+          "txt": "Analyzing player reviews, ratings, and in-game feedback to identify areas for improvement and opportunities for new features."
+        }
+      ]
+    },
+    {
+      "title": "2. Dashboard Creation",
+      "parrafo": [
+        "This service is dedicated to creating dynamic, user-friendly dashboards that visualize your data and make it easy to monitor performance and make informed decisions.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Dashboard Design: ($1,000 - $2,500)",
+          "txt": "Designing a visually appealing, intuitive dashboard tailored to your specific data needs, making it easy to track key performance indicators (KPIs)."
+        },
+        {
+          "title": "KPI Monitoring: ($1,000 - $2,000)",
+          "txt": "Setting up and configuring dashboards to monitor the most critical KPIs, such as player engagement, retention, and revenue metrics."
+        },
+        {
+          "title": "Trend Analysis Visualization: ($1,500 - $3,000)",
+          "txt": "Creating visual tools to track trends over time, helping you identify patterns and make strategic decisions based on historical data."
+        },
+        {
+          "title": "User Access & Customization: ($1,000 - $2,000)",
+          "txt": "Enabling different user roles and customization options, so each team member can view and interact with the data most relevant to their responsibilities."
+        }
+      ]
+    }
+  ]
+}

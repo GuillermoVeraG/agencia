@@ -1,0 +1,163 @@
+{
+  "title": "Branding",
+  "desc": "Unleash your brand’s full potential with our comprehensive branding and design services, crafted to make a lasting impact.",
+  "largedesc": [
+    "At Audienze Labs, our Brand Strategy & Design services are dedicated to defining, amplifying, and visually expressing your brand’s unique identity. We begin with Brand Discovery, where we uncover the core attributes that make your brand stand out. Next, Brand Development strategically positions these attributes in the market to resonate with your audience.",
+    "Through Brand Identity, we create compelling visual and narrative elements, including logos, color schemes, and visual guidelines, ensuring your brand is instantly recognizable and consistent across all platforms. Our Brand Messaging services further solidify your brand’s voice, making it powerful and consistent wherever it’s communicated.",
+    "Finally, we offer Branding Collateral to develop a complete suite of materials that effectively convey your brand’s message."
+  ],
+  "price": "$ 599.00 USD",
+  "slug": "branding",
+  "items": [
+    "Brand Discovery",
+    "Brand Development",
+    "Brand Identity",
+    "Brand Messaging",
+    "Branding Collateral"
+  ],
+
+  "body": [
+    {
+      "title": "1. Brand Discovery",
+      "parrafo": [
+        "This phase involves uncovering the core attributes and values that make your brand unique and sets the foundation for all subsequent branding efforts.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Brand Audit: ($1,000 - $2,000)",
+          "txt": "Comprehensive analysis of your current brand positioning, visual identity, and messaging to identify strengths and areas for improvement."
+        },
+        {
+          "title": "Competitive Analysis: ($1,000 - $2,500)",
+          "txt": "In-depth research into your competitors’ branding strategies to uncover opportunities and differentiate your brand in the marketplace."
+        },
+        {
+          "title": "Target Audience Research: ($1,000 - $2,500)",
+          "txt": "Understanding your audience’s needs, preferences, and behaviors to align your brand strategy with their expectations."
+        },
+        {
+          "title": "Brand Attribute Definition: ($1,500 - $2,500)",
+          "txt": "Identifying and defining the core attributes and values that make your brand unique and compelling."
+        },
+        {
+          "title": "Vision, Mission, and Values Development: ($1,500 - $2,500)",
+          "txt": "Crafting or refining your brand’s vision, mission, and values to ensure they resonate with your target audience and guide all branding efforts."
+        }
+      ]
+    },
+    {
+      "title": "2. Brand Development",
+      "parrafo": [
+        "This phase is focused on strategically positioning your brand in the market to ensure it resonates with your target audience and stands out from the competition.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Brand Positioning Strategy: ($2,000 - $3,500)",
+          "txt": "Developing a clear and compelling positioning strategy that defines where your brand fits in the marketplace and how it differs from competitors."
+        },
+        {
+          "title": "Value Proposition Creation: ($1,500 - $3,000)",
+          "txt": "Articulating the unique value your brand offers to customers, making it clear why they should choose your brand over others."
+        },
+        {
+          "title": "Brand Storytelling: ($2,000 - $4,000)",
+          "txt": "Crafting a powerful brand narrative that communicates your brand’s history, purpose, and values in a way that resonates with your audience."
+        },
+        {
+          "title": "Market Entry Strategy: ($2,500 - $4,000)",
+          "txt": "Developing strategies for introducing or reintroducing your brand to the market, ensuring maximum impact and alignment with your business goals."
+        }
+      ]
+    },
+    {
+      "title": "3. Brand Identity",
+      "parrafo": [
+        "This phase involves creating the visual and narrative elements that make your brand instantly recognizable and memorable.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Logo Design: ($2,000 - $4,000)",
+          "txt": "Creating a unique and impactful logo that visually represents your brand’s identity and values."
+        },
+        {
+          "title": "Color Scheme Development: ($1,000 - $2,000)",
+          "txt": "Selecting a color palette that aligns with your brand’s personality and evokes the desired emotional response from your audience."
+        },
+        {
+          "title": "Typography & Font Selection: ($1,000 - $2,500)",
+          "txt": "Choosing fonts that complement your brand’s identity and ensure readability across all platforms."
+        },
+        {
+          "title": "Visual Style Guide: ($2,500 - $4,000)",
+          "txt": "Developing a comprehensive guide that details the visual elements of your brand, including logo usage, color schemes, typography, and imagery guidelines."
+        },
+        {
+          "title": "Brand Voice & Tone Guide: ($1,500 - $3,000)",
+          "txt": "Establishing guidelines for how your brand communicates, ensuring consistency in messaging across all channels and platforms."
+        }
+      ]
+    },
+    {
+      "title": "4. Brand Messaging",
+      "parrafo": [
+        "This phase solidifies your brand’s voice and ensures that your messaging is consistent, powerful, and resonates with your audience.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Messaging Framework Development: (Custom pricing based on scope)",
+          "txt": "Creating a messaging framework that aligns with your brand’s positioning and resonates with your target audience across all channels."
+        },
+        {
+          "title": "Tagline & Slogan Creation: ($1,000 - $2,000)",
+          "txt": "Developing a memorable and impactful tagline or slogan that encapsulates your brand’s essence and value proposition."
+        },
+        {
+          "title": "Content Strategy Development: (Custom pricing based on scope)",
+          "txt": "Planning and developing content strategies that align with your brand messaging and support your overall business goals."
+        },
+        {
+          "title": "Campaign Messaging: (Custom pricing based on scope)",
+          "txt": "Crafting messaging for specific campaigns that align with your brand voice and objectives, ensuring maximum impact."
+        }
+      ]
+    },
+    {
+      "title": "5. Branding Collateral",
+      "parrafo": [
+        "This phase focuses on developing a suite of branding materials that effectively communicate your brand’s message across all platforms.",
+        "Services Included:"
+      ],
+      "border": false,
+      "list": [
+        {
+          "title": "Business Card Design: ($500 - $1,500)",
+          "txt": "Designing business cards that reflect your brand’s identity and leave a lasting impression."
+        },
+        {
+          "title": "Brochure & Flyer Design: ($1,000 - $2,500)",
+          "txt": "Creating visually appealing and informative brochures and flyers that communicate your brand’s message and offerings."
+        },
+        {
+          "title": "Presentation Templates: ($1,000 - $2,500)",
+          "txt": "Developing branded presentation templates that ensure consistency and professionalism in all business communications."
+        },
+        {
+          "title": "Packaging Design: ($2,000 - $4,000)",
+          "txt": "Designing product packaging that aligns with your brand identity and enhances the customer experience."
+        },
+        {
+          "title": "Social Media Graphics: ($500 - $2,000)",
+          "txt": "Creating branded graphics for social media platforms that drive engagement and reinforce your brand’s identity."
+        }
+      ]
+    }
+  ]
+}

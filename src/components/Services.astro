@@ -1,51 +1,10 @@
 ---
-import HorizontalSplit from "@/components/icons/HorizontalSplit.astro";
-import Details from "@/components/icons/Details.astro";
-import Deblur from "@/components/icons/Deblur.astro";
+import { getCollection } from "astro:content";
+import TitleV from "@/components/TitleVertical.astro";
+import ArrowRight from "@/components/icons/ArrowRight.astro";
+import Button from "@/components/Button.astro";
 
-import Title from "@/components/Titles.astro";
-
-const SERVICES = [
-  {
-    icon: "HorizontalSplit",
-    title: "data analytics",
-    desc: "A passion for design that leaves a lasting impact with your audience.",
-    list: [
-      "Data Transformation",
-      "Advanced Data Analytics",
-      "Data Visualization",
-      "Enterprise Data Management",
-      "Data Democratization",
-      "Industrialized Solutions",
-    ],
-  },
-  {
-    icon: "Details",
-    title: "branding",
-    desc: "The art of shaping perceptions, emotions, and experiences.",
-    list: [
-      "Logo Design",
-      "identity branding",
-      "social media branding",
-      "merch branding",
-      "web branding",
-      "design",
-    ],
-  },
-  {
-    icon: "Deblur",
-    title: "web develop",
-    desc: "Research & Develop the core features and functionalities of an idea to a web.",
-    list: [
-      "Research & Discovery",
-      "UX/UI Design & prototyping",
-      "Web Development",
-      "Web Testing & QA",
-      "Web Maintenance & Hosting",
-      "AI Development",
-    ],
-  },
-];
+const SERVICES = await getCollection("services");
 ---
 
 <section
@@ -55,10 +14,11 @@ const SERVICES = [
     id="servicesTitle"
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
-    <Title
-      title="Where Your Gaming "
-      titleBlue="Journey Begins"
-      subtitle="vision & craft"
+    <TitleV
+      titlePrimary="Where Your Gaming "
+      titleSecondary="Journey Begins"
+      titleBreak
+      titleColor
       desc="From crafting brands to crafting captivating user experiences, Audienze Labs excels in transforming ideas into immersive realities."
       layout="right"
     />
@@ -66,51 +26,31 @@ const SERVICES = [
 
   <div
     id="servicesContainer"
-    class="flex flex-col md:flex-row justify-center items-center md:flex-wrap md:items-start gap-4 w-full mt-20"
+    class="flex flex-col md:flex-row justify-center items-center md:flex-wrap md:items-start gap-4 w-full mt-20 max-w-5xl"
   >
     {
-      SERVICES.map(({ icon, title, desc, list }) => (
-        <div class="relative overflow-hidden rounded-lg group/card">
-          <div class="flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-secondary-900/30 py-12 px-9 text-left">
-            {icon == "HorizontalSplit" && (
-              <HorizontalSplit className="fill-primary-600 dark:fill-primary-300 size-12" />
-            )}
-            {icon == "Details" && (
-              <Details className="fill-primary-600 dark:fill-primary-300 size-12" />
-            )}
-            {icon == "Deblur" && (
-              <Deblur className="stroke-primary-600 dark:stroke-primary-300 size-12" />
-            )}
+      SERVICES.map(({ data }) => (
+        <div class="relative overflow-hidden rounded-2xl hover:drop-shadow-md group/card hover:cursor-pointer">
+          <div class="flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-gray-50 dark:bg-brand-950 group-hover/card:bg-white group-hover/card:dark:bg-brand-800/10 py-12 px-9 text-left">
             <div class="flex flex-col justify-center items-start gap-4 text-left w-full">
-              <h4 class="uppercase font-stretchpro text-2xl font-medium my-0 text-secondary-950 dark:text-secondary-50">
-                {title}
+              <h4 class="uppercase font-stretchpro text-2xl font-medium my-0 text-black dark:text-brand_cyan">
+                {data.title}
               </h4>
-              <p class="text-base text-secondary-700 dark:text-secondary-300">
-                {desc}
-              </p>
+              <p class="text-base text-black dark:text-white">{data.desc}</p>
             </div>
-          </div>
-          <div class="absolute top-0 left-0 flex flex-col justify-between items-start h-[480px] w-full max-w-xs md:max-w-[23rem] bg-primary-600 dark:bg-primary-300 py-12 px-9 text-left [transform:rotateY(90deg)] group-hover/card:[transform:rotateY(0deg)] transition-transform duration-500 ease-in-out">
-            {icon == "HorizontalSplit" && (
-              <HorizontalSplit className="fill-secondary-50 dark:fill-secondary-950 size-12" />
-            )}
-            {icon == "Details" && (
-              <Details className="fill-secondary-50 dark:fill-secondary-950 size-12" />
-            )}
-            {icon == "Deblur" && (
-              <Deblur className="stroke-secondary-50 dark:stroke-secondary-950 size-12" />
-            )}
-            <div class="flex flex-col justify-center items-start gap-4 text-left w-full">
-              <h4 class="uppercase font-stretchpro text-2xl font-medium my-0 text-secondary-50 dark:text-secondary-950">
-                {title}
-              </h4>
+            <div>
+              <p class="text-base text-black dark:text-white">What we do</p>
               <ul class="">
-                {list.map((item) => (
-                  <li class="text-base text-secondary-200 dark:text-secondary-800 font-medium dark:font-light capitalize">
-                    • {item}
+                {data.items.map((item) => (
+                  <li class="text-base text-black dark:text-white font-medium dark:font-light capitalize flex flex-row">
+                    <ArrowRight className="stroke-brand-500 dark:stroke-brand_cyan" />
+                    {item}
                   </li>
                 ))}
               </ul>
+            </div>
+            <div>
+              <Button href={`/services/${data.slug}`} text="Learn More" />
             </div>
           </div>
         </div>

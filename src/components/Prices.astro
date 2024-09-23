@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import TitleVertical from "./TitleVertical.astro";
+import TitleVertical from "@/components/TitleVertical.astro";
+import ArrowRight from "@/components/icons/ArrowRight.astro";
 
-const PRICES = await getCollection("prices");
+const SERVICES = await getCollection("services");
 ---
 
 <section
@@ -12,52 +13,87 @@ const PRICES = await getCollection("prices");
     class="flex flex-col justify-center items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10"
   >
     <TitleVertical
-      subtitlePrimary="Our Basic"
-      subtitleSecondary="Prices"
-      title="options"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
-      subtitleBreak
+      titlePrimary="Where your gaming"
+      titleSecondary=" journey begins"
+      titleBreak
+      titleColor
+      desc="Our Services"
+      layout="left"
     />
   </div>
 
   <div
-    class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-7xl w-full mx-auto px-[10%] lg:px-10 mt-20"
+    class="flex flex-col flex-wrap justify-center items-center gap-8 w-full mx-auto mt-20"
   >
     {
-      PRICES.map(({ data }) => (
-        <div class="w-full min-w-[400px] md:min-w-80 md:max-w-[30%] bg-secondary-900/40 rounded-lg">
-          <div class="flex flex-col justify-center items-center text-center gap-8 rounded-lg py-16 px-8">
+      SERVICES.map(({ data }, index) => (
+        <div
+          class={`w-full p-20 flex flex-row justify-center items-start gap-16  ${index % 2 == 0 ? "bg-none" : "bg-brand-100/60 dark:bg-brand_purple-950"}`}
+        >
+          <div class="flex flex-col gap-4">
             <h4
               transition:name={`prices-title-${data.slug}`}
-              class="font-stretchpro uppercase text-xl text-secondary-950 dark:text-secondary-50 min-h-24"
+              class="font-stretchpro uppercase text-xl text-black dark:text-white"
             >
               {data.title}
             </h4>
-            <h2
-              transition:name={`prices-price-${data.slug}`}
-              class="capitalize text-xl text-primary-600 dark:text-primary-300"
+            <div class="text-wrap mb-0 text-sm font-normal text-gray-700 dark:text-gray-300 flex flex-col gap-4 max-w-96">
+              {data.largedesc.map((text) => (
+                <p>{text}</p>
+              ))}
+            </div>
+          </div>
+          <div
+            class={`flex flex-col gap-3 rounded-2xl p-12 ${index % 2 == 0 ? "bg-white drop-shadow-md" : "bg-white drop-shadow-md dark:bg-brand_purple-950 dark:border-2 dark:border-brand_purple-400"} max-w-96`}
+          >
+            <h4
+              class={`font-stretchpro uppercase text-xl ${index % 2 == 0 ? "text-black dark:text-black" : "text-brand dark:text-white"}`}
             >
-              {data.price}
-            </h2>
-            <p class="text-secondary-800 dark:text-secondary-100/70 text-base min-h-24">
+              {data.title}
+            </h4>
+
+            <p
+              class={`${index % 2 == 0 ? "text-gray-500 dark:text-gray-500" : "text-gray-500 dark:text-gray-300"} text-sm`}
+            >
               {data.desc}
             </p>
-            <ul
-              transition:name={`prices-list-${data.slug}`}
-              class="flex flex-col justify-center items-center gap-4"
+
+            <h2
+              transition:name={`prices-price-${data.slug}`}
+              class={`capitalize text-xl font-bold ${index % 2 == 0 ? "text-black" : "text-black dark:text-white"} py-4`}
             >
+              <span
+                class={`font-thin pr-4 text-base ${index % 2 == 0 ? "text-gray-500 dark:text-gray-500" : "text-gray-500 dark:text-gray-300"}`}
+              >
+                From
+              </span>
+              {data.price}
+            </h2>
+
+            <a
+              href={`/services/${data.slug}`}
+              class={`capitalize text-center border-solid border-2 px-8 py-2 ${index % 2 == 0 ? "border-brand-500 dark:border-brand_cyan text-brand-500 dark:text-brand_cyan hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan" : "border-brand-500 dark:border-brand_purple-400 text-brand-500 dark:text-brand_purple-200 hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_purple-400"} text-xs font-light rounded-xl`}
+            >
+              discover more
+            </a>
+
+            <h2
+              class={`capitalize text-xl font-bold ${index % 2 == 0 ? "text-black" : "text-black dark:font-semibold dark:text-white"} py-4`}
+            >
+              What we do
+            </h2>
+            <ul class="flex flex-col justify-center items-center gap-3">
               {data.items.map((item) => (
-                <li class="capitalize text-lg text-secondary-950 dark:text-secondary-50 py-3 border-b border-primary-600 dark:border-primary-300 w-full">
+                <li
+                  class={`capitalize text-sm ${index % 2 == 0 ? "text-black" : "text-black dark:text-gray-300"} w-full flex flex-row`}
+                >
+                  <ArrowRight
+                    className={`${index % 2 == 0 ? "stroke-brand-500 dark:stroke-brand_cyan" : "stroke-brand-500 dark:stroke-brand_purple-400"}`}
+                  />
                   {item}
                 </li>
               ))}
             </ul>
-            <a
-              href={`${import.meta.env.BASE_URL}/services/${data.slug}`}
-              class="capitalize flex justify-center items-center rounded-3xl pt-3 px-6 cursor-pointer text-secondary-50 dark:text-secondary-950/60 bg-primary-600 dark:bg-primary-300 hover:text-secondary-50 hover:bg-secondary-900 hover:dark:text-secondary-50 hover:dark:bg-secondary-900 text-sm pb-3 mt-4 w-fit"
-            >
-              Get Started
-            </a>
           </div>
         </div>
       ))

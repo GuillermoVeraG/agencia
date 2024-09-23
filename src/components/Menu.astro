@@ -1,23 +1,24 @@
 ---
 import MenuButton from "@/components/icons/Menu.astro";
+import Button from "@/components/Button.astro";
 
 import SwitchMode from "@/components/SwitchMode.astro";
 import AudienzeLabs from "@/components/icons/AudienzeLabs.astro";
 
 const menuItems = [
-  { text: "home", id: `${import.meta.env.BASE_URL}/` },
-  { text: "about", id: `${import.meta.env.BASE_URL}/about` },
-  { text: "projects", id: `${import.meta.env.BASE_URL}/projects` },
-  { text: "team", id: `${import.meta.env.BASE_URL}/team` },
-  { text: "blog", id: `${import.meta.env.BASE_URL}/blog` },
-  { text: "services", id: `${import.meta.env.BASE_URL}/services` },
-  { text: "contact", id: `${import.meta.env.BASE_URL}/contact` },
+  { text: "home", id: `/` },
+  { text: "about", id: `/about` },
+  { text: "projects", id: `/projects` },
+  //{ text: "team", id: `/team` },
+  { text: "blog", id: `/blog` },
+  { text: "services", id: `/services` },
+  //{ text: "contact", id: `/contact` },
 ];
 ---
 
 <section
   id="header-nav"
-  class="fixed top-0 left-0 w-full flex justify-between items-center mx-auto py-5 z-50"
+  class="fixed top-0 left-0 w-full flex justify-between items-center mx-auto py-5 z-50 bg-gray-50 dark:bg-brand-950"
 >
   <div
     class="flex justify-between items-center max-w-screen-xl w-full mx-auto px-[10%] lg:px-10 z-20"
@@ -27,16 +28,17 @@ const menuItems = [
       class="flex justify-center items-center group/logo"
     >
       <AudienzeLabs
-        className="w-full h-auto max-w-16 sm:max-w-20 md:max-w-24 fill-secondary-950 dark:fill-secondary-200 group-hover/logo:fill-primary-600 group-hover/logo:dark:fill-primary-300"
+        className="w-full h-auto max-w-16 sm:max-w-20 md:max-w-24 fill-brand dark:fill-white group-hover/logo:fill-brand-500 group-hover/logo:dark:fill-brand_cyan-500"
       />
       <h1
-        class="font-stretchpro uppercase text-sm sm:text-lg md:text-2xl text-secondary-950 dark:text-secondary-200 group-hover/logo:text-primary-600 group-hover/logo:dark:text-primary-300"
+        class="font-stretchpro uppercase text-sm sm:text-md xl:text-lg text-brand dark:text-white group-hover/logo:text-brand-500 group-hover/logo:dark:text-brand_cyan-500"
       >
         audienze labs
       </h1>
     </a>
+
     <div class="flex justify-end items-center">
-      <nav class="hidden lg:flex gap-4">
+      <nav class="hidden lg:flex lg:gap-8 xl:gap-14">
         {
           menuItems.map(({ text, id }) => {
             const isActive = Astro.url.pathname == id ? "active-menu" : "";
@@ -47,7 +49,7 @@ const menuItems = [
               >
                 <a
                   href={id}
-                  class="uppercase text-secondary-950 dark:text-secondary-50 group-hover/menu:dark:text-primary-300 group-[.active-menu]/menu:dark:text-primary-300 group-hover/menu:text-primary-600 group-[.active-menu]/menu:text-primary-600 pt-4 pb-2 text-sm font-normal dark:font-light leading-5"
+                  class="capitalize text-black dark:text-white group-hover/menu:dark:text-brand_cyan-500 group-[.active-menu]/menu:dark:text-brand_cyan-500 group-hover/menu:text-brand-500 group-[.active-menu]/menu:text-brand-500 pt-4 pb-2 text-sm font-bold dark:font-light leading-5"
                 >
                   {text}
                 </a>
@@ -58,14 +60,18 @@ const menuItems = [
         }
       </nav>
 
-      <div>
+      <div class="ml-10 mt-1">
         <button id="menuNavMobileBut" class="lg:hidden group/mobile">
           <MenuButton
-            className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-primary-50 stroke-2"
+            className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-white stroke-2"
           />
         </button>
         <SwitchMode />
       </div>
+    </div>
+
+    <div class="hidden lg:block">
+      <Button href="/contact" text="Get Started" fill />
     </div>
   </div>
   <nav

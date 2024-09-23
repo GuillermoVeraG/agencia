@@ -1,66 +1,63 @@
 ---
-import Title from "@/components/Titles.astro";
+import Button from "@/components/Button.astro";
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+  class="w-full flex flex-col justify-between items-center mx-auto mb-36"
 >
   <div
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    class="flex flex-col lg:flex-row justify-center items-start max-w-5xl w-full mx-auto px-[10%] lg:px-10 gap-4 mt-20"
   >
-    <Title
-      title="Discover "
-      titleBlue="Our Story"
-      subtitle="get to know"
-      desc="Join us to explore the Audienze Labs difference and unlock your potential for success!"
-      layout="right"
-    />
-  </div>
-
-  <div
-    class="flex flex-col lg:flex-row justify-center items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 gap-4 mt-20"
-  >
-    <img
-      src={`${import.meta.env.BASE_URL}/image/image5.webp`}
-      alt=""
-      class="w-full h-[50rem] max-w-md object-cover object-[-34rem]"
-    />
     <div
-      class="w-full flex flex-col justify-start items-start gap-4 max-w-md text-base font-light text-secondary-700 dark:text-secondary-300 text-pretty"
+      class="w-full flex flex-col justify-center items-start gap-4 max-w-md text-base font-light text-gray-800 dark:text-gray-400 text-pretty relative"
     >
-      <p>
-        Welcome to Audienze Labs, where innovation meets imagination in the
-        heart of the gaming universe!
+      <h2
+        class=`font-stretchpro uppercase text-black dark:text-white text-2xl md:text-3xl lg:text-4xl font-medium my-0 tracking-tight text-left mb-6`
+      >
+        our story
+        <div class="font-stretchpro font-thin text-xl max-w-96 mt-4">
+          where your vision meets our innovation.
+        </div>
+      </h2>
+      <p class="text-sm text-pretty">
+        In the heart of the gaming world, where passion meets innovation,
+        Audienze Labs was born.
       </p>
-      <p>
-        Rooted in our deep understanding of the importance of the video game
-        audience and their insights, Audienze Labs is a dynamic start-up
-        positioned at the forefront of the neuromarketing, data analytics, and
-        programming industries. With a specialized focus on serving the gaming
-        industry, we offer a range of cutting-edge services tailored to game
-        developers and stakeholders.
+      <p class="text-sm text-pretty">
+        We started as a group of gamers, dreamers, and tech enthusiasts who saw
+        the untapped potential in the games we loved. We noticed that while
+        games could captivate and entertain, they often lacked the deeper
+        connection that truly resonates with players. We knew there was more to
+        discover—hidden stories within the data, untold narratives behind every
+        player’s experience.
       </p>
-      <p>
-        Founded on principles of collaboration, creativity, and curiosity, our
-        journey began with a simple yet profound mission – to empower gaming
-        companies with actionable insights and strategic guidance. Driven by our
-        belief in the transformative power of data, we embarked on a journey of
-        discovery, unraveling the narratives hidden within the vast expanse of
-        gaming data.
+      <p class="text-sm text-pretty">
+        Driven by our belief in the power of gaming as an art form, we came
+        together with one mission: to bridge the gap between creators and
+        players. We wanted to help game developers and marketers unlock the
+        secrets of player engagement, using the latest in neuromarketing and
+        data analytics. We weren’t just interested in numbers; we were
+        fascinated by the human stories they told, the emotions they captured,
+        and the experiences they could enhance.
       </p>
-      <p>
-        Our goal stands as a beacon of innovation, inspiring creativity and
-        redefining what's possible in the world of gaming. From predicting
-        industry trends to understanding player behaviors, we've made it our
-        mission to push boundaries and challenge conventions in pursuit of
-        excellence.
+
+      <Button href="#" text="Read More" />
+      <p class="hidden text-sm text-pretty">
+        Audienze Labs was born out of this passion—to turn gaming into something
+        greater, to make every game not just played, but truly felt. With every
+        project, we push the boundaries of what’s possible, working alongside
+        developers to bring their boldest visions to life.
       </p>
-      <p>
-        Join us as we explore new worlds, forge new connections, and push the
-        boundaries of what's possible in gaming. Together, let's create the
-        future of play. Welcome to Audienze Labs – where gaming dreams become
-        reality.
+      <p class="hidden text-sm text-pretty">
+        Our story is just beginning, and we invite you to be part of it.
+        Together, we’ll create the future of gaming—one unforgettable experience
+        at a time.
       </p>
     </div>
+    <img
+      src={`/image/controlabout.webp`}
+      alt=""
+      class="max-w-md object-cover pl-20 mt-48"
+    />
   </div>
 </section>

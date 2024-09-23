@@ -1,45 +1,36 @@
 ---
 import { getDateText } from "@/utils/getDates";
+import Button from "@/components/Button.astro";
 
-const { slug, img, title, desc, category, date, imgperson, nameperson, align } =
-  Astro.props;
+const { slug, img, title, desc, category, date, align } = Astro.props;
 
 const textDate = getDateText(date);
 ---
 
-<a href=`/agencia/blog/${slug}`>
+<a href=`/blog/${slug}`>
   <div
-    class=`flex flex-col-reverse ${align == 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} justify-start items-center gap-8 group/item`
+    class=`flex flex-col-reverse ${align == 'left' ? 'md:flex-row pl-8' : 'md:flex-row-reverse pr-8'} justify-start items-center gap-8 group/item bg-white dark:bg-brand-800/10 drop-shadow-md rounded-2xl overflow-hidden`
   >
     <div
-      class="flex flex-col justify-center items-start gap-4 py-20 w-full md:max-w-[50%]"
+      class="flex flex-col justify-center items-start gap-4 py-8 w-full md:max-w-[50%]"
     >
       <div
         class="flex flex-row flex-wrap justify-between items-center gap-x-8 gap-y-4 w-full"
       >
         <div
           transition:name={`blogs-category-${slug}`}
-          class="bg-secondary-600/30 border-2 border-primary-600 dark:border-primary-300 p-1 pl-3"
+          class="bg-white dark:bg-brand-800/10 border-2 border-black dark:border-white p-1 pl-3"
         >
           <h6
-            class="uppercase my-0 font-stretchpro font-light text-[9px] leading-4 tracking-[5px] text-primary-600 dark:text-secondary-50"
+            class="uppercase my-0 font-stretchpro font-light text-[9px] leading-4 tracking-[5px] text-black dark:text-white"
           >
             {category}
           </h6>
         </div>
         <div class="flex justify-start items-center gap-2">
-          <div class="size-5 overflow-hidden rounded-full">
-            <img src={imgperson} alt="" class="size-5 object-cover" />
-          </div>
-          <p
-            class="text-base text-primary-600 dark:text-primary-300 font-medium"
-          >
-            {nameperson}
-          </p>
-          <span class="w-0.5 bg-secondary-600 dark:bg-secondary-400 h-3"></span>
           <p
             transition:name={`blogs-date-${slug}`}
-            class="text-base text-secondary-600 dark:text-secondary-400"
+            class="text-base text-gray-700 dark:text-gray-300"
           >
             {textDate}
           </p>
@@ -47,28 +38,23 @@ const textDate = getDateText(date);
       </div>
       <h2
         transition:name={`blogs-title-${slug}`}
-        class="font-stretchpro my-0 uppercase font-medium text-2xl leading-[58px] tracking-tighter text-secondary-950 dark:text-secondary-50"
+        class="font-poppins my-0 uppercase font-semibold text-2xl text-black dark:text-white"
       >
         {title}
       </h2>
       <p
         transition:name={`blogs-desc-${slug}`}
-        class="text-wrap mb-0 text-sm font-normal text-secondary-600 dark:text-secondary-300"
-      >
-        {desc}
-      </p>
-      <h5
-        class="uppercase my-0 font-inter font-normal dark:font-black text-xs leading-5 tracking-[8px] text-secondary-950 dark:text-secondary-50"
-      >
-        read more
-      </h5>
+        class="text-wrap mb-0 text-sm font-normal text-gray-700 dark:text-gray-300"
+        set:html={desc}
+      />
+      <Button href={`/blog/${slug}`} text="read more" />
     </div>
-    <div class="overflow-hidden md:w-[48%]">
+    <div class="overflow-hidden md:w-[48%] h-[35rem]">
       <img
         transition:name={`blogs-img-${slug}`}
         src={img}
         alt=""
-        class="w-full h-96 object-cover group-hover/item:scale-105 transition-transform duration-500 ease-linear"
+        class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500 ease-linear"
       />
     </div>
   </div>

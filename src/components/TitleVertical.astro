@@ -1,28 +1,37 @@
 ---
-const { title, subtitlePrimary, subtitleSecondary, subtitleBreak, desc } =
-  Astro.props;
+const {
+  titlePrimary,
+  titleSecondary,
+  titleBreak,
+  titleColor,
+  titleAltColor,
+  textAlign,
+  desc,
+} = Astro.props;
+
+let color =
+  titleColor == true
+    ? "text-brand-500 dark:text-brand_cyan"
+    : "text-black dark:text-white";
+
+color =
+  titleAltColor == true ? "text-brand-400 dark:text-brand_purple-500" : color;
+
+const textAlignClass = textAlign == "left" ? "text-left" : "text-center";
 ---
 
-<h5
-  class="font-poppins font-semibold dark:font-light text-xs text-left leading-5 tracking-[8px] uppercase text-secondary-800 dark:text-secondary-200 my-0"
->
-  {title}
-</h5>
 <h2
-  class="font-stretchpro uppercase text-secondary-950 dark:text-secondary-50 text-2xl md:text-3xl lg:text-4xl font-medium my-0 tracking-tight"
+  class=`font-stretchpro uppercase text-black dark:text-white text-2xl md:text-3xl lg:text-4xl font-medium my-0 tracking-tight ${textAlignClass}`
 >
-  {subtitlePrimary}
+  {titlePrimary}
 
-  {subtitleBreak && <br />}
+  {titleBreak && <br />}
 
-  <span
-    class="font-stretchpro text-primary-600 dark:text-primary-300 font-thin italic"
-    >{subtitleSecondary}</span
-  >
+  <span class=`font-stretchpro font-thin ${color}`>{titleSecondary}</span>
 </h2>
 {
   desc && (
-    <p class="font-poppins text-base font-light text-secondary-700 dark:text-secondary-300 mt-4 max-w-sm">
+    <p class="font-poppins text-lg text-pretty font-light text-black/60 dark:text-white/60 mt-4 max-w-xl text-center">
       {desc}
     </p>
   )

@@ -1,31 +1,42 @@
 ---
-import TitleVertical from "./TitleVertical.astro";
+import TitleVertical from "@/components/TitleVertical.astro";
 
 const FAQS = [
   {
-    question: "What Services Does Your Design Agency Offer?",
+    question:
+      "What makes Audienze Labs different from other firms in the gaming industry?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+      "At Audienze Labs, we specialize exclusively in the gaming sector, combining neuroscience, psychology, data analytics, and programming to deliver unparalleled insights. Our deep industry focus allows us to provide highly tailored strategies that resonate with gamers and help developers create more immersive experiences. We don’t just offer data; we provide actionable insights that drive real results.",
   },
   {
-    question: "How Do I Get Started With A Design Project?",
+    question:
+      "How does Audienze Labs ensure the security and privacy of our data during analysis?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+      "We prioritize data security and privacy by implementing robust safeguards, including encryption, secure storage, and strict access controls. Our methodologies are designed to comply with industry standards and regulations, ensuring that your data is protected at every stage of the analysis process.",
   },
   {
-    question: "What Industries Do You Serve?",
+    question:
+      "How can Audienze Labs help optimize our marketing campaigns for better player engagement and retention?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+      "Our neuromarketing and data analytics services provide deep insights into player behavior, preferences, and emotional responses. By understanding these factors, we can help you craft highly targeted and personalized marketing campaigns that resonate with your audience, leading to increased engagement and retention. We also offer continuous monitoring and optimization to ensure your campaigns evolve with player trends.",
   },
   {
-    question: "How Long Does A Typical Design Project Take?",
+    question:
+      "What kind of data analysis tools and techniques do Audienze Labs use to generate insights?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+      "We employ a range of advanced tools and techniques, including predictive analytics, machine learning, and real-time data visualization. Our multidisciplinary team integrates neuroscience with traditional data analytics to uncover deep insights into player behavior and game performance. This comprehensive approach allows us to provide you with actionable recommendations that drive better decision-making and game optimization.",
   },
   {
-    question: "What Is The Cost Of Your Design Services?",
+    question:
+      "How does Audienze Labs ensure that the websites we build are optimized for player engagement?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis.",
+      "Our web development services are deeply informed by our neuromarketing and data analytics expertise. We focus on creating secure, high-performance websites that not only meet technical requirements but are also designed to enhance user experience and engagement. Through continuous testing and optimization, we ensure that your digital platforms resonate with your audience, driving higher player retention and satisfaction.",
+  },
+  {
+    question:
+      "How does Audienze Labs enhance our branding to resonate with players and stand out in the gaming market?",
+    answer:
+      "Our branding services are designed to connect your brand with the emotions and identities of your target audience. Through a combination of neuromarketing research and creative strategy, we help you build a brand that resonates deeply with players, making your game or company memorable and distinctive in a competitive market. We ensure that your brand identity aligns with player expectations and strengthens their connection to your products.",
   },
 ];
 ---
@@ -37,11 +48,12 @@ const FAQS = [
     class="flex flex-col justify-around items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <TitleVertical
-      subtitlePrimary="frequently asked "
-      subtitleSecondary="questions"
-      title="overview"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
-      subtitleBreak
+      titlePrimary="frequently asked "
+      titleSecondary="questions"
+      titleBreak
+      titleColor
+      desc=""
+      textAlign="left"
     />
   </div>
 
@@ -54,23 +66,23 @@ const FAQS = [
         return (
           <details class="bg-secondary-900/40 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/50">
             <summary class="w-full flex justify-center items-center gap-8 p-16 pb-12 relative">
-              <h2 class="font-stretchpro hidden md:block text-secondary-950 dark:text-secondary-50 text-4xl font-medium absolute top-auto bottom-auto right-auto left-8">
+              <h2 class="font-stretchpro hidden md:block text-brand-500 dark:text-brand_cyan text-4xl font-medium absolute top-auto bottom-auto right-auto left-8">
                 0{index + 1}
               </h2>
-              <h3 class="w-full max-w-[80%] md:max-w-[75%] text-2xl font-light text-center text-pretty uppercase text-secondary-950 dark:text-secondary-50">
+              <h3 class="w-full max-w-[80%] md:max-w-[75%] text-2xl font-light text-pretty uppercase text-black dark:text-white">
                 {question}
               </h3>
               <div class="absolute top-auto bottom-auto left-auto right-8">
                 <button
                   data-open="false"
                   class="butOpenClose w-8 h-8 flex justify-center items-center
-                before:content-[''] before:content-center before:bg-secondary-950 before:dark:bg-white before:w-8 before:h-1
-                after:content-[''] after:content-center after:bg-secondary-950 after:dark:bg-white after:w-1 after:h-8 after:-translate-x-4 after:transition-transform after:duration-500"
+                before:content-[''] before:content-center before:bg-black before:dark:bg-white before:w-8 before:h-1
+                after:content-[''] after:content-center after:bg-black after:dark:bg-white after:w-1 after:h-8 after:-translate-x-4 after:transition-transform after:duration-500"
                 />
               </div>
             </summary>
             <div class="w-full max-w-[80%] mx-auto mb-8">
-              <p class="text-lg font-light text-center text-secondary-800/90 dark:text-secondary-100/70 ">
+              <p class="text-lg font-light text-left text-gray-700 dark:text-gray-300 ">
                 {answer}
               </p>
             </div>

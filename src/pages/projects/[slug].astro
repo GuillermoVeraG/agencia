@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import { getDateText } from "@/utils/getDates";
-
-import type {blogItemBody} from "@/content/schemas";
+import Body from "@/components/Body.astro";
+import Back from "@/components/Back.astro";
 
 export async function getStaticPaths() {
   const PROJECTS = await getCollection("projects");
@@ -16,92 +16,74 @@ export async function getStaticPaths() {
   });
 }
 
-const { img, slug, title, desc, tags, client, pubDate, gallery, body } = Astro.props;
+const { img, slug, title, desc, tags, pubDate, gallery, body } = Astro.props;
 
 const textDate = getDateText(pubDate);
 ---
 
-<Layout title={`Project - ${title}`}>
+<Layout title={`${title}`}>
   <main class="w-full mt-40">
     <section class="w-full my-16">
+      <Back href="/projects" />
+
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
         <div
-          class="flex flex-col md:flex-row justify-center items-center gap-8"
+          class="flex flex-col justify-center items-center gap-8"
         >
           <div
-            class="w-full md:max-w-[70%] flex flex-col justify-center items-center md:items-start"
+            class="w-full flex flex-col justify-center items-center"
           >
             <h2
               transition:name={`projects-title-${slug}`}
-              class="font-stretchpro uppercase text-5xl text-secondary-950 dark:text-secondary-50 text-center md:text-left"
+              class="font-poppins font-extrabold uppercase text-center text-5xl text-brand-500 dark:text-brand_cyan md:text-left"
             >
               {title}
             </h2>
             <p
               transition:name={`projects-desc-${slug}`}
-              class="text-base font-light text-secondary-800/80 dark:text-secondary-200/80 mt-2"
+              class="text-base font-light text-black dark:text-white mt-2"
             >
               {desc}
             </p>
           </div>
           <div
-            class="w-full md:max-w-[30%] flex flex-col justify-center items-center md:items-start gap-4"
+            class="w-full flex flex-col justify-center items-center gap-4"
           >
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-brand-500 dark:border-brand_cyan pb-2"
             >
               <h5
-                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
-              >
-                Client
-              </h5>
-              <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
-              >
-                •
-              </h5>
-              <p
-                class="text-base font-sm text-secondary-700 dark:text-secondary-300 capitalize"
-              >
-                {client}
-              </p>
-            </div>
-
-            <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
-            >
-              <h5
-                class="font-stretchpro uppercase text-[0.6em] font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="font-stretchpro uppercase text-[0.6em] font-medium dark:font-light tracking-[6px] text-black dark:text-white"
               >
                 category
               </h5>
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="uppercase text-xs font-light tracking-[6px] text-black dark:text-white"
               >
                 •
               </h5>
               <p
-                class="text-base font-sm text-secondary-700 dark:text-secondary-300 capitalize"
+                class="text-base font-sm text-gray-700 dark:text-gray-300 capitalize"
               >
                 {tags[0]}
               </p>
             </div>
 
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-primary-600 dark:border-primary-300 pb-2"
+              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-brand-500 dark:border-brand_cyan pb-2"
             >
               <h5
-                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-black dark:text-white"
               >
                 date
               </h5>
               <h5
-                class="uppercase text-xs font-light tracking-[6px] text-secondary-950 dark:text-secondary-50"
+                class="uppercase text-xs font-light tracking-[6px] text-black dark:text-white"
               >
                 •
               </h5>
               <p
-                class="text-sm font-normal text-secondary-700 dark:text-secondary-300"
+                class="text-sm font-normal text-gray-700 dark:text-gray-300"
               >
                 {textDate}
               </p>
@@ -112,37 +94,23 @@ const textDate = getDateText(pubDate);
       
       <img
         transition:name={`projects-img-${slug}`}
-        src={`${import.meta.env.BASE_URL}${img}`}
+        src={`${img}`}
         alt="image project"
         class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 rounded-lg"
       />
 
       <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] flex flex-col justify-start items-center gap-8">
-        {body.map(({ title, parrafo, border, list }:blogItemBody) => 
-            {
-              const borderCls = border ? "border-l-4 border-primary-600 dark:border-primary-300 pl-2" : "";
-
-              return (
-              <div class={`flex flex-col gap-3 ${borderCls}`}>
-                {title && (<h3 class="text-secondary-950 dark:text-secondary-50 uppercase text-4xl font-medium"></h3class>{title}</h3>)}
-                {parrafo.map((txt:string) => <p class="text-secondary-600 dark:text-secondary-100/70 text-base">{txt}</p>)}
-                {list && (
-                  <ul class="pl-8 flex flex-col gap-4">
-                    {list.map((txt:string) => <li class="text-secondary-600 dark:text-secondary-100/70 text-base">• {txt}</li>)}
-                  </ul>
-                )}
-              </div>);
-            })}
+        <Body body={body} />
       </div>
 
       <div class="w-full max-w-7xl mx-auto px-10 lg:px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
-        <img src={`${import.meta.env.BASE_URL}${gallery[0]}`} alt="" class="w-full md:w-3/4 h-full object-cover">
+        {gallery.length > 0 && (<img src={`${gallery[0]}`} alt="" class="w-full md:w-3/4 h-full object-cover">
         <div class="flex flex-col gap-4 w-full md:w-1/4">
           {gallery.map((img:string, index) => {
             if(index > 0)
-              return (<img src={`${import.meta.env.BASE_URL}${img}`} alt="" class="object-cover">);
+              return (<img src={`${img}`} alt="" class="object-cover">)
           })}
-        </div>        
+        </div>)} 
       </div>
     </section>
   </main>

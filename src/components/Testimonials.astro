@@ -5,34 +5,43 @@ import Arrow from "@/components/icons/ArrowRight.astro";
 
 const CLIENTS = [
   {
-    name: "james black",
-    img: `${import.meta.env.BASE_URL}/image/client1.webp`,
-    desc: "Sed tempus porta lorem, ut iaculis neque lobortis a. Nam efficitur porta pellentesque. Maecenas id aliquet ligula.",
+    name: "Lead Game Developer",
+    type: "Indie Studio",
+    img: `/image/clients/client1.webp`,
+    desc: "Audienze Labs transformed our game. Their insights into player behavior were spot on, helping us refine gameplay and boost engagement beyond our expectations.",
   },
   {
-    name: "ana turner",
-    img: `${import.meta.env.BASE_URL}/image/client2.webp`,
-    desc: "Sed tempus porta lorem, ut iaculis neque lobortis a. Nam efficitur porta pellentesque. Maecenas id aliquet ligula.",
+    name: "Marketing Director",
+    type: "Major Game Publisher",
+    img: `/image/clients/client2.webp`,
+    desc: "Thanks to Audienze Labs, we now understand our audience on a whole new level. Their data-driven strategies directly contributed to our most successful launch yet.",
   },
   {
-    name: "logan parker",
-    img: `${import.meta.env.BASE_URL}/image/client3.webp`,
-    desc: "Sed tempus porta lorem, ut iaculis neque lobortis a. Nam efficitur porta pellentesque. Maecenas id aliquet ligula.",
+    name: "Creative Director",
+    type: "AAA Game Studio",
+    img: `/image/clients/client3.webp`,
+    desc: "The team at Audienze Labs didn’t just deliver data—they provided actionable insights that reshaped our entire approach to game design. The results were phenomenal.",
+  },
+  {
+    name: "Head of Marketing",
+    type: "Global Gaming Company",
+    img: `/image/clients/client2.webp`,
+    desc: "Audienze Labs is a game-changer. Their expertise in neuromarketing gave us a deep understanding of our players, leading to campaigns that truly connected and converted.",
   },
 ];
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20"
+  class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20 bg-brand-100/60 dark:bg-brand_purple-950 py-10"
 >
   <div
     id="testimonialsContainer"
     class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
   >
     <TitleV
-      title="testimonials"
-      subtitlePrimary="Client"
-      subtitleSecondary="Tales"
+      titlePrimary="Why Choose"
+      titleSecondary="Audienze Labs?"
+      titleAltColor
     />
 
     <div
@@ -44,24 +53,24 @@ const CLIENTS = [
         data-slider="0"
       >
         {
-          CLIENTS.map(({ name, img, desc }) => (
+          CLIENTS.map(({ name, type, img, desc }) => (
             <div class="inline-block opacity-1 translate-x-0 transition-transform duration-500 ease-in-out">
               <div class="w-full h-full relative flex flex-col lg:flex-row whitespace-normal justify-center items-start">
-                <div class="flex justify-around items-center gap-4 lg:gap-8 bg-secondary-900/30 w-full h-72 pt-16 pb-11 px-7 lg:pl-10 border-l-2 border-primary-600 dark:border-primary-300">
+                <div class="flex flex-col sm:flex-row justify-around items-center gap-4 lg:gap-8  w-full h-72 pt-16 pb-11 px-7 lg:pl-10">
                   <img
                     src={img}
-                    class="size-24 rounded-full shadow-xl object-cover"
+                    class="size-24 lg:size-36 rounded-full shadow-xl object-cover"
                   />
-                  <p class="text-base text-left text-pretty text-secondary-700 dark:text-secondary-300">
-                    {desc}
+                  <p class="text-sm sm:text-lg text-left text-pretty dark:text-white/70">
+                    " {desc} "
                   </p>
                 </div>
-                <div class="w-full lg:max-w-[15%] min-h-20 lg:h-[288px] bg-secondary-900/30 lg:bg-transparent flex flex-col justify-center items-center gap-1 lg:gap-4">
-                  <h5 class="font-bold dark:font-semibold text-xs leading-5 tracking-[8px] uppercase text-secondary-950 dark:text-secondary-50 my-0">
+                <div class="w-full lg:max-w-[15%] min-h-20 lg:h-[288px] bg-transparent flex flex-col justify-center items-center gap-1 lg:gap-4">
+                  <h5 class="font-bold dark:font-semibold text-sm leading-5 tracking-[8px] uppercase text-brand dark:text-white my-0">
                     {name}
                   </h5>
-                  <h6 class="font-semibold dark:font-light text-xs leading-5 tracking-[8px] uppercase text-primary-600 dark:text-primary-300 my-0">
-                    Client Review
+                  <h6 class="font-semibold dark:font-light text-xs leading-5 tracking-[8px] uppercase dark:text-white/70 my-0">
+                    {type}
                   </h6>
                 </div>
               </div>
@@ -71,21 +80,21 @@ const CLIENTS = [
       </div>
       <button
         id="butLeftSlide"
-        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-secondary-900/30 hover:bg-secondary-900 text-center block top-auto left-auto right-[10%] cursor-pointer"
+        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-[10%] cursor-pointer group/left"
       >
         <div class="flex justify-center items-center h-full">
           <Arrow
-            className="size-8 stroke-secondary-950 dark:stroke-secondary-50 rotate-180"
+            className="size-8 stroke-brand group-hover/left:stroke-white dark:stroke-white rotate-180"
           />
         </div>
       </button>
       <button
         id="butRightSlide"
-        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-secondary-900/30 hover:bg-secondary-900 text-center block top-auto left-auto right-0 cursor-pointer"
+        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-0 cursor-pointer group/right"
       >
         <div class="flex justify-center items-center h-full">
           <Arrow
-            className="size-8 stroke-secondary-950 dark:stroke-secondary-50"
+            className="size-8 stroke-brand group-hover/right:stroke-white dark:stroke-white"
           />
         </div>
       </button>

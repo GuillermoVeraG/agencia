@@ -13,16 +13,18 @@ const BLOG_ITEMS = await getCollection("blog");
       class="flex flex-col justify-center items-center gap-4 mt-10"
     >
       <Title
-        title="our blog"
-        subtitlePrimary="posts"
-        subtitleSecondary="& articles"
+        titlePrimary="our blog "
+        titleSecondary="posts & articles"
+        titleBreak
+        titleColor
         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis."
+        layout="right"
       />
     </div>
 
     <div
       id="blogsContainer"
-      class="flex flex-col justify-center items-center gap-4 mt-10"
+      class="flex flex-col justify-center items-center gap-4 my-10"
     >
       {
         BLOG_ITEMS.map(({ id, data }, index) => {

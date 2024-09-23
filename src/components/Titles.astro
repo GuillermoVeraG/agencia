@@ -1,5 +1,5 @@
 ---
-const { title, titleBlue, subtitle, desc, layout } = Astro.props;
+const { title, titleBlue, desc, layout } = Astro.props;
 ---
 
 <div
@@ -8,13 +8,8 @@ const { title, titleBlue, subtitle, desc, layout } = Astro.props;
   <div
     class="flex flex-col justify-start items-center lg:items-start gap-4 text-center lg:min-w-80"
   >
-    <h5
-      class="font-poppins font-semibold dark:font-light text-xs text-center lg:text-left leading-5 tracking-[8px] uppercase text-secondary-800 dark:text-secondary-200 my-0"
-    >
-      {subtitle}
-    </h5>
     <p
-      class="max-w-md font-poppins text-secondary-700 dark:text-secondary-300 text-base lg:text-lg text-pretty my-0 mx-4 md:mx-0 text-center lg:text-left"
+      class="max-w-md font-poppins text-black/60 dark:text-white/60 text-xs lg:text-base text-pretty my-0 mx-4 md:mx-0 text-center lg:text-left"
     >
       {desc}
     </p>
@@ -22,12 +17,13 @@ const { title, titleBlue, subtitle, desc, layout } = Astro.props;
 
   <div class="flex flex-col items-center lg:items-start gap-2">
     <h2
-      class="font-stretchpro uppercase text-secondary-950 dark:text-secondary-50 text-3xl md:text-4xl lg:text-5xl font-medium my-0 tracking-tight lg:text-left"
+      class="font-stretchpro uppercase text-black dark:text-white text-xl md:text-2xl lg:text-3xl font-medium my-0 tracking-tight lg:text-left"
     >
       {title}
-      <span class="text-primary-600 dark:text-primary-300 font-thin italic"
-        >{titleBlue}</span
-      >
+
+      <div class="text-brand-500 dark:text-brand_cyan">
+        {titleBlue}
+      </div>
     </h2>
   </div>
 </div>

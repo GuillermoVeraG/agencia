@@ -1,11 +1,9 @@
 ---
-import TitleVertical from "./TitleVertical.astro";
-
 const TEAM = [
   {
     name: "Alex Hidalgo",
     profession: "ceo | cso",
-    img: "/image/team3.webp",
+    img: "/image/team/team3.webp",
     socialMedia: {
       facebook: "",
       instagram: "a",
@@ -15,7 +13,7 @@ const TEAM = [
   {
     name: "Geisson Guadir",
     profession: "CDO",
-    img: "/image/team1.webp",
+    img: "/image/team/team1.webp",
     socialMedia: {
       facebook: "a",
       instagram: "a",
@@ -24,72 +22,64 @@ const TEAM = [
   },
   {
     name: "Guillermo Vera",
-    profession: "CTO",
-    img: "/image/team4.webp",
+    profession: "CTO | CMO",
+    img: "/image/team/team4.webp",
     socialMedia: {
       facebook: "",
       instagram: "https://www.instagram.com/guive86/",
       linkedin: "https://www.linkedin.com/in/guillermoverag/",
     },
   },
-  {
-    name: "Rosy Gonacalves",
-    profession: "CMO",
-    img: "/image/team3.webp",
-    socialMedia: {
-      facebook: "face",
-      instagram: "",
-      linkedin: "",
-    },
-  },
 ];
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-72 relative"
 >
   <div
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10"
+    class="flex flex-col justify-start items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 bg-gradient-to-t from-brand-950 to-brand_purple-950 py-10 min-h-[422px]"
   >
-    <TitleVertical
-      subtitlePrimary="Meet Our "
-      subtitleSecondary="Team"
-      title="who we are"
-      desc="At Audienze Labs, we're pioneers of innovation in the gaming industry. With a multidisciplinary team of marketers, data analysts, and programmers, we harness the power of data-driven insights to unlock new possibilities and reshape the gaming landscape."
-    />
+    <h2
+      class=`font-stretchpro uppercase text-white text-2xl md:text-3xl lg:text-4xl font-medium my-0 tracking-tight text-center`
+    >
+      meet our team
+    </h2>
+    <p
+      class="font-poppins text-lg text-pretty font-light text-white/60 mt-0 max-w-xl text-center"
+    >
+      At Audienze Labs, we're the visionaries driving the future of gaming. Our
+      team of seasoned experts works together to unlock new dimensions of player
+      engagement.
+    </p>
   </div>
 
   <div
-    class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-7xl w-full mx-auto px-[10%] lg:px-10 mt-20"
+    class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-8 max-w-7xl w-full mx-auto px-[10%] lg:px-10 absolute -bottom-40"
   >
     {
       TEAM.map(({ name, profession, img, socialMedia }) => (
         <div class="overflow-hidden w-full max-w-60 h-96 flex flex-col justify-center items-center gap-4 relative group/team">
           <img
-            src={`${import.meta.env.BASE_URL}${img}`}
-            alt=""
-            class="h-[320px] object-cover"
+            src={`${img}`}
+            class="h-[320px] object-cover w-full rounded-lg"
           />
-          <div class="w-full max-w-52 min-h-20 flex flex-col justify-center items-center gap-1 absolute bottom-0 bg-secondary-700/30 dark:bg-secondary-900/50">
-            <h4 class="uppercase text-secondary-50 font-medium text-xl">
-              {name}
-            </h4>
-            <h5 class="uppercase text-primary-600 dark:text-primary-300 tracking-[6px] text-sm font-normal dark:font-light">
+          <div class="z-10 absolute h-[320px] top-8 inset-0 group-hover/team:opacity-0 opacity-100 transition-opacity bg-gradient-to-b from-[rgba(22,73,240,0.71)] via-55% via-[rgba(121,26,242,0.5)] to-[rgba(22,73,240,0.92)] rounded-lg" />
+
+          <div class="w-full max-w-52 min-h-20 flex flex-col justify-center items-center gap-1 absolute bottom-0 bg-gray-100 dark:bg-white z-20">
+            <h4 class="uppercase text-black font-medium text-xl">{name}</h4>
+            <h5 class="uppercase text-black tracking-[6px] text-sm font-normal dark:font-light">
               {profession}
             </h5>
           </div>
 
-          <div class="w-full max-w-52 py-2 bg-secondary-50/60 flex justify-center items-center gap-6 absolute top-auto bottom-20 translate-y-40 opacity-0 transition-transform duration-700 group-hover/team:translate-y-0 group-hover/team:opacity-100">
+          <div class="w-full max-w-52 py-2 flex justify-center items-center gap-6 absolute top-auto bottom-20 translate-y-40 opacity-0 transition-transform duration-700 group-hover/team:translate-y-0 group-hover/team:opacity-100">
             {socialMedia.facebook && (
               <a
                 href={socialMedia.facebook}
                 class="size-10 rounded-full overflow-hidden"
                 target="_blank"
               >
-                <img
-                  src={`${import.meta.env.BASE_URL}/image/facebook.webp`}
-                  alt="facebook"
-                />
+                <img src={`/image/logo/facebook.webp`} alt="facebook" />
               </a>
             )}
             {socialMedia.instagram && (
@@ -98,10 +88,7 @@ const TEAM = [
                 class="size-10 rounded-full overflow-hidden"
                 target="_blank"
               >
-                <img
-                  src={`${import.meta.env.BASE_URL}/image/instagram.webp`}
-                  alt="instagram"
-                />
+                <img src={`/image/logo/instagram.webp`} alt="instagram" />
               </a>
             )}
             {socialMedia.linkedin && (
@@ -110,10 +97,7 @@ const TEAM = [
                 class="size-10 rounded-full overflow-hidden"
                 target="_blank"
               >
-                <img
-                  src={`${import.meta.env.BASE_URL}/image/linkedin.webp`}
-                  alt="linkedin"
-                />
+                <img src={`/image/logo/linkedin.webp`} alt="linkedin" />
               </a>
             )}
           </div>

@@ -5,7 +5,7 @@ interface emailSend {
   body: string;
 }
 
-export const sendEmail = async (data: emailSend) => {
+export const sendEmail = async ({ subject, body }: emailSend) => {
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -15,14 +15,15 @@ export const sendEmail = async (data: emailSend) => {
     body: JSON.stringify({
       from: "Acme <onboarding@resend.dev>",
       to: ["guillermoveraghanain@gmail.com"],
-      subject: data.subject,
-      html: data.body,
+      subject: subject,
+      html: body,
     }),
   });
 
   if (res.ok) {
     const data = await res.json();
 
+    console.log(data);
     return {
       statusCode: 200,
       body: data,

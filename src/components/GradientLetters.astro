@@ -1,0 +1,23 @@
+---
+const { name, size } = Astro.props;
+
+let textSize = "text-[1.5rem] lg:text-[2rem] leading-[5rem] lg:leading-[7rem]";
+
+if (size == "md") {
+  textSize = "text-2xl lg:text-[2.6rem] leading-[5rem] lg:leading-[7rem]";
+}
+
+if (size == "xs") {
+  textSize = "text-[1.5rem] md:text-[2rem] leading-[1.5rem] lg:leading-[2rem]";
+}
+---
+
+<div
+  class={`text-primary-600 dark:text-primary-300 uppercase ${textSize} tracking-wider relative w-fit`}
+>
+  <div
+    class="font-stretchpro bg-gradient-to-r from-brand_cyan-400 to-brand_pink-600 to-80% bg-clip-text text-transparent"
+  >
+    {name}
+  </div>
+</div>
