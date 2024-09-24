@@ -47,6 +47,7 @@ export const serviceSchema = z.object({
   largedesc: z.array(z.string()),
   price: z.string(),
   slug: z.string(),
+  img: z.string(),
 
   items: z.array(z.string()),
 
