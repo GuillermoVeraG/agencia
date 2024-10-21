@@ -1,54 +1,33 @@
 ---
 import TitleV from "@/components/TitleVertical.astro";
 import Button from "@/components/Button.astro";
-
-import ClientIcon from "@/components/icons/Client.astro";
-import AnalyticIcon from "@/components/icons/Analytic.astro";
+import ArrowRight from "@/components/icons/ArrowRight.astro";
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
+  class="flex flex-col justify-between items-center mx-auto md:mt-20 mb-20 md:mb-36"
 >
   <div
-    class="w-full h-full max-w-[540px] md:max-w-[720px] lg:max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-center items-center lg:items-start px-4 py-5"
+    class="h-full md:max-w-[720px] lg:max-w-[1200px] mx-auto flex flex-col-reverse lg:flex-row justify-center items-center lg:items-start md:px-4 md:py-5"
   >
-    <div class="w-full h-full lg:max-w-[40%] z-20 relative">
+    <div class="w-screen h-full lg:max-w-[40%] mt-10 md:mt-0 z-20 relative">
       <img
         id="overviewImg"
         src={`/image/overview.webp`}
         alt=""
-        class="object-cover object-right rounded-md w-[650px] h-[41rem] lg:max-w-none mb-0"
+        class="object-cover object-right md:rounded-md w-full lg:w-[650px] h-full md:h-[41rem] lg:max-w-none mb-0"
       />
-      {
-        /*<div
-        id="overviewMenssage"
-        class="absolute size-56 -top-4 right-0 md:-left-10 flex flex-col justify-center items-center"
-      >
-        <MenssageGlobe
-          className="fill-brand_purple dark:fill-brand_cyan absolute top-0 left-0 -scale-x-100 scale-y-100"
-        />
-        <span
-          class="block text-xs font-bold uppercase mb-2 text-white dark:text-black z-10"
-          >Trusted by</span
-        >
-        <h4
-          class="font-handlee text-4xl text-white dark:text-black m-0 font-bold z-10"
-        >
-          8900
-        </h4>
-      </div>*/
-      }
     </div>
 
-    <div class="w-full lg:max-w-[58%] z-30">
+    <div class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-[58%] z-30">
       <div
         id="overviewContainer"
-        class="bg-transparent lg:bg-gray-50 lg:dark:bg-brand-950 lg:shadow-md p-2 lg:p-14 lg:pl-24 mt-12 rounded-md flex flex-col justify-center items-start gap-4"
+        class="bg-transparent lg:bg-gray-50 lg:dark:bg-brand-950 lg:shadow-md md:p-2 lg:p-14 lg:pl-24 mt-12 rounded-md flex flex-col justify-center items-start gap-4"
       >
         <TitleV
           title="Welcome to Audienze Labs"
-          titlePrimary="where gaming dreams"
-          titleSecondary="become reality."
+          titlePrimary="Welcome to "
+          titleSecondary="Audienze Labs"
           titleBreak
           titleColor
           textAlign="left"
@@ -60,17 +39,43 @@ import AnalyticIcon from "@/components/icons/Analytic.astro";
         </p>
 
         <p
-          class="text-black font-semibold dark:font-normal dark:text-white text-base leading-9"
+          class="text-black font-semibold dark:font-normal dark:text-white text-sm leading-9"
         >
-          Join Audienze Labs as we explore new worlds, forge new connections,
-          and push the boundaries of what's possible in gaming.
+          Audienze Labs LLC is specialized in data analytics, programming, and
+          neuromarketing with a sharp focus on the gaming industry.
         </p>
 
-        <div
-          class="border-x-0 border-y w-full border-brand_purple-950 dark:border-brand_cyan-950 py-5 mb-4 flex flex-col lg:flex-row items-center justify-center gap-8"
+        <p
+          class="text-black font-semibold dark:font-normal dark:text-white text-sm leading-9"
+        >
+          <ArrowRight
+            className="stroke-brand-500 dark:stroke-brand_cyan inline mb-1"
+          />
+          Elevate with data analytics that drive better decisions.
+        </p>
+        <p
+          class="text-black font-semibold dark:font-normal dark:text-white text-sm leading-9"
+        >
+          <ArrowRight
+            className="stroke-brand-500 dark:stroke-brand_cyan inline mb-1"
+          />
+          Engage your audience with captivating web develop and design.
+        </p>
+        <p
+          class="text-black font-semibold dark:font-normal dark:text-white text-sm leading-9"
+        >
+          <ArrowRight
+            className="stroke-brand-500 dark:stroke-brand_cyan inline mb-1"
+          />
+          Expand your reach with targeted marketing.
+        </p>
+
+        {
+          /* <div
+          class="border-x-0 border-y border-brand_purple-950 dark:border-brand_cyan-950 py-5 mb-4 flex flex-col lg:flex-row items-center justify-center gap-8"
         >
           <div
-            class="w-full lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
+            class="lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
           >
             <ClientIcon
               className="size-12 fill-black dark:fill-white group-hover/abouticon:dark:fill-brand_cyan group-hover/abouticon:fill-brand-500"
@@ -82,7 +87,7 @@ import AnalyticIcon from "@/components/icons/Analytic.astro";
             </h4>
           </div>
           <div
-            class="w-full lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
+            class="lg:w-1/2 flex justify-start items-center gap-4 group/abouticon"
           >
             <AnalyticIcon
               className="size-12 stroke-black dark:stroke-white group-hover/abouticon:stroke-brand-500 group-hover/abouticon:dark:stroke-brand_cyan"
@@ -93,9 +98,10 @@ import AnalyticIcon from "@/components/icons/Analytic.astro";
               Innovation & Creativity
             </h4>
           </div>
-        </div>
+        </div>*/
+        }
 
-        <Button href="/contact" text="discover more" />
+        <Button href="/about" text="discover more" />
       </div>
     </div>
   </div>

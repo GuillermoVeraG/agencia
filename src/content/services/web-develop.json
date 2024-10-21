@@ -5,7 +5,7 @@
     "Our Web Strategy services at Audienze Labs are tailored to build and optimize your online presence. We begin with Website Discovery, where we analyze your needs and goals to lay a strong foundation.",
     "Our Website Development services focus on creating secure, high-performance websites that offer a seamless user experience. We also offer Web Content creation that is optimized for engagement, and Web Maintenance & Hosting to ensure your site stays updated, secure, and performing at its best 24/7."
   ],
-  "price": "$ 1,499.00 USD",
+  "price": "$ 1,099.00 USD",
   "slug": "web-develop",
   "img": "/image/services/web-develop.webp",
   "items": [
@@ -26,27 +26,27 @@
       "border": false,
       "list": [
         {
-          "title": "Needs & Goals Analysis: ($500 - $1,500)",
+          "title": "Needs & Goals Analysis:",
           "txt": "In-depth discussions and analysis to understand your business objectives, target audience, and competitive landscape."
         },
         {
-          "title": "Market Research: ($1,000 - $2,500)",
+          "title": "Market Research:",
           "txt": "Comprehensive research to identify trends, best practices, and competitor strategies in your industry."
         },
         {
-          "title": "Technical Requirements Assessment: ($1,000 - $2,000)",
+          "title": "Technical Requirements Assessment:",
           "txt": "Evaluation of the technical needs, including platform choice, integrations, and scalability requirements."
         },
         {
-          "title": "User Journey Mapping: ($1,500 - $3,000)",
+          "title": "User Journey Mapping:",
           "txt": "Creating detailed user journey maps to understand how visitors will interact with your site, ensuring the design aligns with user expectations."
         },
         {
-          "title": "Content Audit & Strategy: ($1,000 - $2,500)",
+          "title": "Content Audit & Strategy:",
           "txt": "Reviewing existing content and planning for future content needs based on SEO and engagement goals."
         },
         {
-          "title": "SEO & Keyword Research: ($1,000 - $2,000)",
+          "title": "SEO & Keyword Research:",
           "txt": "Identifying key terms and SEO strategies to enhance site visibility from the outset."
         }
       ]
@@ -60,35 +60,35 @@
       "border": false,
       "list": [
         {
-          "title": "Custom Web Design: ($2,500 - $5,000)",
+          "title": "Custom Web Design:",
           "txt": "Crafting unique, visually compelling designs tailored to your brand’s identity."
         },
         {
-          "title": "UI/UX Design: ($2,000 - $4,000)",
+          "title": "UI/UX Design:",
           "txt": "Developing intuitive, user-friendly interfaces that enhance engagement and usability."
         },
         {
-          "title": "Responsive Design: ($2,000 - $3,500)",
+          "title": "Responsive Design:",
           "txt": "Ensuring the website is fully optimized for mobile, tablet, and desktop viewing."
         },
         {
-          "title": "Development & Coding: ($5,000 - $10,000)",
+          "title": "Development & Coding:",
           "txt": "Building the website using the latest technologies, with a focus on security, speed, and scalability."
         },
         {
-          "title": "Content Management System (CMS) Integration: ($2,000 - $4,500)",
+          "title": "Content Management System (CMS) Integration:",
           "txt": "Implementing and customizing a CMS to allow easy content updates and management."
         },
         {
-          "title": "E-commerce Integration: ($3,000 - $7,000)",
+          "title": "E-commerce Integration:",
           "txt": "Setting up and optimizing online stores with secure payment gateways if needed."
         },
         {
-          "title": "SEO Implementation: ($1,500 - $3,000)",
+          "title": "SEO Implementation:",
           "txt": "Applying SEO best practices during development to ensure search engine visibility."
         },
         {
-          "title": "Security Implementation: ($3,000 - $6,000)",
+          "title": "Security Implementation:",
           "txt": "Incorporating advanced security features, including SSL certificates, data encryption, and protection against cyber threats."
         }
       ]
@@ -102,27 +102,27 @@
       "border": false,
       "list": [
         {
-          "title": "Content Creation: ($500 - $3,000 per piece)",
+          "title": "Content Creation:",
           "txt": "Writing and producing high-quality, relevant content, including text, images, videos, and infographics."
         },
         {
-          "title": "Content Strategy Development: ($1,500 - $4,000)",
+          "title": "Content Strategy Development:",
           "txt": "Planning content that aligns with your brand voice, SEO strategy, and user engagement goals."
         },
         {
-          "title": "SEO Copywriting: ($500 - $2,000 per page)",
+          "title": "SEO Copywriting:",
           "txt": "Crafting keyword-rich, SEO-optimized content to improve search engine rankings."
         },
         {
-          "title": "Blog & Article Creation: ($300 - $1,000 per article)",
+          "title": "Blog & Article Creation:",
           "txt": "Developing regular blog posts and articles to keep your audience engaged and to establish your brand as a thought leader."
         },
         {
-          "title": "Landing Page Content: ($1,000 - $3,000 per page)",
+          "title": "Landing Page Content:",
           "txt": "Writing persuasive, conversion-focused content for landing pages."
         },
         {
-          "title": "Visual Content Design: ($1,000 - $4,000)",
+          "title": "Visual Content Design:",
           "txt": "Creating graphics, videos, and other visual elements that enhance your website’s appeal and effectiveness."
         }
       ]
@@ -136,31 +136,31 @@
       "border": false,
       "list": [
         {
-          "title": "Regular Updates & Patches: ($1,000 - $2,500 per year)",
+          "title": "Regular Updates & Patches:",
           "txt": "Keeping your website’s software, plugins, and CMS up-to-date to ensure security and functionality."
         },
         {
-          "title": "Security Monitoring: ($500 - $2,000 per month)",
+          "title": "Security Monitoring:",
           "txt": "Continuous monitoring for potential security threats, with proactive measures to prevent breaches."
         },
         {
-          "title": "Backup & Disaster Recovery: ($1,500 - $3,500 per year)",
+          "title": "Backup & Disaster Recovery:",
           "txt": "Implementing regular backups and a disaster recovery plan to protect your data and ensure business continuity."
         },
         {
-          "title": "Performance Monitoring & Optimization: ($1,000 - $3,000 per year)",
+          "title": "Performance Monitoring & Optimization:",
           "txt": "Regularly checking site speed, uptime, and overall performance, with ongoing tweaks to maintain optimal function."
         },
         {
-          "title": "Content Updates: ($500 - $2,000 per month)",
+          "title": "Content Updates:",
           "txt": "Providing support for updating content as needed, including text, images, and other media."
         },
         {
-          "title": "Technical Support: ($1,000 - $3,000 per year)",
+          "title": "Technical Support:",
           "txt": "Offering ongoing technical support to address any issues or improvements needed post-launch."
         },
         {
-          "title": "Hosting Services: ($500 - $5,000 per year)",
+          "title": "Hosting Services:",
           "txt": "Providing reliable, scalable hosting solutions tailored to your site's needs, with options for shared, VPS, or dedicated hosting."
         }
       ]

@@ -2,8 +2,8 @@
 const { text, href, fill } = Astro.props;
 
 const classes = fill
-  ? "bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 px-8 py-2 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-3xl"
-  : "capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-light rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan";
+  ? "w-max block bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 px-8 py-2 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-3xl"
+  : "w-max block capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-light rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan";
 ---
 
 <a href={href} class={classes}>{text}</a>

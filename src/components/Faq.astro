@@ -41,11 +41,9 @@ const FAQS = [
 ];
 ---
 
-<section
-  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
->
+<section class="flex flex-col justify-between items-center mx-auto mt-20 mb-36">
   <div
-    class="flex flex-col justify-around items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    class="flex flex-col justify-around items-center text-center max-w-7xl w-screen mx-auto px-[10%] lg:px-10 relative"
   >
     <TitleVertical
       titlePrimary="frequently asked "
@@ -59,17 +57,17 @@ const FAQS = [
 
   <div
     id="faq-container"
-    class="w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex flex-col justify-between items-center gap-4 mt-8"
+    class="w-screen max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl flex flex-col justify-between items-center gap-4 mt-8"
   >
     {
       FAQS.map(({ question, answer }, index) => {
         return (
-          <details class="bg-secondary-900/40 w-full flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/50">
-            <summary class="w-full flex justify-center items-center gap-8 p-16 pb-12 relative">
+          <details class="flex flex-col justify-center items-center gap-8 cursor-pointer group/faq hover:bg-secondary-900/50">
+            <summary class="flex justify-center items-center gap-8 p-16 pb-12 relative">
               <h2 class="font-stretchpro hidden md:block text-brand-500 dark:text-brand_cyan text-4xl font-medium absolute top-auto bottom-auto right-auto left-8">
                 0{index + 1}
               </h2>
-              <h3 class="w-full max-w-[80%] md:max-w-[75%] text-2xl font-light text-pretty uppercase text-black dark:text-white">
+              <h3 class="max-w-[80%] md:max-w-[75%] text-2xl font-light text-pretty uppercase text-black dark:text-white">
                 {question}
               </h3>
               <div class="absolute top-auto bottom-auto left-auto right-8">
@@ -81,7 +79,7 @@ const FAQS = [
                 />
               </div>
             </summary>
-            <div class="w-full max-w-[80%] mx-auto mb-8">
+            <div class="max-w-[80%] mx-auto mb-8">
               <p class="text-lg font-light text-left text-gray-700 dark:text-gray-300 ">
                 {answer}
               </p>

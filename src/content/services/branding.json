@@ -6,7 +6,7 @@
     "Through Brand Identity, we create compelling visual and narrative elements, including logos, color schemes, and visual guidelines, ensuring your brand is instantly recognizable and consistent across all platforms. Our Brand Messaging services further solidify your brand’s voice, making it powerful and consistent wherever it’s communicated.",
     "Finally, we offer Branding Collateral to develop a complete suite of materials that effectively convey your brand’s message."
   ],
-  "price": "$ 599.00 USD",
+  "price": "$ 999.00 USD",
   "slug": "branding",
   "img": "/image/services/branding.webp",
   "items": [
@@ -27,23 +27,23 @@
       "border": false,
       "list": [
         {
-          "title": "Brand Audit: ($1,000 - $2,000)",
+          "title": "Brand Audit:",
           "txt": "Comprehensive analysis of your current brand positioning, visual identity, and messaging to identify strengths and areas for improvement."
         },
         {
-          "title": "Competitive Analysis: ($1,000 - $2,500)",
+          "title": "Competitive Analysis:",
           "txt": "In-depth research into your competitors’ branding strategies to uncover opportunities and differentiate your brand in the marketplace."
         },
         {
-          "title": "Target Audience Research: ($1,000 - $2,500)",
+          "title": "Target Audience Research:",
           "txt": "Understanding your audience’s needs, preferences, and behaviors to align your brand strategy with their expectations."
         },
         {
-          "title": "Brand Attribute Definition: ($1,500 - $2,500)",
+          "title": "Brand Attribute Definition:",
           "txt": "Identifying and defining the core attributes and values that make your brand unique and compelling."
         },
         {
-          "title": "Vision, Mission, and Values Development: ($1,500 - $2,500)",
+          "title": "Vision, Mission, and Values Development:",
           "txt": "Crafting or refining your brand’s vision, mission, and values to ensure they resonate with your target audience and guide all branding efforts."
         }
       ]
@@ -57,19 +57,19 @@
       "border": false,
       "list": [
         {
-          "title": "Brand Positioning Strategy: ($2,000 - $3,500)",
+          "title": "Brand Positioning Strategy:",
           "txt": "Developing a clear and compelling positioning strategy that defines where your brand fits in the marketplace and how it differs from competitors."
         },
         {
-          "title": "Value Proposition Creation: ($1,500 - $3,000)",
+          "title": "Value Proposition Creation:",
           "txt": "Articulating the unique value your brand offers to customers, making it clear why they should choose your brand over others."
         },
         {
-          "title": "Brand Storytelling: ($2,000 - $4,000)",
+          "title": "Brand Storytelling:",
           "txt": "Crafting a powerful brand narrative that communicates your brand’s history, purpose, and values in a way that resonates with your audience."
         },
         {
-          "title": "Market Entry Strategy: ($2,500 - $4,000)",
+          "title": "Market Entry Strategy:",
           "txt": "Developing strategies for introducing or reintroducing your brand to the market, ensuring maximum impact and alignment with your business goals."
         }
       ]
@@ -83,23 +83,23 @@
       "border": false,
       "list": [
         {
-          "title": "Logo Design: ($2,000 - $4,000)",
+          "title": "Logo Design:",
           "txt": "Creating a unique and impactful logo that visually represents your brand’s identity and values."
         },
         {
-          "title": "Color Scheme Development: ($1,000 - $2,000)",
+          "title": "Color Scheme Development:",
           "txt": "Selecting a color palette that aligns with your brand’s personality and evokes the desired emotional response from your audience."
         },
         {
-          "title": "Typography & Font Selection: ($1,000 - $2,500)",
+          "title": "Typography & Font Selection:",
           "txt": "Choosing fonts that complement your brand’s identity and ensure readability across all platforms."
         },
         {
-          "title": "Visual Style Guide: ($2,500 - $4,000)",
+          "title": "Visual Style Guide:",
           "txt": "Developing a comprehensive guide that details the visual elements of your brand, including logo usage, color schemes, typography, and imagery guidelines."
         },
         {
-          "title": "Brand Voice & Tone Guide: ($1,500 - $3,000)",
+          "title": "Brand Voice & Tone Guide:",
           "txt": "Establishing guidelines for how your brand communicates, ensuring consistency in messaging across all channels and platforms."
         }
       ]
@@ -113,19 +113,19 @@
       "border": false,
       "list": [
         {
-          "title": "Messaging Framework Development: (Custom pricing based on scope)",
+          "title": "Messaging Framework Development:",
           "txt": "Creating a messaging framework that aligns with your brand’s positioning and resonates with your target audience across all channels."
         },
         {
-          "title": "Tagline & Slogan Creation: ($1,000 - $2,000)",
+          "title": "Tagline & Slogan Creation:",
           "txt": "Developing a memorable and impactful tagline or slogan that encapsulates your brand’s essence and value proposition."
         },
         {
-          "title": "Content Strategy Development: (Custom pricing based on scope)",
+          "title": "Content Strategy Development:",
           "txt": "Planning and developing content strategies that align with your brand messaging and support your overall business goals."
         },
         {
-          "title": "Campaign Messaging: (Custom pricing based on scope)",
+          "title": "Campaign Messaging:",
           "txt": "Crafting messaging for specific campaigns that align with your brand voice and objectives, ensuring maximum impact."
         }
       ]
@@ -139,23 +139,23 @@
       "border": false,
       "list": [
         {
-          "title": "Business Card Design: ($500 - $1,500)",
+          "title": "Business Card Design:",
           "txt": "Designing business cards that reflect your brand’s identity and leave a lasting impression."
         },
         {
-          "title": "Brochure & Flyer Design: ($1,000 - $2,500)",
+          "title": "Brochure & Flyer Design:",
           "txt": "Creating visually appealing and informative brochures and flyers that communicate your brand’s message and offerings."
         },
         {
-          "title": "Presentation Templates: ($1,000 - $2,500)",
+          "title": "Presentation Templates:",
           "txt": "Developing branded presentation templates that ensure consistency and professionalism in all business communications."
         },
         {
-          "title": "Packaging Design: ($2,000 - $4,000)",
+          "title": "Packaging Design:",
           "txt": "Designing product packaging that aligns with your brand identity and enhances the customer experience."
         },
         {
-          "title": "Social Media Graphics: ($500 - $2,000)",
+          "title": "Social Media Graphics:",
           "txt": "Creating branded graphics for social media platforms that drive engagement and reinforce your brand’s identity."
         }
       ]

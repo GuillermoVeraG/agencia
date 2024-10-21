@@ -18,23 +18,23 @@ const menuItems = [
 
 <section
   id="header-nav"
-  class="fixed top-0 left-0 w-full flex justify-between items-center mx-auto py-5 z-50 bg-gray-50 dark:bg-brand-950"
+  class="fixed top-0 left-0 w-screen py-5 z-50 bg-gray-50 dark:bg-brand-950"
 >
   <div
-    class="flex justify-between items-center max-w-screen-xl w-full mx-auto px-[10%] lg:px-10 z-20"
+    class="flex justify-between items-center w-screen lg:max-w-7xl mx-auto px-2 sm:px-10 z-20"
   >
     <a
       href={import.meta.env.BASE_URL}
       class="flex justify-center items-center group/logo"
     >
       <AudienzeLabs
-        className="w-full h-auto max-w-16 sm:max-w-20 md:max-w-24 fill-brand dark:fill-white group-hover/logo:fill-brand-500 group-hover/logo:dark:fill-brand_cyan-500"
+        className="h-auto w-16 sm:w-20 md:w-24 fill-brand dark:fill-white group-hover/logo:fill-brand-500 group-hover/logo:dark:fill-brand_cyan-500"
       />
-      <h1
-        class="font-stretchpro uppercase text-sm sm:text-md xl:text-lg text-brand dark:text-white group-hover/logo:text-brand-500 group-hover/logo:dark:text-brand_cyan-500"
+      <div
+        class="hidden md:block font-stretchpro uppercase w-72 text-sm md:text-md xl:text-lg text-brand dark:text-white group-hover/logo:text-brand-500 group-hover/logo:dark:text-brand_cyan-500"
       >
         audienze labs
-      </h1>
+      </div>
     </a>
 
     <div class="flex justify-end items-center">
@@ -53,7 +53,6 @@ const menuItems = [
                 >
                   {text}
                 </a>
-                <div class="w-full h-0.5 mx-auto bg-gradient-to-l from-primary-600 dark:from-primary-300 from-25% to-transparent -translate-x-[105%] transition-transform group-hover/menu:translate-x-0 group-[.active-menu]/menu:translate-x-0 duration-300" />
               </div>
             );
           })
@@ -77,20 +76,26 @@ const menuItems = [
   <nav
     id="menuNavMobile"
     class="lg:hidden flex flex-col justify-start items-center
-    h-screen w-full z-10 pt-24
+    h-screen w-screen z-10 pt-24
     absolute top-0 left-0
-    bg-secondary-100 dark:bg-secondary-950
+    bg-white dark:bg-brand-950
     -translate-y-[120vh] duration-700"
   >
     {
       menuItems.map(({ text, id }) => (
         <a
           href={id}
-          class="font-archivo uppercase text-secondary-950 dark:text-secondary-50 hover:text-primary-600 hover:dark:text-primary-300 py-4 text-sm font-normal dark:font-light leading-5"
+          class="capitalize text-black dark:text-white group-hover/menu:dark:text-brand_cyan-500 group-[.active-menu]/menu:dark:text-brand_cyan-500 group-hover/menu:text-brand-500 group-[.active-menu]/menu:text-brand-500 pt-4 pb-2 text-sm font-bold dark:font-light leading-5"
         >
           {text}
         </a>
       ))
     }
+    <a
+      href="/contact"
+      class="capitalize text-black dark:text-white group-hover/menu:dark:text-brand_cyan-500 group-[.active-menu]/menu:dark:text-brand_cyan-500 group-hover/menu:text-brand-500 group-[.active-menu]/menu:text-brand-500 pt-4 pb-2 text-sm font-bold dark:font-light leading-5"
+    >
+      contact
+    </a>
   </nav>
 </section>

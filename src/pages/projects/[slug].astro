@@ -21,21 +21,21 @@ const { img, slug, title, desc, tags, pubDate, gallery, body } = Astro.props;
 const textDate = getDateText(pubDate);
 ---
 
-<Layout title={`${title}`}>
-  <main class="w-full mt-40">
-    <section class="w-full my-16">
-      <Back href="/projects" />
+<Layout title={title} description={desc} image={img}>
+  <main class="mt-28 md:mt-40">
+    <section>
+      <div class="w-screen max-w-7xl mx-auto overflow-hidden px-10 pt-12 lg:px-[10%] relative">
+        <Back href="/projects" />
 
-      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
         <div
           class="flex flex-col justify-center items-center gap-8"
         >
           <div
-            class="w-full flex flex-col justify-center items-center"
+            class="flex flex-col justify-center items-center"
           >
             <h2
               transition:name={`projects-title-${slug}`}
-              class="font-poppins font-extrabold uppercase text-center text-5xl text-brand-500 dark:text-brand_cyan md:text-left"
+              class="font-poppins font-extrabold uppercase text-center text-xl md:text-3xl lg:text-5xl text-brand-500 dark:text-brand_cyan md:text-left"
             >
               {title}
             </h2>
@@ -47,10 +47,10 @@ const textDate = getDateText(pubDate);
             </p>
           </div>
           <div
-            class="w-full flex flex-col justify-center items-center gap-4"
+            class="flex flex-col justify-center items-center gap-4"
           >
             <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-brand-500 dark:border-brand_cyan pb-2"
+              class="max-w-60 flex justify-start items-center gap-4 border-b border-brand-500 dark:border-brand_cyan pb-2"
             >
               <h5
                 class="font-stretchpro uppercase text-[0.6em] font-medium dark:font-light tracking-[6px] text-black dark:text-white"
@@ -68,44 +68,24 @@ const textDate = getDateText(pubDate);
                 {tags[0]}
               </p>
             </div>
-
-            <div
-              class="w-full max-w-60 flex justify-start items-center gap-4 border-b border-brand-500 dark:border-brand_cyan pb-2"
-            >
-              <h5
-                class="font-stretchpro uppercase text-xs font-medium dark:font-light tracking-[6px] text-black dark:text-white"
-              >
-                date
-              </h5>
-              <h5
-                class="uppercase text-xs font-light tracking-[6px] text-black dark:text-white"
-              >
-                •
-              </h5>
-              <p
-                class="text-sm font-normal text-gray-700 dark:text-gray-300"
-              >
-                {textDate}
-              </p>
-            </div>
           </div>
         </div>
       </div>
       
       <img
         transition:name={`projects-img-${slug}`}
-        src={`${img}`}
+        src={img}
         alt="image project"
-        class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 rounded-lg"
+        class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 md:rounded-lg"
       />
 
-      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] flex flex-col justify-start items-center gap-8">
+      <div class="w-screen max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%] flex flex-col justify-start items-center gap-8">
         <Body body={body} />
       </div>
 
-      <div class="w-full max-w-7xl mx-auto px-10 lg:px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
+      <div class="max-w-7xl mx-auto px-10 lg:px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
         {gallery.length > 0 && (<img src={`${gallery[0]}`} alt="" class="w-full md:w-3/4 h-full object-cover">
-        <div class="flex flex-col gap-4 w-full md:w-1/4">
+        <div class="flex flex-col gap-4 md:w-1/4">
           {gallery.map((img:string, index) => {
             if(index > 0)
               return (<img src={`${img}`} alt="" class="object-cover">)

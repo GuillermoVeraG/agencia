@@ -6,7 +6,7 @@
     "Our Search Engine Marketing Audit evaluates your online presence and provides actionable recommendations for improvement. Through our Campaign Strategy Audit, we review your existing marketing campaigns and provide insights on how to optimize them for better performance.",
     "Finally, with our Paid Marketing Strategy Audit, we assess your paid advertising efforts and offer strategies to maximize your return on investment."
   ],
-  "price": "$ 2,399.00 USD",
+  "price": "$ 1,099.00 USD",
   "slug": "marketing-strategy",
   "img": "/image/services/marketing-strategy.webp",
   "items": [
@@ -26,23 +26,23 @@
       "border": false,
       "list": [
         {
-          "title": "Audience Research Audit: ($1,000 - $2,000)",
+          "title": "Audience Research Audit:",
           "txt": "Evaluate your target audience’s demographics, behaviors, preferences, and pain points to ensure your marketing strategy aligns with their needs."
         },
         {
-          "title": "Competitor Analysis Audit: ($1,000 - $2,000)",
+          "title": "Competitor Analysis Audit:",
           "txt": "Conducting a comprehensive review of your competitors’ marketing strategies to identify opportunities for differentiation."
         },
         {
-          "title": "SWOT Analysis Audit: ($1,000 - $2,000)",
+          "title": "SWOT Analysis Audit:",
           "txt": "Analyzing your brand’s strengths, weaknesses, opportunities, and threats to provide strategic recommendations."
         },
         {
-          "title": "Market Trend Analysis Audit: ($1,500 - $2,500)",
+          "title": "Market Trend Analysis Audit:",
           "txt": "Reviewing current and emerging market trends to ensure your strategy is aligned with industry developments."
         },
         {
-          "title": "Persona Development Audit: ($1,000 - $2,000)",
+          "title": "Persona Development Audit:",
           "txt": "Assessing the accuracy and effectiveness of your existing buyer personas and offering suggestions for refinement."
         }
       ]
@@ -56,27 +56,27 @@
       "border": false,
       "list": [
         {
-          "title": "SEO Audit: ($1,500 - $3,000)",
+          "title": "SEO Audit:",
           "txt": "Conducting a comprehensive review of your website’s SEO performance, including keyword usage, on-page optimization, and backlink profile."
         },
         {
-          "title": "Keyword Research Audit: ($1,000 - $2,000)",
+          "title": "Keyword Research Audit:",
           "txt": "Analyzing the effectiveness of your current keyword strategy and identifying opportunities for improvement."
         },
         {
-          "title": "On-Page SEO Audit: ($1,500 - $3,000)",
+          "title": "On-Page SEO Audit:",
           "txt": "Reviewing your website’s content, meta tags, images, and internal linking structure to enhance search engine visibility."
         },
         {
-          "title": "Off-Page SEO Audit: ($1,500 - $3,500)",
+          "title": "Off-Page SEO Audit:",
           "txt": "Evaluating your backlink profile and off-site SEO efforts to recommend improvements."
         },
         {
-          "title": "PPC Campaign Audit: ($2,000 - $4,000)",
+          "title": "PPC Campaign Audit:",
           "txt": "Reviewing your pay-per-click campaigns, including ad copy, targeting, and bidding strategies, to identify optimization opportunities."
         },
         {
-          "title": "Conversion Rate Optimization Audit: ($1,500 - $3,000)",
+          "title": "Conversion Rate Optimization Audit:",
           "txt": "Assessing your website’s user experience and conversion paths to improve the percentage of visitors who become customers."
         }
       ]
@@ -90,15 +90,15 @@
       "border": false,
       "list": [
         {
-          "title": "Campaign Planning & Strategy Audit: (Custom pricing based on scope)",
+          "title": "Campaign Planning & Strategy Audit:",
           "txt": "Reviewing your current campaign strategies, including goals, KPIs, and channel selection, to provide strategic recommendations for improvement."
         },
         {
-          "title": "Campaign Optimization Audit: ($1,500 - $3,000 per campaign)",
+          "title": "Campaign Optimization Audit:",
           "txt": "Evaluating your campaign’s performance and offering insights on how to improve targeting, messaging, and overall effectiveness."
         },
         {
-          "title": "Campaign Analytics & Reporting Audit: (Custom pricing based on frequency and detail)",
+          "title": "Campaign Analytics & Reporting Audit:",
           "txt": "Analyzing campaign performance data to identify trends, strengths, and areas for improvement, and providing actionable recommendations."
         }
       ]
@@ -112,27 +112,27 @@
       "border": false,
       "list": [
         {
-          "title": "Paid Campaign Strategy Audit: (Custom pricing based on scope)",
+          "title": "Paid Campaign Strategy Audit:",
           "txt": "Reviewing your overall paid marketing strategy, including budget allocation, targeting, and channel selection, to provide strategic insights."
         },
         {
-          "title": "Ad Creative Audit: ($1,500 - $3,000 per ad)",
+          "title": "Ad Creative Audit:",
           "txt": "Evaluating the effectiveness of your ad creatives across platforms like Google Ads, Facebook, and Instagram, and recommending improvements."
         },
         {
-          "title": "Campaign Setup & Execution Audit: (Custom pricing based on platform and scope)",
+          "title": "Campaign Setup & Execution Audit:",
           "txt": "Reviewing your campaign setup, including targeting, bidding, and execution, to identify areas for optimization."
         },
         {
-          "title": "A/B Testing & Optimization Audit: ($1,000 - $2,500 per test)",
+          "title": "A/B Testing & Optimization Audit:",
           "txt": "Assessing your A/B testing processes and results, and providing recommendations for more effective testing and optimization."
         },
         {
-          "title": "Campaign Monitoring & Reporting Audit: (Custom pricing based on frequency and detail)",
+          "title": "Campaign Monitoring & Reporting Audit:",
           "txt": "Reviewing your campaign monitoring and reporting processes, offering suggestions for more effective tracking and analysis."
         },
         {
-          "title": "Retargeting Strategy Audit: ($1,500 - $3,000 per campaign)",
+          "title": "Retargeting Strategy Audit:",
           "txt": "Evaluating your retargeting campaigns and providing insights on how to better re-engage visitors who have interacted with your brand."
         }
       ]

@@ -6,11 +6,9 @@ import ArrowRight from "@/components/icons/ArrowRight.astro";
 const SERVICES = await getCollection("services");
 ---
 
-<section
-  class="w-full flex flex-col justify-between items-center mx-auto mt-20 mb-36"
->
+<section class="flex flex-col justify-between items-center mx-auto mt-20 mb-36">
   <div
-    class="flex flex-col justify-center items-center text-center max-w-7xl w-full mx-auto px-[10%] lg:px-10"
+    class="flex flex-col justify-center items-center text-center max-w-7xl w-screen mx-auto px-[10%] lg:px-10"
   >
     <TitleVertical
       titlePrimary="Where your gaming"
@@ -23,12 +21,12 @@ const SERVICES = await getCollection("services");
   </div>
 
   <div
-    class="flex flex-col flex-wrap justify-center items-center gap-8 w-full mx-auto mt-20"
+    class="flex flex-col flex-wrap justify-center items-center gap-8 mx-auto mt-20"
   >
     {
       SERVICES.map(({ data }, index) => (
         <div
-          class={`w-full p-20 flex flex-row justify-center items-start gap-16  ${index % 2 == 0 ? "bg-none" : "bg-brand-100/60 dark:bg-brand_purple-950"}`}
+          class={`w-screen p-20 flex flex-col lg:flex-row justify-center items-center lg:items-start gap-16  ${index % 2 == 0 ? "bg-none" : "bg-brand-100/60 dark:bg-brand_purple-950"}`}
         >
           <div class="flex flex-col gap-4">
             <h4
@@ -44,7 +42,7 @@ const SERVICES = await getCollection("services");
             </div>
           </div>
           <div
-            class={`flex flex-col gap-3 rounded-2xl p-12 ${index % 2 == 0 ? "bg-white drop-shadow-md" : "bg-white drop-shadow-md dark:bg-brand_purple-950 dark:border-2 dark:border-brand_purple-400"} max-w-96`}
+            class={`flex flex-col gap-3 rounded-2xl p-8 lg:p-12 ${index % 2 == 0 ? "bg-white drop-shadow-md" : "bg-white drop-shadow-md dark:bg-brand_purple-950 dark:border-2 dark:border-brand_purple-400"} max-w-96`}
           >
             <h4
               class={`font-stretchpro uppercase text-xl ${index % 2 == 0 ? "text-black dark:text-black" : "text-brand dark:text-white"}`}
@@ -60,7 +58,7 @@ const SERVICES = await getCollection("services");
 
             <h2
               transition:name={`prices-price-${data.slug}`}
-              class={`capitalize text-xl font-bold ${index % 2 == 0 ? "text-black" : "text-black dark:text-white"} py-4`}
+              class={`capitalize text-sm lg:text-xl font-bold ${index % 2 == 0 ? "text-black" : "text-black dark:text-white"} py-4`}
             >
               <span
                 class={`font-thin pr-4 text-base ${index % 2 == 0 ? "text-gray-500 dark:text-gray-500" : "text-gray-500 dark:text-gray-300"}`}

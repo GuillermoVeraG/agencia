@@ -1,19 +1,19 @@
 {
   "id": 2,
   "img": {
-    "url": "/image/blogs/image.webp",
+    "url": "/image/blogs/blog1.webp",
     "alt": "imagen blog 2"
   },
-  "title": "Unlocking Engagement and Loyalty with Tailored Experiences",
+  "title": "The Power of Personalization in Gaming: Unlocking Engagement and Loyalty with Tailored Experiences",
   "desc": "🌟 Personalization is key to player engagement! 🌟 <br><br>Ever wonder how you can keep players coming back for more? It’s all about creating experiences that feel unique to them! Learn how data-driven personalization is shaping the future of gaming and why it’s essential to increasing player loyalty and boosting retention. 🎮 <br><br>🚀 Read our latest blog on 'How Personalization Drives Player Engagement' and learn how Audienze Labs can help you tailor your game to each player’s preferences.",
   "tag": "Personalization in Gaming",
-  "slug": "from-pencil-to-pixel",
+  "slug": "power-of-personalization-in-gaming",
 
-  "pubDate": "2024-10-20",
+  "pubDate": "2024-10-02",
 
   "author": {
     "img": {
-      "url": "/image/team/team3.webp",
+      "url": "/image/team/team1.webp",
       "alt": "imagen author"
     },
     "name": "Jane Doe",

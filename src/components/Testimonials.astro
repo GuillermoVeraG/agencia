@@ -25,18 +25,18 @@ const CLIENTS = [
   {
     name: "Head of Marketing",
     type: "Global Gaming Company",
-    img: `/image/clients/client2.webp`,
+    img: `/image/clients/client4.webp`,
     desc: "Audienze Labs is a game-changer. Their expertise in neuromarketing gave us a deep understanding of our players, leading to campaigns that truly connected and converted.",
   },
 ];
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20 bg-brand-100/60 dark:bg-brand_purple-950 py-10"
+  class="flex flex-col justify-between items-center mx-auto mb-4 mt-20 bg-brand-100/60 dark:bg-brand_purple-950 py-10"
 >
   <div
     id="testimonialsContainer"
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    class="flex flex-col justify-around items-center max-w-7xl w-screen mx-auto px-[10%] lg:px-10 relative"
   >
     <TitleV
       titlePrimary="Why Choose"
@@ -49,14 +49,14 @@ const CLIENTS = [
     >
       <div
         id="slideContainer"
-        class="w-5/6 lg:w-full h-full whitespace-nowrap block relative mr-auto z-10 left-0 right-0 overflow-hidden"
+        class="h-full whitespace-nowrap block relative mr-auto z-10 left-0 right-0 overflow-hidden"
         data-slider="0"
       >
         {
           CLIENTS.map(({ name, type, img, desc }) => (
             <div class="inline-block opacity-1 translate-x-0 transition-transform duration-500 ease-in-out">
-              <div class="w-full h-full relative flex flex-col lg:flex-row whitespace-normal justify-center items-start">
-                <div class="flex flex-col sm:flex-row justify-around items-center gap-4 lg:gap-8  w-full h-72 pt-16 pb-11 px-7 lg:pl-10">
+              <div class="h-full relative flex flex-col lg:flex-row whitespace-normal justify-center items-start">
+                <div class="flex flex-col sm:flex-row justify-around items-center gap-4 lg:gap-8  w-full h-72 md:pt-16 pb-11 px-7 lg:pl-10">
                   <img
                     src={img}
                     class="size-24 lg:size-36 rounded-full shadow-xl object-cover"
@@ -66,10 +66,10 @@ const CLIENTS = [
                   </p>
                 </div>
                 <div class="w-full lg:max-w-[15%] min-h-20 lg:h-[288px] bg-transparent flex flex-col justify-center items-center gap-1 lg:gap-4">
-                  <h5 class="font-bold dark:font-semibold text-sm leading-5 tracking-[8px] uppercase text-brand dark:text-white my-0">
+                  <h5 class="font-bold dark:font-semibold text-xs md:text-sm leading-5 tracking-[8px] uppercase text-brand dark:text-white my-0">
                     {name}
                   </h5>
-                  <h6 class="font-semibold dark:font-light text-xs leading-5 tracking-[8px] uppercase dark:text-white/70 my-0">
+                  <h6 class="font-semibold dark:font-light text-[0.6rem] md:text-xs leading-5 tracking-[8px] uppercase dark:text-white/70 my-0">
                     {type}
                   </h6>
                 </div>
@@ -80,7 +80,7 @@ const CLIENTS = [
       </div>
       <button
         id="butLeftSlide"
-        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-[10%] cursor-pointer group/left"
+        class="w-fit h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-[10%] cursor-pointer group/left"
       >
         <div class="flex justify-center items-center h-full">
           <Arrow
@@ -90,7 +90,7 @@ const CLIENTS = [
       </button>
       <button
         id="butRightSlide"
-        class="w-full h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-0 cursor-pointer group/right"
+        class="w-fit h-[368px] lg:h-[288px] max-w-12 bg-brand-100/30 hover:bg-brand dark:bg-brand_purple-950 hover:dark:bg-brand-100/30 text-center block top-auto left-auto right-0 cursor-pointer group/right"
       >
         <div class="flex justify-center items-center h-full">
           <Arrow

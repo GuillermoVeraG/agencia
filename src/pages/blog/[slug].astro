@@ -26,13 +26,15 @@ const { img, slug, title, desc, tag, pubDate, author, body, conclusion } =
 const textDate = getDateText(pubDate);
 ---
 
-<Layout title={`${title}`}>
-  <main class="w-full mt-40">
-    <section class="w-full my-16">
-      <div class="w-full max-w-7xl mx-auto overflow-hidden px-10">
+<Layout title={title} description={desc} image={img.url}>
+  <main class="mt-28 md:mt-40">
+    <section>
+      <div
+        class="w-screen max-w-7xl mx-auto overflow-hidden px-10 pt-12 relative"
+      >
         <Back href="/blog" />
 
-        <div class="w-full flex flex-col items-center justify-center gap-2">
+        <div class="flex flex-col items-center justify-center gap-2">
           <div
             transition:name={`blogs-category-${slug}`}
             class="w-fit py-2 px-4 bg-secondary-400/50 dark:bg-secondary-900/50 text-center uppercase whitespace-nowrap rounded-3xl flex justify-center items-center text-xs font-normal"
@@ -46,7 +48,7 @@ const textDate = getDateText(pubDate);
 
           <h2
             transition:name={`blogs-title-${slug}`}
-            class="font-stretchpro my-0 uppercase font-medium text-center text-3xl md:text-4xl lg:text-5xl leading-[58px] tracking-tighter text-brand-500 dark:text-brand_cyan"
+            class="font-stretchpro my-0 uppercase font-medium text-center text-xl md:text-3xl lg:text-5xl leading-[30px] md:leading-[58px] tracking-tighter text-brand-500 dark:text-brand_cyan"
           >
             {title}
           </h2>
@@ -67,20 +69,18 @@ const textDate = getDateText(pubDate);
             transition:name={`blogs-img-${slug}`}
             src={img.url}
             alt={img.alt}
-            class="w-full max-h-[480px] object-cover rounded-3xl mt-20"
+            class="w-screen max-h-[480px] object-cover rounded-3xl mt-20"
           />
         </div>
 
         <div
-          class="w-full flex flex-col lg:flex-row items-center justify-center lg:items-start gap-8 mt-20 relative"
+          class="flex flex-col lg:flex-row items-center justify-center lg:items-start gap-8 mt-20 relative"
         >
-          <div
-            class="w-full lg:max-w-[60%] flex flex-col justify-center items-start gap-4"
-          >
+          <div class="max-w-7xl flex flex-col justify-center items-start gap-4">
             <Body body={body} />
 
             <div
-              class="w-full mt-8 border-t-2 pt-1 pl-3 border-brand dark:border-brand_cyan"
+              class="mt-8 border-t-2 pt-1 pl-3 border-brand dark:border-brand_cyan"
             >
               {
                 conclusion.map((txt: string) => (
@@ -90,9 +90,10 @@ const textDate = getDateText(pubDate);
             </div>
           </div>
 
-          <div class="sticky -top-7">
+          {
+            /* <div class="sticky -top-7 hidden lg:block">
             <div
-              class="flex flex-col justify-start items-center gap-4 rounded-2xl bg-gradient-to-t from-brand-950 to-brand_purple-950 w-full h-[420px]"
+              class="flex flex-col justify-start items-center gap-4 rounded-2xl bg-gradient-to-t from-brand-950 to-brand_purple-950 w-64 h-[420px]"
             >
               <img
                 src={author.img.url}
@@ -117,7 +118,8 @@ const textDate = getDateText(pubDate);
                 {author.bio}
               </p>
             </div>
-          </div>
+          </div>*/
+          }
         </div>
       </div>
     </section>

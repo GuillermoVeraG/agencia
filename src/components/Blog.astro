@@ -1,13 +1,19 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Title from "@/components/TitleVertical.astro";
 import Item from "@/components/BlogItem.astro";
 
-const BLOG_ITEMS = await getCollection("blog");
+const BLOG_ITEMS: CollectionEntry<"blogs">[] = (
+  await getCollection("blogs")
+).sort(
+  (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
-<section class="w-full my-16">
-  <div class="w-full max-w-7xl mx-auto overflow-hidden px-10 lg:px-[10%]">
+<section class="my-16">
+  <div class="w-screen max-w-7xl mx-auto overflow-hidden px-10">
     <div
       id="blogsTitle"
       class="flex flex-col justify-center items-center gap-4 mt-10"

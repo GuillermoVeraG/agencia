@@ -1,38 +1,57 @@
 ---
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Title from "@/components/Titles.astro";
+import TitleV from "@/components/TitleVertical.astro";
 
 const { showAll } = Astro.props;
 
-const allProjects = await getCollection("projects");
+const allProjects: CollectionEntry<"projects">[] = (
+  await getCollection("projects")
+).sort(
+  (a: CollectionEntry<"projects">, b: CollectionEntry<"projects">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 
 const PROJECTS = showAll ? allProjects : allProjects.slice(0, 2);
 ---
 
 <section
-  class="w-full flex flex-col justify-between items-center mx-auto mb-4 mt-20"
+  class="flex flex-col justify-between items-center mx-auto md:mb-4 mt-10 md:mt-20"
 >
   <div
-    class="flex flex-col justify-around items-center max-w-7xl w-full mx-auto px-[10%] lg:px-10 relative"
+    class="flex flex-col justify-around items-center max-w-7xl mx-auto lg:px-10 relative"
   >
-    <div id="projectsTitle">
-      <Title
-        title="Build Your Next "
-        titleBlue="Adventure with Us"
-        subtitle="Forge Unique Adventures"
-        desc="Transcending the ordinary by unleashing creativity and transforming imagination into practical, groundbreaking solutions."
-        layout="left"
-      />
+    <div class="px-10" id="projectsTitle">
+      <div class="hidden md:block">
+        <Title
+          title="Build Your Next "
+          titleBlue="Adventure with Us"
+          subtitle="Forge Unique Adventures"
+          desc="Transcending the ordinary by unleashing creativity and transforming imagination into practical, groundbreaking solutions."
+          layout="left"
+        />
+      </div>
+      <div class="block md:hidden">
+        <TitleV
+          titlePrimary="Build Your Next "
+          titleSecondary="Adventure with Us"
+          titleBreak
+          titleColor
+          desc="Transcending the ordinary by unleashing creativity and transforming imagination into practical, groundbreaking solutions."
+          layout="right"
+        />
+      </div>
     </div>
 
     <div
       id="projectsContainer"
-      class="flex flex-row flex-wrap justify-center items-center gap-4 mt-20"
+      class="flex flex-row flex-wrap justify-center items-center gap-0 md:gap-4 mt-10 md:mt-20"
     >
       {
         PROJECTS.map(({ data }, index) => (
           <a href={`/projects/${data.slug}`} class="group/projects">
-            <div class="flex flex-col justify-center items-center relative text-left w-full max-w-sm lg:max-w-xl h-[480px] rounded-lg overflow-hidden">
+            <div class="flex flex-col justify-center items-center relative text-left w-screen md:max-w-xl h-[480px] md:rounded-lg overflow-hidden">
               <img
                 transition:name={`projects-img-${data.slug}`}
                 src={`${data.img}`}
@@ -45,22 +64,28 @@ const PROJECTS = showAll ? allProjects : allProjects.slice(0, 2);
                 <div class="z-10 absolute inset-0 group-hover/projects:opacity-0 opacity-100 transition-opacity bg-gradient-to-t from-[rgba(22,209,240,0.4)] via-55% via-[rgba(121,26,242,0.5)] to-[rgba(24,64,255,0.6)]" />
                 /*rgba(250,34,202,0.6)*/
               )}
-              <div class="z-20 flex flex-col justify-start items-start px-8 w-full gap-4 absolute bottom-8">
-                <h4
-                  transition:name={`projects-title-${data.slug}`}
-                  class="text-white font-stretchpro text-xl uppercase font-medium my-0 tracking-tight max-w-sm"
-                >
-                  {data.title}
-                </h4>
-              </div>
-              <div class="flex justify-start items-center gap-4 absolute top-8 left-8 z-20">
-                {data.tags.map((cat: string) => (
-                  <div class="flex justify-start items-start py-2 px-4 bg-white/60 border border-white rounded-md">
-                    <p class="font-stretchpro text-xs mb-0 font-light text-brand uppercase">
-                      {cat}
-                    </p>
-                  </div>
-                ))}
+              <div class="py-10 flex flex-col-reverse justify-between items-center absolute inset-0">
+                <div class="z-20 flex flex-col justify-start items-start max-w-[80%] gap-4">
+                  <h4
+                    transition:name={`projects-title-${data.slug}`}
+                    class="text-white font-stretchpro text-sm md:text-base lg:text-xl uppercase font-medium my-0 tracking-tight"
+                  >
+                    {data.title}
+                  </h4>
+                </div>
+                <div class="flex justify-center items-center gap-4 z-20">
+                  {data.tags.map((cat: string, index) => {
+                    if (index < 2) {
+                      return (
+                        <div class="flex justify-start items-start py-2 px-4 bg-white/60 border border-white rounded-md">
+                          <p class="font-poppins text-xs mb-0 font-semibold text-brand uppercase">
+                            {cat}
+                          </p>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             </div>
           </a>

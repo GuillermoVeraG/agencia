@@ -4,11 +4,11 @@ import EnvelopIcon from "@/components/icons/Envelop.astro";
 import WhatsappIcon from "@/components/icons/Whatsapp.astro";
 ---
 
-<section class="w-full flex flex-col justify-between items-center mx-auto mb-6">
-  <div
-    class="bg-secondary-900/40 py-4 w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl"
-  >
-    <div class="flex flex-col justify-center items-start w-full mx-auto">
+<section class="flex flex-col justify-between items-center mx-auto mb-6">
+  <div class="py-4 max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
+    <div
+      class="flex flex-col justify-center items-center md:items-start mx-auto"
+    >
       <TitleVertical
         titlePrimary="request a free "
         titleSecondary="consultation"
@@ -20,10 +20,10 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
     </div>
 
     <div
-      class="w-full flex flex-row justify-center items-center gap-8 mx-auto mt-10"
+      class="flex flex-col md:flex-row justify-center items-center gap-8 mx-auto mt-10"
     >
-      <form id="formContact" class="w-full flex flex-col">
-        <div class="flex flex-col items-start w-full">
+      <form id="formContact" class="flex flex-col p-8 min-w-[50%]">
+        <div class="flex flex-col items-start">
           <label
             for="Customer-Name"
             class="py-2 px-0 capitalize text-base font-light text-black dark:text-white"
@@ -39,7 +39,7 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
           />
         </div>
 
-        <div class="flex flex-col items-start w-full">
+        <div class="flex flex-col items-start">
           <label
             for="Customer-Email"
             class="py-2 px-0 capitalize text-base font-light text-black dark:text-white"
@@ -55,7 +55,7 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
           />
         </div>
 
-        <div class="flex flex-col items-start w-full">
+        <div class="flex flex-col items-start">
           <label
             for="Service"
             class="py-2 px-0 capitalize text-base font-light text-black dark:text-white"
@@ -73,7 +73,7 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
           </select>
         </div>
 
-        <div class="w-full flex flex-col items-start pt-2">
+        <div class="flex flex-col items-start pt-2">
           <label
             for="Customer-Message"
             class="py-2 px-0 capitalize text-base font-light text-black dark:text-white"
@@ -102,8 +102,10 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
           class="border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-light rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan hover:cursor-pointer w-52 mt-5"
         />
       </form>
-      <div class="w-full h-full flex flex-col gap-4 justify-start items-start">
-        <div class="w-full h-[380px] overflow-hidden rounded-lg mb-10">
+      <div
+        class="min-w-[50%] h-full flex flex-col gap-4 justify-start items-start"
+      >
+        <div class="h-[380px] overflow-hidden rounded-lg mb-10">
           <img
             src={`/image/contact.webp`}
             alt=""
@@ -111,13 +113,13 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
           />
         </div>
         <div
-          class="w-full flex justify-start items-center gap-2 text-black dark:text-white"
+          class="flex justify-start items-center gap-2 text-black dark:text-white pl-8 md:pl-0"
         >
           <EnvelopIcon className="w-5 fill-brand-500 dark:fill-brand_cyan" />
           hello@audienzelabs.com
         </div>
         <div
-          class="w-full flex justify-start items-center gap-2 text-black dark:text-white"
+          class="flex justify-start items-center gap-2 text-black dark:text-white pl-8 md:pl-0"
         >
           <WhatsappIcon className="w-5 fill-[#5ECD6A]" />
           +1 772 265 5871
@@ -141,6 +143,10 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${RESEND_API_KEY}`,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
       },
       body: JSON.stringify({
         from: "Acme <onboarding@resend.dev>",
