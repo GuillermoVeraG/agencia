@@ -24,7 +24,7 @@ export const blogSchema = z.object({
   desc: z.string(),
   tag: z.string(),
   slug: z.string(),
-  pubDate: z.date(),
+  pubDate: z.string().transform((str) => new Date(str)),
 
   author: z.object({
     img: z.object({
@@ -61,7 +61,7 @@ export const projectSchema = z.object({
   tags: z.array(z.string()),
   slug: z.string(),
   client: z.string(),
-  pubDate: z.date(),
+  pubDate: z.string().transform((str) => new Date(str)),
   gallery: z.array(z.string()),
 
   body: body,

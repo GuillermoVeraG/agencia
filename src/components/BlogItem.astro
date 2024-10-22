@@ -7,7 +7,7 @@ const { slug, img, title, desc, category, date, align } = Astro.props;
 const textDate = getDateText(date);
 ---
 
-<a href={`/blog/${slug}`}>
+<a href={`/blogs/${slug}`}>
   <div
     class={`flex flex-col-reverse ${align == "left" ? "md:flex-row md:pl-8" : "md:flex-row-reverse md:pr-8"} justify-start items-center gap-8 group/item bg-white dark:bg-brand-800/10 md:drop-shadow-md md:rounded-2xl overflow-hidden`}
   >
@@ -47,13 +47,13 @@ const textDate = getDateText(date);
         class="text-wrap mb-0 text-sm font-normal text-gray-700 dark:text-gray-300"
         set:html={desc}
       />
-      <Button href={`/blog/${slug}`} text="read more" />
+      <Button href={`/blogs/${slug}`} text="read more" />
     </div>
     <div class="overflow-hidden w-screen md:w-[48%] h-[15rem] md:h-[35rem]">
       <img
         transition:name={`blogs-img-${slug}`}
         src={img}
-        alt=""
+        alt={title}
         class="w-full h-full object-cover group-hover/item:scale-105 transition-transform duration-500 ease-linear"
       />
     </div>

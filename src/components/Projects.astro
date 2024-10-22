@@ -54,7 +54,8 @@ const PROJECTS = showAll ? allProjects : allProjects.slice(0, 2);
             <div class="flex flex-col justify-center items-center relative text-left w-screen md:max-w-xl h-[480px] md:rounded-lg overflow-hidden">
               <img
                 transition:name={`projects-img-${data.slug}`}
-                src={`${data.img}`}
+                src={data.img}
+                alt={data.title}
                 class="object-cover w-full h-full group-hover/projects:scale-110 transition-transform"
               />
               {index % 2 == 0 && (

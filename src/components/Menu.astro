@@ -10,7 +10,7 @@ const menuItems = [
   { text: "about", id: `/about` },
   { text: "projects", id: `/projects` },
   //{ text: "team", id: `/team` },
-  { text: "blog", id: `/blog` },
+  { text: "blog", id: `/blogs` },
   { text: "services", id: `/services` },
   //{ text: "contact", id: `/contact` },
 ];
@@ -41,7 +41,16 @@ const menuItems = [
       <nav class="hidden lg:flex lg:gap-8 xl:gap-14">
         {
           menuItems.map(({ text, id }) => {
-            const isActive = Astro.url.pathname == id ? "active-menu" : "";
+            var isActive = "";
+
+            if (Astro.url.pathname != "/") {
+              isActive =
+                id != "/" && Astro.url.pathname.includes(id)
+                  ? "active-menu"
+                  : "";
+            } else {
+              isActive = Astro.url.pathname == id ? "active-menu" : "";
+            }
 
             return (
               <div

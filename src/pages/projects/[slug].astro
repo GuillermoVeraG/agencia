@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import { getDateText } from "@/utils/getDates";
 import Body from "@/components/Body.astro";
 import Back from "@/components/Back.astro";
 
@@ -16,9 +15,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { img, slug, title, desc, tags, pubDate, gallery, body } = Astro.props;
-
-const textDate = getDateText(pubDate);
+const { img, slug, title, desc, tags, gallery, body } = Astro.props;
 ---
 
 <Layout title={title} description={desc} image={img}>
@@ -75,7 +72,7 @@ const textDate = getDateText(pubDate);
       <img
         transition:name={`projects-img-${slug}`}
         src={img}
-        alt="image project"
+        alt={title}
         class="w-full object-cover max-h-[540px] max-w-7xl mx-auto my-20 md:rounded-lg"
       />
 
@@ -84,11 +81,11 @@ const textDate = getDateText(pubDate);
       </div>
 
       <div class="max-w-7xl mx-auto px-10 lg:px-[10%] flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
-        {gallery.length > 0 && (<img src={`${gallery[0]}`} alt="" class="w-full md:w-3/4 h-full object-cover">
+        {gallery.length > 0 && (<img src={`${gallery[0]}`} alt="gallery images" class="w-full md:w-3/4 h-full object-cover">
         <div class="flex flex-col gap-4 md:w-1/4">
           {gallery.map((img:string, index) => {
             if(index > 0)
-              return (<img src={`${img}`} alt="" class="object-cover">)
+              return (<img src={`${img}`} alt="gallery images" class="object-cover">)
           })}
         </div>)} 
       </div>

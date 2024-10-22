@@ -13,8 +13,8 @@ const monthNames = [
   "December",
 ];
 
-export function getDateText(date: string) {
-  const objDate = new Date(date);
+export function getDateText(date: Date) {
+  const objDate = date;
 
   return (
     monthNames[objDate.getMonth()] +
