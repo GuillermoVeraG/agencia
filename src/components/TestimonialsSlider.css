@@ -1,0 +1,70 @@
+.swiper-pagination-bullet {
+  border: 5px solid white;
+  opacity: 100%;
+  background-color: white;
+}
+
+.services .swiper-pagination-bullet {
+  border: 5px solid rgb(208 229 255);
+  opacity: 100%;
+  background-color: rgb(208 229 255);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(66 117 255);
+  border: 5px solid rgb(66 117 255);
+}
+
+.services .swiper-pagination-bullet-active {
+  background-color: rgb(66 117 255);
+  border: 5px solid rgb(66 117 255);
+}
+
+.dark .swiper-pagination-bullet {
+  border: 5px solid white;
+  outline: none;
+}
+
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(22 209 250);
+  border: 5px solid rgb(22 209 250);
+}
+
+.dark .testimonials .swiper-pagination-bullet-active {
+  background-color: rgb(140 71 255);
+  border: 5px solid rgb(140 71 255);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: 380px;
+  display: none;
+  top: var(--swiper-navigation-top-offset, calc(50% - 210px));
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: none;
+}
+.swiper-button-prev {
+  left: auto;
+  right: var(--swiper-navigation-sides-offset, 30px);
+}
+.swiper-button-next {
+  left: auto;
+  right: var(--swiper-navigation-sides-offset, 3px);
+}
+
+@media (min-width: 640px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    height: 288px;
+    top: var(--swiper-navigation-top-offset, calc(50% - 110px));
+  }
+}

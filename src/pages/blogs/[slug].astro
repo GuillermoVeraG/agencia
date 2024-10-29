@@ -78,15 +78,17 @@ const textDate = getDateText(pubDate);
           <div class="max-w-7xl flex flex-col justify-center items-start gap-4">
             <Body body={body} />
 
-            <div
-              class="mt-8 border-t-2 pt-1 pl-3 border-brand dark:border-brand_cyan"
-            >
-              {
-                conclusion.map((txt: string) => (
-                  <p class="text-gray-700 dark:text-gray-300 text-sm">{txt}</p>
-                ))
-              }
-            </div>
+            {
+              conclusion && (
+                <div class="mt-8 border-t-2 pt-1 pl-3 border-brand dark:border-brand_cyan">
+                  {conclusion.map((txt: string) => (
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">
+                      {txt}
+                    </p>
+                  ))}
+                </div>
+              )
+            }
           </div>
 
           {

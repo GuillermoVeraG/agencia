@@ -10,7 +10,7 @@ const menuItems = [
   { text: "about", id: `/about` },
   { text: "projects", id: `/projects` },
   //{ text: "team", id: `/team` },
-  { text: "blog", id: `/blogs` },
+  { text: "blog", id: `/blogs/1` },
   { text: "services", id: `/services` },
   //{ text: "contact", id: `/contact` },
 ];
@@ -21,10 +21,11 @@ const menuItems = [
   class="fixed top-0 left-0 w-screen py-5 z-50 bg-gray-50 dark:bg-brand-950"
 >
   <div
-    class="flex justify-between items-center w-screen lg:max-w-7xl mx-auto px-2 sm:px-10 z-20"
+    class="flex justify-between items-center w-full lg:max-w-7xl mx-auto px-2 sm:px-10 z-20"
   >
     <a
       href={import.meta.env.BASE_URL}
+      aria-label="go to audienzelabs home page"
       class="flex justify-center items-center group/logo"
     >
       <AudienzeLabs
@@ -69,7 +70,11 @@ const menuItems = [
       </nav>
 
       <div class="ml-10 mt-1">
-        <button id="menuNavMobileBut" class="lg:hidden group/mobile">
+        <button
+          id="menuNavMobileBut"
+          aria-label="Mobile Menu"
+          class="lg:hidden group/mobile"
+        >
           <MenuButton
             className="group-hover/mobile:stroke-primary-600 group-hover/mobile:dark:stroke-primary-300 stroke-secondary-950 dark:stroke-white stroke-2"
           />

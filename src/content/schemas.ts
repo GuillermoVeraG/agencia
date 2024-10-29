@@ -5,12 +5,18 @@ const list = z.object({
   txt: z.string(),
 });
 
+const imgBlog = z.object({
+  src: z.string(),
+  align: z.enum(["left", "right"]),
+});
+
 const body = z.array(
   z.object({
     title: z.string(),
-    parrafo: z.array(z.string()),
-    border: z.boolean(),
-    list: z.array(list),
+    parrafo: z.optional(z.array(z.string())),
+    border: z.optional(z.boolean()),
+    list: z.optional(z.array(list)),
+    img: z.optional(imgBlog),
   })
 );
 
@@ -38,7 +44,7 @@ export const blogSchema = z.object({
 
   body: body,
 
-  conclusion: z.array(z.string()),
+  conclusion: z.optional(z.array(z.string())),
 });
 
 export const serviceSchema = z.object({
@@ -67,6 +73,11 @@ export const projectSchema = z.object({
   body: body,
 });
 
+interface blogImg {
+  src: string;
+  align: string;
+}
+
 export interface blogItemList {
   title: string;
   txt: string;
@@ -74,7 +85,8 @@ export interface blogItemList {
 
 export interface blogItemBody {
   title: string;
-  parrafo: Array<string>;
-  list: Array<blogItemList>;
-  border: boolean;
+  parrafo?: Array<string>;
+  list?: Array<blogItemList>;
+  border?: boolean;
+  img?: blogImg;
 }

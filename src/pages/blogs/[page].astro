@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { GetStaticPathsOptions } from "astro";
+import Title from "@/components/TitleVertical.astro";
+import Item from "@/components/BlogItem.astro";
+import Button from "@/components/Button.astro";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const BLOG_ITEMS: CollectionEntry<"blogs">[] = (
+    await getCollection("blogs")
+  ).sort(
+    (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(BLOG_ITEMS, { pageSize: 1 });
+}
+
+const { page } = Astro.props;
+---
+
+<Layout
+  title="Blogs - Audienze Labs LLC"
+  description="Welcome to the Audienze Labs blog, where we explore how data and strategy are transforming the video game industry. Dive into articles on the latest gaming trends and uncover how data analytics, marketing, branding, and web development drive success. Stay informed and learn how to take your game to the next level while keeping your audience engaged."
+>
+  <main>
+    <div class="block h-14"></div>
+    <section class="my-16">
+      <div class="w-screen max-w-7xl mx-auto overflow-hidden px-10">
+        <div
+          id="blogsTitle"
+          class="flex flex-col justify-center items-center gap-4 mt-10"
+        >
+          <Title
+            titlePrimary="our blog "
+            titleSecondary="posts & articles"
+            titleBreak
+            titleColor
+            desc="Stay informed and learn how to take your game to the next level while keeping your audience engaged."
+            layout="right"
+          />
+        </div>
+
+        <div
+          id="blogsContainer"
+          class="flex flex-col justify-center items-center gap-4 my-10"
+        >
+          {
+            page.data.map(({ id, data }, index) => {
+              return (
+                <Item
+                  id={id}
+                  slug={data.slug}
+                  img={data.img.url}
+                  title={data.title}
+                  desc={data.desc}
+                  category={data.tag}
+                  date={data.pubDate}
+                  imgperson={data.author.img.url}
+                  nameperson={data.author.name}
+                  align={index % 2 == 0 ? "left" : "right"}
+                />
+              );
+            })
+          }
+        </div>
+
+        {
+          page.lastPage > 1 && (
+            <nav class="flex items-center justify-center gap-8">
+              {page.url.prev && <Button href={page.url.prev} text="<-" fill />}
+
+              <p class="text-slate-600 dark:text-slate-400">
+                Page
+                <strong class="text-slate-800 dark:text-white">
+                  {page.currentPage}
+                </strong>
+                of
+                <strong class="text-slate-800 dark:text-white">
+                  {page.lastPage}
+                </strong>
+              </p>
+
+              {page.url.next && <Button href={page.url.next} text="->" fill />}
+            </nav>
+          )
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

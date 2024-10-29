@@ -3,7 +3,12 @@ import MoonButton from "@/components/icons/Moon.astro";
 import SunButton from "@/components/icons/Sun.astro";
 ---
 
-<button id="theme-toggle" type="button" class="text-sm p-2.5 group/mode">
+<button
+  id="theme-toggle"
+  aria-label="toogle dark/light button"
+  type="button"
+  class="text-sm p-2.5 group/mode"
+>
   <SunButton
     id="theme-toggle-dark-icon"
     className="hidden size-5 group-hover/mode:stroke-primary-300 stroke-secondary-950 dark:stroke-white"

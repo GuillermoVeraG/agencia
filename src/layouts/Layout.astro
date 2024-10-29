@@ -32,7 +32,7 @@ Astro.response.headers.set(
     {image && <meta property="og:image" content={image} />}
     <ViewTransitions />
   </head>
-  <body class="bg-gray-50 dark:bg-brand-950 overflow-x-hidden w-screen">
+  <body class="bg-gray-50 dark:bg-brand-950 overflow-x-hidden w-full">
     <Menu />
     <slot />
     <Footer />
@@ -48,6 +48,8 @@ Astro.response.headers.set(
 
       html {
         font-family: "Poppins", sans-serif;
+        width: 100%;
+        height: 100%;
       }
     </style>
     <script>

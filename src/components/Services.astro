@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import TitleV from "@/components/TitleVertical.astro";
 import ArrowRight from "@/components/icons/ArrowRight.astro";
 import Button from "@/components/Button.astro";
+import ServicesSlider from "@/components/ServicesSlider";
 
 const SERVICES = await getCollection("services");
 ---
@@ -26,7 +27,7 @@ const SERVICES = await getCollection("services");
 
   <div
     id="servicesContainer"
-    class="flex flex-col md:flex-row justify-center items-center md:flex-wrap md:items-start gap-4 mt-5 md:mt-20 max-w-5xl"
+    class="hidden md:flex md:flex-row justify-center items-center md:flex-wrap md:items-start gap-4 mt-5 md:mt-20 max-w-5xl"
   >
     {
       SERVICES.map(({ data }) => (
@@ -57,10 +58,15 @@ const SERVICES = await getCollection("services");
       ))
     }
   </div>
+  <div
+    class="flex md:hidden justify-center items-center gap-0 md:gap-2 mt-8 relative clear-both text-center w-full h-full max-w-5xl overflow-hidden"
+  >
+    <ServicesSlider services={SERVICES} client:load />
+  </div>
 </section>
 
 <script>
-  import { gsap } from "gsap";
+  /*import { gsap } from "gsap";
 
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -107,5 +113,5 @@ const SERVICES = await getCollection("services");
           delay: 0.3 * (index + 1),
         }
       );
-    });
+    });*/
 </script>
