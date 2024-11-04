@@ -1,7 +1,3 @@
----
-import Button from "@/components/Button.astro";
----
-
 <section class="flex flex-col justify-between items-center mx-auto mb-36">
   <div
     class="flex flex-col lg:flex-row justify-center items-start max-w-5xl mx-auto px-[10%] lg:px-10 gap-4 mt-20"
@@ -39,18 +35,28 @@ import Button from "@/components/Button.astro";
         and the experiences they could enhance.
       </p>
 
-      <Button href="#" text="Read More" />
-      <p class="hidden text-sm text-pretty">
+      <button
+        aria-label="Read more about our story"
+        id="readMoreBut"
+        class="w-max block capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-semibold rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan"
+        >Read More</button
+      >
+      <p id="readMoreText1" class="hidden text-sm text-pretty">
         Audienze Labs was born out of this passion—to turn gaming into something
         greater, to make every game not just played, but truly felt. With every
         project, we push the boundaries of what’s possible, working alongside
         developers to bring their boldest visions to life.
       </p>
-      <p class="hidden text-sm text-pretty">
+      <p id="readMoreText2" class="hidden text-sm text-pretty">
         Our story is just beginning, and we invite you to be part of it.
         Together, we’ll create the future of gaming—one unforgettable experience
         at a time.
       </p>
+      <button
+        aria-label="Read less about our story"
+        class="hidden w-max capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-semibold rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan"
+        id="readLessBut">Read Less</button
+      >
     </div>
     <img
       src={`/image/controlabout.webp`}
@@ -59,3 +65,28 @@ import Button from "@/components/Button.astro";
     />
   </div>
 </section>
+
+<script is:inline>
+  const readMoreBut = document.getElementById("readMoreBut"),
+    readLessBut = document.getElementById("readLessBut"),
+    readMoreText1 = document.getElementById("readMoreText1"),
+    readMoreText2 = document.getElementById("readMoreText2");
+
+  readMoreBut?.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    readMoreBut?.classList.toggle("hidden");
+    readLessBut?.classList.toggle("hidden");
+    readMoreText1?.classList.toggle("hidden");
+    readMoreText2?.classList.toggle("hidden");
+  });
+
+  readLessBut?.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    readMoreBut?.classList.toggle("hidden");
+    readLessBut?.classList.toggle("hidden");
+    readMoreText1?.classList.toggle("hidden");
+    readMoreText2?.classList.toggle("hidden");
+  });
+</script>
