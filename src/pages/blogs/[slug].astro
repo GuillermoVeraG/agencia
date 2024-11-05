@@ -9,7 +9,7 @@ import Back from "@/components/Back.astro";
 export async function getStaticPaths() {
   const BLOG_ITEMS = await getCollection("blogs");
 
-  return BLOG_ITEMS.map((blog) => {
+  return BLOG_ITEMS.map((blog: CollectionEntry<"blogs">) => {
     return {
       params: { slug: blog.data.slug },
       props: blog,

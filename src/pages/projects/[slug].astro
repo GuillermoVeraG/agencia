@@ -37,11 +37,10 @@ const { img, slug, title, desc, tags, gallery, body } = Astro.props;
               {title}
             </h2>
             <p
-              transition:name={`projects-desc-${slug}`}
-              class="text-base font-light text-black dark:text-white mt-2"
-            >
-              {desc}
-            </p>
+            transition:name={`blogs-desc-${slug}`}
+            class="text-wrap mb-0 text-base font-normal text-black dark:text-white max-w-5xl"
+            set:html={desc}
+          />
           </div>
           <div
             class="flex flex-col justify-center items-center gap-4"
