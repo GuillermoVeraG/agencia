@@ -1,0 +1,130 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Audienze Labs LLC"
+  description="Audienze Labs LLC is specialized in data analytics, programming, and neuromarketing with a sharp focus on the gaming industry."
+  image="/image/banner.webp"
+>
+  <main class="w-full mt-32 flex items-center justify-center">
+    <form id="convertForm" class="w-full mx-8 max-w-3xl flex flex-col gap-2">
+      <label for="textForm" class="font-bold dark:text-white">Title:</label>
+      <input
+        type="text"
+        name="title"
+        class="border-2 border-brand-500 dark:border-brand_cyan rounded-md"
+      />
+      <label for="textForm" class="font-bold dark:text-white">Desc:</label>
+      <input
+        type="text"
+        name="desc"
+        class="border-2 border-brand-500 dark:border-brand_cyan rounded-md"
+      />
+      <label for="textForm" class="font-bold dark:text-white">Body:</label>
+      <textarea
+        id="textForm"
+        name="body"
+        class="border-2 border-brand-500 dark:border-brand_cyan rounded-md h-80"
+      ></textarea>
+      <div class="flex items-center justify-center">
+        <button
+          type="submit"
+          class="w-max block capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-semibold rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan"
+        >
+          convert
+        </button>
+      </div>
+    </form>
+  </main>
+</Layout>
+
+<script>
+  import type { blogItem, blogItemBody } from "@/content/schemas";
+
+  function convertToJSON(text: string): blogItemBody[] {
+    const sections: blogItemBody[] = [];
+    const paragraphs = text
+      .split("\n")
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0);
+
+    let currentSection: blogItemBody | null = null;
+
+    paragraphs.forEach((line) => {
+      // Detect section titles: any line that's not a list item and not a paragraph is considered a title
+      if (
+        !line.startsWith("●") &&
+        !line.startsWith("•") &&
+        line[line.length - 1] != "." &&
+        line[line.length - 1] != ":"
+      ) {
+        if (currentSection) {
+          sections.push(currentSection); // Push the previous section
+        }
+        // Start a new section
+        currentSection = { title: line, parrafo: [] };
+      } else if (line.startsWith("●") || line.startsWith("•")) {
+        // Process list items
+        if (currentSection) {
+          const parts = line.slice(2).split(":");
+          currentSection.list = currentSection.list || [];
+          currentSection.list.push({
+            title: parts[0].trim() + ": ",
+            txt: parts[1].trim(),
+          });
+        }
+      } else if (currentSection) {
+        // Add paragraphs to the current section
+        currentSection.parrafo?.push(line);
+      }
+    });
+
+    // Push the last section if it exists
+    if (currentSection) {
+      sections.push(currentSection);
+    }
+
+    return sections;
+  }
+
+  const form = document.getElementById("convertForm") as HTMLFormElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const values = Object.fromEntries(formData);
+
+    const jsonBody = convertToJSON(values.body as string);
+    const title = values.title as string;
+    const date = new Date();
+
+    let jsonOutput: blogItem = {
+      id: 1,
+      img: {
+        url: "/image/blogs/blog1.webp",
+        alt: "imagen blog 1",
+      },
+      title: title,
+      desc: values.desc as string,
+      tag: "",
+      slug: title.replaceAll(" ", "-").toLowerCase(),
+
+      pubDate: date.toISOString().split("T")[0],
+
+      author: {
+        img: {
+          url: "/image/team/team3.webp",
+          alt: "imagen author",
+        },
+        name: "Guillermo Vera",
+        proffesion: "writter",
+        bio: "He is an editor with over 12 years.",
+      },
+
+      body: jsonBody,
+    };
+
+    console.log(JSON.stringify(jsonOutput, null, 2));
+  });
+</script>

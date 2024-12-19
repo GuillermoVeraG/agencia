@@ -8,6 +8,7 @@ const list = z.object({
 const imgBlog = z.object({
   src: z.string(),
   align: z.enum(["left", "right"]),
+  height: z.optional(z.string()),
 });
 
 const body = z.array(
@@ -25,6 +26,7 @@ export const blogSchema = z.object({
   img: z.object({
     url: z.string(),
     alt: z.string(),
+    pos: z.optional(z.string()),
   }),
   title: z.string(),
   desc: z.string(),
@@ -76,6 +78,7 @@ export const projectSchema = z.object({
 interface blogImg {
   src: string;
   align: string;
+  height?: string;
 }
 
 export interface blogItemList {
@@ -89,4 +92,28 @@ export interface blogItemBody {
   list?: Array<blogItemList>;
   border?: boolean;
   img?: blogImg;
+}
+
+export interface blogItem {
+  id: number;
+  img: {
+    url: string;
+    alt: string;
+    pos?: string;
+  };
+  title: string;
+  desc: string;
+  tag: string;
+  slug: string;
+  pubDate: string;
+  author: {
+    img: {
+      url: string;
+      alt: string;
+    };
+    name: string;
+    proffesion: string;
+    bio: string;
+  };
+  body: Array<blogItemBody>;
 }

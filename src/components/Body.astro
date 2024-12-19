@@ -11,7 +11,8 @@ const { body } = Astro.props;
     {
         const borderCls = border ? "border-l-4 border-brand-500 dark:border-brand_cyan pl-2" : "";
         const imgOnly = img && title == '' && !parrafo && !list;
-        const imgWidth = imgOnly ? "w-full" : "w-full md:w-1/2 h-80";
+        const imgH = img && img.height ? img.height : 'h-80';
+        const imgWidth = (imgOnly ? "w-full " : "w-full md:w-1/2 ") + imgH;
         const isImg = img ? "w-full md:w-1/2" : "w-full";
         const align = img?.align == "left" ? "md:flex-row" : "md:flex-row-reverse";
 
@@ -27,7 +28,7 @@ const { body } = Astro.props;
                             <li class="text-gray-700 dark:text-gray-300 text-base">
                                 <ArrowRight className="stroke-brand-500 dark:stroke-brand_cyan inline mb-1"></ArrowRight> 
                                 <span class="font-semibold text-black dark:text-white">{item.title}</span>
-                                {item.txt}
+                                <span set:html={item.txt}></span>
                             </li>)
                         )}
                         </ul>

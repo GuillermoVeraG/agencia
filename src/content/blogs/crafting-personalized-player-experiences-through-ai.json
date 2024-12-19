@@ -114,7 +114,10 @@
           "title": "Procedural Generation:",
           "txt": "AI can be used to generate procedurally created content, from levels and enemies to quests, ensuring that each player’s journey is fresh and unique."
         }
-      ],
+      ]
+    },
+    {
+      "title": "",
       "img": {
         "src": "/image/blogs/blog3-1.webp",
         "align": "right"

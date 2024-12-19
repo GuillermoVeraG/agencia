@@ -4,12 +4,17 @@ import type { CollectionEntry } from "astro:content";
 import Title from "@/components/TitleVertical.astro";
 import Item from "@/components/BlogItem.astro";
 
-const BLOG_ITEMS: CollectionEntry<"blogs">[] = (
+const today = new Date();
+const BLOG_ITEMS_TOTAL: CollectionEntry<"blogs">[] = (
   await getCollection("blogs")
-).sort(
-  (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+)
+  .sort(
+    (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  )
+  .filter((value: CollectionEntry<"blogs">) => value.data.pubDate <= today);
+
+const BLOG_ITEMS: CollectionEntry<"blogs">[] = BLOG_ITEMS_TOTAL.slice(0, 2);
 ---
 
 <section class="my-16">
@@ -53,54 +58,3 @@ const BLOG_ITEMS: CollectionEntry<"blogs">[] = (
     </div>
   </div>
 </section>
-
-<script>
-  /*import { gsap } from "gsap";
-
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.fromTo(
-    "#blogsTitle",
-    {
-      x: -100,
-      opacity: 0,
-    },
-    {
-      scrollTrigger: {
-        trigger: "#blogsTitle",
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play none none none",
-      },
-      x: 0,
-      opacity: 100,
-      duration: 2,
-    }
-  );
-
-  gsap.utils
-    .toArray<HTMLElement>("#blogsContainer > a")
-    .forEach((project, index) => {
-      gsap.fromTo(
-        project,
-        {
-          opacity: 0,
-          x: 100 * (index % 2 == 0 ? -1 : 1),
-        },
-        {
-          scrollTrigger: {
-            trigger: "#blogsContainer",
-            start: "top center",
-            end: "bottom center",
-            toggleActions: "play none none none",
-          },
-          x: 0,
-          opacity: 100,
-          duration: 1.5,
-          delay: 0.3 * (index + 1),
-        }
-      );
-    });*/
-</script>
