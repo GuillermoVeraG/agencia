@@ -82,7 +82,7 @@ const Services = ({ services }) => {
                   </div>
                   <div className="w-full">
                     <a
-                      href={`/services/${data.slug}`}
+                      href={`/services/${data.slug}/`}
                       className="flex justify-center items-center capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-semibold rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan"
                     >
                       Learn More

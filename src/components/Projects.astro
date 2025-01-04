@@ -50,7 +50,7 @@ const PROJECTS = showAll ? allProjects : allProjects.slice(0, 2);
     >
       {
         PROJECTS.map(({ data }, index) => (
-          <a href={`/projects/${data.slug}`} class="group/projects">
+          <a href={`/projects/${data.slug}/`} class="group/projects">
             <div class="flex flex-col justify-center items-center relative text-left w-screen md:max-w-xl h-[480px] md:rounded-lg overflow-hidden">
               <img
                 transition:name={`projects-img-${data.slug}`}

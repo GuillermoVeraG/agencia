@@ -4,6 +4,11 @@ const { text, href, fill } = Astro.props;
 const classes = fill
   ? "w-max block bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 px-8 py-2 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-3xl"
   : "w-max block capitalize border-solid border-2 border-brand-500 dark:border-brand_cyan px-8 py-2 text-brand-500 dark:text-brand_cyan text-xs font-semibold rounded-3xl hover:text-white hover:bg-brand-500 hover:dark:text-black hover:dark:bg-brand_cyan";
+
+let link = href;
+if (href.slice(-1) != "/") {
+  link = `${href}/`;
+}
 ---
 
-<a href={href} class={classes}>{text}</a>
+<a href={link} class={classes}>{text}</a>
