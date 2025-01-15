@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap";
 
 import react from "@astrojs/react";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -15,9 +17,18 @@ export default defineConfig({
     }),
     react(),
   ],
+
   site: "https://audienzelabs.com",
+
   //base: "/agencia",
   redirects: {
     "/blogs": "/blogs/1",
   },
+
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
+  output: "server",
 });

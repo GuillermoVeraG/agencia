@@ -6,6 +6,8 @@ import { getDateText } from "@/utils/getDates";
 import Body from "@/components/Body.astro";
 import Back from "@/components/Back.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const BLOG_ITEMS = await getCollection("blogs");
 
