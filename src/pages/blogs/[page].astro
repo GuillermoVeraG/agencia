@@ -2,33 +2,45 @@
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import type { GetStaticPathsOptions } from "astro";
 import Title from "@/components/TitleVertical.astro";
 import Item from "@/components/BlogItem.astro";
-import Button from "@/components/Button.astro";
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const today = new Date();
-  const BLOG_ITEMS: CollectionEntry<"blogs">[] = (await getCollection("blogs"))
-    .sort(
-      (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
-        b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-    )
-    .filter((value: CollectionEntry<"blogs">) => value.data.pubDate <= today);
+import Pagination from "@/components/Pagination.astro";
 
-  return paginate(BLOG_ITEMS, { pageSize: 5 });
-}
+export const prerender = false;
+const today = new Date();
+const BLOG_ITEMS: CollectionEntry<"blogs">[] = (await getCollection("blogs"))
+  .sort(
+    (a: CollectionEntry<"blogs">, b: CollectionEntry<"blogs">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  )
+  .filter((value: CollectionEntry<"blogs">) => value.data.pubDate <= today);
 
-const { page } = Astro.props;
+const url = new URL(Astro.url);
+const { page } = Astro.params;
+
+const paths = url.pathname.split("/");
+const baseUrl = paths.slice(0, -2).join("/") + "/";
+
+const currentPage = parseInt(page ?? "1");
+const ITEMS_PER_PAGE = 5;
+const total = BLOG_ITEMS.length;
+
+const lastPage = Math.ceil(total / ITEMS_PER_PAGE);
+
+const blogData = BLOG_ITEMS.slice(
+  (currentPage - 1) * ITEMS_PER_PAGE,
+  currentPage * ITEMS_PER_PAGE
+);
 ---
 
 <Layout
-  title={`Blogs page ${page.currentPage} - Audienze Labs LLC`}
-  description={`Welcome to the Audienze Labs blog page ${page.currentPage}, where we explore how data and strategy are transforming the video game industry. Dive into articles on the latest gaming trends and uncover how data analytics, marketing, branding, and web development drive success. Stay informed and learn how to take your game to the next level while keeping your audience engaged.`}
+  title={`Blogs page ${currentPage} - Audienze Labs LLC`}
+  description={`Welcome to the Audienze Labs blog page ${currentPage}, where we explore how data and strategy are transforming the video game industry. Dive into articles on the latest gaming trends and uncover how data analytics, marketing, branding, and web development drive success. Stay informed and learn how to take your game to the next level while keeping your audience engaged.`}
 >
   <main>
     <div class="block h-14"></div>
-    <h1 class="hidden">Blogs page {page.currentPage} - Audienze Labs LLC</h1>
+    <h1 class="hidden">Blogs page {currentPage} - Audienze Labs LLC</h1>
     <section class="my-16">
       <div class="w-screen max-w-7xl mx-auto overflow-hidden px-10">
         <div
@@ -50,7 +62,7 @@ const { page } = Astro.props;
           class="flex flex-col justify-center items-center gap-4 my-10"
         >
           {
-            page.data.map(({ id, data }, index) => {
+            blogData.map(({ id, data }, index) => {
               return (
                 <Item
                   id={id}
@@ -69,26 +81,11 @@ const { page } = Astro.props;
           }
         </div>
 
-        {
-          page.lastPage > 1 && (
-            <nav class="flex items-center justify-center gap-8">
-              {page.url.prev && <Button href={page.url.prev} text="<-" fill />}
-
-              <p class="text-slate-600 dark:text-slate-400">
-                Page
-                <strong class="text-slate-800 dark:text-white">
-                  {page.currentPage}
-                </strong>
-                of
-                <strong class="text-slate-800 dark:text-white">
-                  {page.lastPage}
-                </strong>
-              </p>
-
-              {page.url.next && <Button href={page.url.next} text="->" fill />}
-            </nav>
-          )
-        }
+        <Pagination
+          currentPage={currentPage}
+          lastPage={lastPage}
+          url={baseUrl}
+        />
       </div>
     </section>
   </main>

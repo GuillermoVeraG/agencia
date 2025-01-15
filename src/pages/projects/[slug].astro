@@ -4,6 +4,8 @@ import Layout from "@/layouts/Layout.astro";
 import Body from "@/components/Body.astro";
 import Back from "@/components/Back.astro";
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const PROJECTS = await getCollection("projects");
 
