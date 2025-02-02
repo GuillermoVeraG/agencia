@@ -7,12 +7,13 @@ const { body } = Astro.props;
 
 <div>
 {
-    body.map(({ title, parrafo, border, list, img }:blogItemBody) => 
+    body.map(({ title, parrafo, subparrafo, border, list, img }:blogItemBody) => 
     {
+        console.log(title, parrafo, subparrafo);
         const borderCls = border ? "border-l-4 border-brand-500 dark:border-brand_cyan pl-2" : "";
-        const imgOnly = img && title == '' && !parrafo && !list;
+        const imgOnly = img && title == '' && !parrafo && !list && !subparrafo;
         const imgH = img && img.height ? img.height : 'h-80';
-        const imgWidth = (imgOnly ? "w-full " : "w-full md:w-1/2 ") + imgH;
+        const imgWidth = (imgOnly ? "w-full " : "w-full md:w-1/2 ") + imgH; 
         const isImg = img ? "w-full md:w-1/2" : "w-full";
         const align = img?.align == "left" ? "md:flex-row" : "md:flex-row-reverse";
 
@@ -32,7 +33,9 @@ const { body } = Astro.props;
                             </li>)
                         )}
                         </ul>
-                    )}</div>
+                    )}
+                    {subparrafo  && subparrafo.map((txt:string) => <p class="text-gray-700 dark:text-gray-300 text-base">{txt}</p>)}
+                    </div>
                 }</div>
         )
     })
