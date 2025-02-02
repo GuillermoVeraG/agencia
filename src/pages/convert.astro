@@ -56,6 +56,7 @@ import Layout from "@/layouts/Layout.astro";
       if (
         !line.startsWith("●") &&
         !line.startsWith("•") &&
+        !line.startsWith("o") &&
         line[line.length - 1] != "." &&
         line[line.length - 1] != ":"
       ) {
@@ -71,7 +72,7 @@ import Layout from "@/layouts/Layout.astro";
           currentSection.list = currentSection.list || [];
           currentSection.list.push({
             title: parts[0].trim() + ": ",
-            txt: parts[1].trim(),
+            txt: parts[1] ? parts[1].trim() : "",
           });
         }
       } else if (currentSection) {

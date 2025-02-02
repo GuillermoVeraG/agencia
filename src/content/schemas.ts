@@ -18,6 +18,7 @@ const body = z.array(
     border: z.optional(z.boolean()),
     list: z.optional(z.array(list)),
     img: z.optional(imgBlog),
+    subparrafo: z.optional(z.array(z.string())),
   })
 );
 
@@ -92,6 +93,7 @@ export interface blogItemBody {
   list?: Array<blogItemList>;
   border?: boolean;
   img?: blogImg;
+  subparrafo?: Array<string>;
 }
 
 export interface blogItem {
