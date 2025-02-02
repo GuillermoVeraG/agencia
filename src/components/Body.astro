@@ -9,7 +9,6 @@ const { body } = Astro.props;
 {
     body.map(({ title, parrafo, subparrafo, border, list, img }:blogItemBody) => 
     {
-        console.log(title, parrafo, subparrafo);
         const borderCls = border ? "border-l-4 border-brand-500 dark:border-brand_cyan pl-2" : "";
         const imgOnly = img && title == '' && !parrafo && !list && !subparrafo;
         const imgH = img && img.height ? img.height : 'h-80';
