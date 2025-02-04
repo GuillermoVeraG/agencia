@@ -62,8 +62,8 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
             >service</label
           >
           <select
-            name="Service"
-            id="Service"
+            name="Customer-Service"
+            id="Customer-Service"
             required
             class="w-full min-h-16 bg-white rounded-xl flex justify-center items-center mx-auto align-middle px-4 py-2 text-sm text-gray-900 border-2"
           >
@@ -132,41 +132,92 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
   </div>
 </section>
 
-<script is:inline>
-  const RESEND_API_KEY = "re_Cay8emts_Cd5WHLj6SHsWEkUV5woBkVhq";
-  const form = document.getElementById("formContact");
-  const sendBt = document.getElementById("formButContact");
+<dialog
+  id="dialogForm"
+  class="max-w-sm w-full bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
+>
+  <h5
+    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
+  >
+    Thank you for your message!
+  </h5>
+  <button id="closeDialogForm" class="absolute top-2 right-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="icon icon-tabler icons-tabler-filled icon-tabler-square-x"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3zm-9.387 6.21l.094 .083l2.293 2.292l2.293 -2.292a1 1 0 0 1 1.497 1.32l-.083 .094l-2.292 2.293l2.292 2.293a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 1.32 -1.497z"
+      ></path></svg
+    >
+  </button>
+</dialog>
 
-  sendBt?.addEventListener("click", async (e) => {
+<dialog
+  id="dialogFormError"
+  class="max-w-sm w-full bg-red-600 hover:bg-red-800 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
+>
+  <h5
+    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
+  >
+    We are experiencing problems at this time
+  </h5>
+  <button id="closeErrorDialogForm" class="absolute top-2 right-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="icon icon-tabler icons-tabler-filled icon-tabler-square-x"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3zm-9.387 6.21l.094 .083l2.293 2.292l2.293 -2.292a1 1 0 0 1 1.497 1.32l-.083 .094l-2.292 2.293l2.292 2.293a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 1.32 -1.497z"
+      ></path></svg
+    >
+  </button>
+</dialog>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const form = document.querySelector("form") as HTMLFormElement,
+    dialogForm = document.getElementById("dialogForm") as HTMLDialogElement,
+    dialogFormError = document.getElementById(
+      "dialogFormError"
+    ) as HTMLDialogElement,
+    closeErrorDialogForm = document.getElementById("closeErrorDialogForm"),
+    closeDialogForm = document.getElementById("closeDialogForm");
+
+  closeDialogForm?.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(form);
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${RESEND_API_KEY}`,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
-        "Access-Control-Allow-Headers":
-          "Origin, X-Requested-With, Content-Type, Accept",
-      },
-      body: JSON.stringify({
-        from: "Acme <onboarding@resend.dev>",
-        to: ["guillermoveraghanain@gmail.com"],
-        subject: "test agencia",
-        html: "ajhsdkjas",
-      }),
-    });
+    dialogForm?.close();
+  });
 
-    if (res.ok) {
-      const data = await res.json();
+  closeErrorDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
 
-      console.log(data);
-      return {
-        statusCode: 200,
-        body: data,
-      };
+    dialogFormError?.close();
+  });
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    console.log(formData.get);
+
+    const { data, error } = await actions.contact.sendEmail(formData);
+
+    if (error) {
+      console.log("error", error.message);
+      dialogFormError.showModal();
+      return;
     }
+
+    console.log("todo bien", data);
+    form?.reset();
+    dialogForm.showModal();
   });
 </script>
