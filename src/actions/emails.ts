@@ -2,8 +2,7 @@ import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";
 
-//const resend = new Resend(import.meta.env.PUBLIC_RESEND_API_KEY);
-const resend = new Resend("asds");
+const resend = new Resend(import.meta.env.PUBLIC_RESEND_API_KEY);
 
 export const contact = {
   sendEmail: defineAction({
