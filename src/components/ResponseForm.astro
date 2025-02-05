@@ -1,0 +1,54 @@
+---
+import Close from "@/components/icons/Close.astro";
+
+const { msgError, msgSuccess } = Astro.props;
+---
+
+<dialog
+  id="dialogForm"
+  class="max-w-sm w-full bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
+>
+  <h5
+    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
+  >
+    {msgSuccess}
+  </h5>
+  <button id="closeDialogForm" class="absolute top-2 right-2">
+    <Close />
+  </button>
+</dialog>
+
+<dialog
+  id="dialogFormError"
+  class="max-w-sm w-full bg-red-600 hover:bg-red-800 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
+>
+  <h5
+    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
+  >
+    {msgError}
+  </h5>
+  <button id="closeErrorDialogForm" class="absolute top-2 right-2">
+    <Close />
+  </button>
+</dialog>
+
+<script>
+  const dialogForm = document.getElementById("dialogForm") as HTMLDialogElement,
+    dialogFormError = document.getElementById(
+      "dialogFormError"
+    ) as HTMLDialogElement,
+    closeErrorDialogForm = document.getElementById("closeErrorDialogForm"),
+    closeDialogForm = document.getElementById("closeDialogForm");
+
+  closeDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    dialogForm?.close();
+  });
+
+  closeErrorDialogForm?.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    dialogFormError?.close();
+  });
+</script>
