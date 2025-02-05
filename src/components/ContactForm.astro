@@ -2,6 +2,7 @@
 import TitleVertical from "@/components/TitleVertical.astro";
 import EnvelopIcon from "@/components/icons/Envelop.astro";
 import WhatsappIcon from "@/components/icons/Whatsapp.astro";
+import ResponseForm from "@/components/ResponseForm.astro";
 ---
 
 <section class="flex flex-col justify-between items-center mx-auto mb-6">
@@ -132,53 +133,10 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
   </div>
 </section>
 
-<dialog
-  id="dialogForm"
-  class="max-w-sm w-full bg-brand-500 dark:bg-brand_cyan hover:bg-brand hover:dark:bg-brand_cyan-950 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
->
-  <h5
-    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
-  >
-    Thank you for your message!
-  </h5>
-  <button id="closeDialogForm" class="absolute top-2 right-2">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="icon icon-tabler icons-tabler-filled icon-tabler-square-x"
-      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-        d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3zm-9.387 6.21l.094 .083l2.293 2.292l2.293 -2.292a1 1 0 0 1 1.497 1.32l-.083 .094l-2.292 2.293l2.292 2.293a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 1.32 -1.497z"
-      ></path></svg
-    >
-  </button>
-</dialog>
-
-<dialog
-  id="dialogFormError"
-  class="max-w-sm w-full bg-red-600 hover:bg-red-800 text-white dark:text-black hover:dark:text-gray-200 text-xs font-light rounded-xl relative group/dialog"
->
-  <h5
-    class="p-10 text-xl font-bold tracking-tight text-white dark:text-black group-hover/dialog:text-white"
-  >
-    We are experiencing problems at this time
-  </h5>
-  <button id="closeErrorDialogForm" class="absolute top-2 right-2">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      class="icon icon-tabler icons-tabler-filled icon-tabler-square-x"
-      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-        d="M19 2h-14a3 3 0 0 0 -3 3v14a3 3 0 0 0 3 3h14a3 3 0 0 0 3 -3v-14a3 3 0 0 0 -3 -3zm-9.387 6.21l.094 .083l2.293 2.292l2.293 -2.292a1 1 0 0 1 1.497 1.32l-.083 .094l-2.292 2.293l2.292 2.293a1 1 0 0 1 -1.32 1.497l-.094 -.083l-2.293 -2.292l-2.293 2.292a1 1 0 0 1 -1.497 -1.32l.083 -.094l2.292 -2.293l-2.292 -2.293a1 1 0 0 1 1.32 -1.497z"
-      ></path></svg
-    >
-  </button>
-</dialog>
+<ResponseForm
+  msgSuccess="Thank you for your message!"
+  msgError="We are experiencing problems at this time"
+/>
 
 <script>
   import { actions } from "astro:actions";
@@ -187,21 +145,7 @@ import WhatsappIcon from "@/components/icons/Whatsapp.astro";
     dialogForm = document.getElementById("dialogForm") as HTMLDialogElement,
     dialogFormError = document.getElementById(
       "dialogFormError"
-    ) as HTMLDialogElement,
-    closeErrorDialogForm = document.getElementById("closeErrorDialogForm"),
-    closeDialogForm = document.getElementById("closeDialogForm");
-
-  closeDialogForm?.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    dialogForm?.close();
-  });
-
-  closeErrorDialogForm?.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    dialogFormError?.close();
-  });
+    ) as HTMLDialogElement;
 
   form?.addEventListener("submit", async (event) => {
     event.preventDefault();
