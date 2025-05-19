@@ -2,7 +2,7 @@
 const TEAM = [
   {
     name: "Alex Hidalgo",
-    profession: "ceo",
+    profession: "CEO | CO-FOUNDER",
     img: "/image/team/team1.webp",
     socialMedia: {
       facebook: "",
@@ -12,7 +12,7 @@ const TEAM = [
   },
   {
     name: "Geisson Guadir",
-    profession: "CDO",
+    profession: "CDO | CO-FOUNDER",
     img: "/image/team/team2.webp",
     socialMedia: {
       facebook: "",
@@ -22,7 +22,7 @@ const TEAM = [
   },
   {
     name: "Guillermo Vera",
-    profession: "CTO",
+    profession: "CTO | CO-FOUNDER",
     img: "/image/team/team3.webp",
     socialMedia: {
       instagram: "https://www.instagram.com/guive86/",
@@ -37,18 +37,27 @@ const TEAM = [
       linkedin: "https://www.linkedin.com/in/lisettecoiro/",
     },
   },
+  {
+    name: "Elizabeth Loaiza",
+    profession: "CPO",
+    img: "/image/team/team5.webp",
+    socialMedia: {
+      linkedin:
+        "https://www.linkedin.com/in/elizabeth-loaiza-mogollon-70460657/",
+    },
+  },
   /*{
     name: "Daniela Ramirez",
     profession: "CIO",
-    img: "/image/team/team5.webp",
+    img: "/image/team/team6.webp",
     socialMedia: {
-      linkedin: "https://www.linkedin.com/in/lisettecoiro/",
+      linkedin: "https://www.linkedin.com/in/danielaramirezprisco/",
     },
   },
   {
     name: "Marcia",
     profession: "CCO",
-    img: "/image/team/team6.webp",
+    img: "/image/team/team7.webp",
     socialMedia: {
       linkedin: "https://www.linkedin.com/in/lisettecoiro/",
     },
@@ -77,7 +86,7 @@ const TEAM = [
   </div>
 
   <div
-    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-0 md:gap-8 max-w-7xl mx-auto px-[10%] lg:px-10 -mt-40 mb-6"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-0 md:gap-8 max-w-7xl mx-auto px-[10%] lg:px-10 -mt-40 mb-6"
   >
     {
       TEAM.map(({ name, profession, img, socialMedia }) => (
@@ -87,11 +96,11 @@ const TEAM = [
             alt="image of team"
             class="h-[320px] object-cover w-full rounded-lg"
           />
-          <div class="z-10 absolute h-[320px] top-8 inset-0 group-hover/team:opacity-0 opacity-100 transition-opacity bg-gradient-to-b from-[rgba(22,73,240,0.2)] via-60% via-[rgba(121,26,242,0.2)] to-[rgba(22,73,240,0.9)] rounded-lg" />
+          <div class="z-10 absolute h-[340px] top-8 inset-0 group-hover/team:opacity-0 opacity-100 transition-opacity bg-gradient-to-b from-[rgba(22,73,240,0.2)] via-60% via-[rgba(121,26,242,0.2)] to-[rgba(22,73,240,0.9)] rounded-lg" />
 
-          <div class="w-full max-w-52 min-h-20 flex flex-col justify-center items-center gap-1 absolute bottom-0 bg-gray-100 dark:bg-white z-20">
+          <div class="w-full max-w-56 min-h-20 flex flex-col justify-center items-center gap-1 absolute bottom-0 bg-gray-100 dark:bg-white z-20 rounded">
             <h4 class="uppercase text-black font-medium text-xl">{name}</h4>
-            <h5 class="uppercase text-black tracking-[6px] text-sm font-normal dark:font-light">
+            <h5 class="uppercase text-black tracking-[5px] text-center text-xs font-normal dark:font-light">
               {profession}
             </h5>
           </div>
