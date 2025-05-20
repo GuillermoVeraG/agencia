@@ -2,8 +2,9 @@
 const TEAM = [
   {
     name: "Alex Hidalgo",
-    profession: "CEO | CO-FOUNDER",
+    profession: "CEO",
     img: "/image/team/team1.webp",
+    cofounder: true,
     socialMedia: {
       facebook: "",
       instagram: "",
@@ -12,8 +13,9 @@ const TEAM = [
   },
   {
     name: "Geisson Guadir",
-    profession: "CDO | CO-FOUNDER",
+    profession: "CDO",
     img: "/image/team/team2.webp",
+    cofounder: true,
     socialMedia: {
       facebook: "",
       instagram: "",
@@ -22,8 +24,9 @@ const TEAM = [
   },
   {
     name: "Guillermo Vera",
-    profession: "CTO | CO-FOUNDER",
+    profession: "CTO",
     img: "/image/team/team3.webp",
+    cofounder: true,
     socialMedia: {
       instagram: "https://www.instagram.com/guive86/",
       linkedin: "https://www.linkedin.com/in/guillermoverag/",
@@ -33,6 +36,7 @@ const TEAM = [
     name: "Lisette Coiro",
     profession: "CMO",
     img: "/image/team/team4.webp",
+    cofounder: false,
     socialMedia: {
       linkedin: "https://www.linkedin.com/in/lisettecoiro/",
     },
@@ -41,6 +45,7 @@ const TEAM = [
     name: "Elizabeth Loaiza",
     profession: "CPO",
     img: "/image/team/team5.webp",
+    cofounder: false,
     socialMedia: {
       linkedin:
         "https://www.linkedin.com/in/elizabeth-loaiza-mogollon-70460657/",
@@ -50,6 +55,7 @@ const TEAM = [
     name: "Daniela Ramirez",
     profession: "CIO",
     img: "/image/team/team6.webp",
+    cofounder: false,
     socialMedia: {
       linkedin: "https://www.linkedin.com/in/danielaramirezprisco/",
     },
@@ -58,6 +64,7 @@ const TEAM = [
     name: "Marcia",
     profession: "CCO",
     img: "/image/team/team7.webp",
+    cofounder: false,
     socialMedia: {
       linkedin: "https://www.linkedin.com/in/lisettecoiro/",
     },
@@ -89,7 +96,7 @@ const TEAM = [
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-0 md:gap-8 max-w-7xl mx-auto px-[10%] lg:px-10 -mt-40 mb-6"
   >
     {
-      TEAM.map(({ name, profession, img, socialMedia }) => (
+      TEAM.map(({ name, profession, img, socialMedia, cofounder }) => (
         <div class="overflow-hidden w-80 md:max-w-80 lg:max-w-60 h-96 flex flex-col justify-center items-center gap-4 relative group/team">
           <img
             src={`${img}`}
@@ -103,6 +110,11 @@ const TEAM = [
             <h5 class="uppercase text-black tracking-[5px] text-center text-xs font-normal dark:font-light">
               {profession}
             </h5>
+            {cofounder && (
+              <h5 class="uppercase text-black tracking-[5px] text-center text-xs font-normal dark:font-light">
+                co-founder
+              </h5>
+            )}
           </div>
 
           <div class="w-full max-w-52 py-2 flex justify-center items-center gap-6 absolute top-auto bottom-20 translate-y-40 opacity-0 transition-transform duration-700 group-hover/team:translate-y-0 group-hover/team:opacity-100 z-10">
